@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電學自學 · 三欄（DAT 選修電子）</title>
+<style>
+:root {
+  --bg: #eef2f7; --card: #fff; --ink: #1e293b; --muted: #64748b; --line: #dbe3ee;
+  --primary: #1d4ed8; --ok: #059669; --bad: #dc2626; --side: #0f172a;
+  --radius: 10px;
+  --font: "Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;
+  --left-w: 240px; --right-w: 340px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: var(--font); color: var(--ink); background: var(--bg); }
+button, input { font: inherit; }
+.topbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  padding: .55rem .85rem; background: linear-gradient(120deg,#0f172a,#1d4ed8); color: #fff;
+}
+.topbar h1 { margin: 0; font-size: 1.05rem; flex: 1; min-width: 10rem; }
+.topbar .tag { font-size: .78rem; opacity: .92; }
+.topbar button {
+  appearance: none; border: 0; border-radius: 6px; padding: .35rem .65rem;
+  background: rgba(255,255,255,.18); color: #fff; font-weight: 700; cursor: pointer; font-size: .8rem;
+}
+.topbar button:hover { background: rgba(255,255,255,.28); }
+.shell { display: flex; height: calc(100vh - 52px); min-height: 420px; }
+.panel {
+  background: var(--card); border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; min-width: 0;
+}
+.panel.left { width: var(--left-w); flex-shrink: 0; background: var(--side); color: #e2e8f0; border-right-color: #1e293b; }
+.panel.mid { flex: 1; border-right: 1px solid var(--line); }
+.panel.right { width: var(--right-w); flex-shrink: 0; background: #f8fafc; }
+body.hide-left .panel.left { display: none; }
+body.hide-right .panel.right { display: none; }
+.panel-h {
+  padding: .55rem .75rem; font-size: .72rem; font-weight: 800; letter-spacing: .04em;
+  text-transform: uppercase; border-bottom: 1px solid var(--line); color: var(--muted);
+}
+.panel.left .panel-h { color: #94a3b8; border-bottom-color: #334155; }
+.panel-body { flex: 1; overflow: auto; padding: .65rem .75rem 1.2rem; }
+#navList { display: flex; flex-direction: column; gap: .25rem; }
+.nav-item {
+  display: flex; align-items: flex-start; gap: .45rem; width: 100%;
+  appearance: none; border: 0; background: transparent; color: #cbd5e1;
+  text-align: left; padding: .45rem .5rem; border-radius: 8px; cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.nav-item:hover { background: #1e293b; color: #fff; }
+.nav-item.active { background: #1e293b; color: #fff; border-left-color: #60a5fa; }
+.nav-item .ord {
+  flex-shrink: 0; width: 1.4rem; height: 1.4rem; border-radius: 999px;
+  background: #334155; color: #93c5fd; font-size: .72rem; font-weight: 800;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.nav-item .ttl { flex: 1; font-size: .82rem; font-weight: 650; line-height: 1.35; }
+.nav-item .star { font-size: .72rem; color: #fbbf24; }
+.nav-item.locked { opacity: .55; }
+.nav-item .soon { font-size: .68rem; color: #94a3b8; }
+.welcome h2 { margin-top: 0; }
+.q-meta { font-size: .8rem; color: var(--muted); margin-bottom: .35rem; }
+.stem { font-size: 1.15rem; margin: 0 0 .6rem; line-height: 1.45; }
+.given { background: #eff6ff; border-radius: 8px; padding: .5rem .7rem; font-size: .9rem; }
+.fig { margin: .7rem 0; }
+.fig img { max-width: 100%; max-height: min(420px, 55vh); width: auto; height: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: .35rem; }
+.answer-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin: .85rem 0; }
+.answer-multi { display: flex; flex-direction: column; gap: .15rem; margin: .5rem 0; }
+.answer-multi .answer-row { margin: .35rem 0; }
+.answer-row .ans-lab { min-width: 2.2rem; font-weight: 800; color: #1e3a5f; }
+.answer-row input {
+  flex: 1; min-width: 10rem; padding: .55rem .7rem; border: 1px solid #94a3b8;
+  border-radius: 8px; font-size: 1rem;
+}
+.answer-row input:focus { outline: 2px solid #93c5fd; border-color: #3b82f6; }
+.answer-row .unit { color: var(--muted); font-weight: 700; }
+.btn-row { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 0; }
+.btn {
+  appearance: none; border: 1px solid #94a3b8; background: #fff; color: var(--ink);
+  border-radius: 8px; padding: .45rem .85rem; font-weight: 700; cursor: pointer; font-size: .86rem;
+}
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn.ghost { background: #fff7ed; border-color: #fdba74; color: #9a3412; }
+.feedback { margin-top: .75rem; font-weight: 700; min-height: 1.3em; }
+.feedback.ok { color: var(--ok); }
+.feedback.bad { color: var(--bad); }
+.feedback.info { color: var(--muted); }
+.concept, .demo {
+  background: #fff; border-left: 4px solid var(--primary); padding: .55rem .7rem;
+  border-radius: 6px; font-size: .9rem; margin: .35rem 0 .7rem;
+  line-height: 1.55;
+}
+.concept p, .demo p { margin: .35rem 0; }
+.demo { border-left-color: var(--ok); background: #ecfdf5; }
+.frac {
+  display: inline-block; vertical-align: middle; text-align: center;
+  line-height: 1.05; margin: 0 .15em;
+}
+.frac > span { display: block; padding: 0 .2em; }
+.frac .num { border-bottom: 1px solid currentColor; }
+.frac .den { padding-top: .05em; }
+.stem .frac, .hint-card .frac, .concept .frac, .demo .frac { font-size: 1.02em; }
+sub, .sub { font-size: .75em; }
+.fig { margin: .85rem 0; text-align: center; }
+.defs { margin: 0 0 .8rem; }
+.defs dt { font-weight: 800; font-size: .86rem; margin-top: .45rem; color: #1e3a8a; }
+.defs dd { margin: .15rem 0 .35rem; font-size: .86rem; color: #334155; }
+.hint-card {
+  border: 1px solid var(--line); border-radius: 8px; padding: .5rem .65rem; margin: .4rem 0; background: #fff;
+}
+.hint-card.locked { opacity: .65; background: #f1f5f9; }
+.hint-lab { font-size: .72rem; font-weight: 800; color: #b45309; margin-bottom: .2rem; }
+.panel.right h3 { font-size: .9rem; margin: .85rem 0 .35rem; color: #1e40af; }
+.panel.right .muted, .muted { color: var(--muted); font-size: .84rem; }
+.sr { position: absolute; left: -9999px; }
+.footer-note { text-align: center; font-size: .72rem; color: var(--muted); padding: .35rem; }
+@media (max-width: 960px) {
+  .shell { flex-direction: column; height: auto; min-height: 0; }
+  .panel.left, .panel.right { width: 100%; max-height: 220px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .panel.mid { min-height: 360px; }
+}
+
+.fig-sm img { max-height: min(220px, 32vh); }
+.fig-def { margin: .35rem 0 .55rem; }
+.fig-def img { max-width: 100%; max-height: 160px; width: auto; height: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: .25rem; }
+.fig-row { display: flex; flex-wrap: wrap; gap: .4rem; margin: .4rem 0 .6rem; }
+.fig-row .fig { margin: 0; flex: 1 1 140px; }
+.credit-muted { text-align: center; font-size: .68rem; color: var(--muted); padding: 0 .5rem .45rem; }
+
+
+
+/* —— 互動教學卡（求 V／I／R） —— */
+.teach-card {
+  border: 2px solid #3b82f6; border-radius: 12px; padding: .7rem .75rem .8rem;
+  background: #fff; margin: .45rem 0 .75rem; box-shadow: 0 2px 8px rgba(29,78,216,.08);
+}
+.teach-card .tc-head {
+  display: flex; align-items: center; justify-content: space-between; gap: .4rem; flex-wrap: wrap;
+  margin-bottom: .45rem;
+}
+.teach-card .tc-title { margin: 0; font-size: .95rem; font-weight: 800; color: #1e40af; }
+.teach-card .tc-refresh {
+  appearance: none; border: 1px solid #93c5fd; background: #eff6ff; color: #1e3a8a;
+  border-radius: 6px; padding: .2rem .5rem; font-size: .7rem; font-weight: 700; cursor: pointer;
+}
+.teach-card .tc-layout {
+  display: flex; flex-wrap: wrap; gap: .55rem; align-items: stretch; margin-bottom: .55rem;
+}
+.teach-card .tc-circuit {
+  flex: 1 1 150px; min-height: 110px; background: #f8fafc; border: 1px solid #e2e8f0;
+  border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: .35rem;
+}
+.teach-card .tc-circuit svg { max-width: 100%; height: auto; }
+.teach-card .tc-formula {
+  flex: 0 1 120px; border: 1px solid #93c5fd; background: #eff6ff; border-radius: 8px;
+  padding: .45rem .5rem; text-align: center; font-size: .82rem; color: #1e3a8a;
+  display: flex; flex-direction: column; justify-content: center; gap: .25rem;
+}
+.teach-card .tc-formula .tf-lab { font-size: .68rem; color: #64748b; font-weight: 700; }
+.teach-card .tc-formula .tf-eq { font-size: 1.05rem; font-weight: 800; }
+.teach-card .tc-chips {
+  display: flex; flex-wrap: wrap; gap: .4rem; align-items: stretch;
+}
+.teach-card .tc-chip {
+  flex: 1 1 90px; border-radius: 8px; padding: .4rem .5rem; border: 1.5px solid;
+  font-size: .82rem; min-width: 88px;
+}
+.teach-card .tc-chip .ck { font-size: .68rem; font-weight: 800; opacity: .85; margin-bottom: .15rem; }
+.teach-card .tc-chip .cv { font-weight: 800; font-size: .95rem; }
+.teach-card .tc-chip.v { background: #fee2e2; border-color: #f87171; color: #991b1b; }
+.teach-card .tc-chip.r { background: #dcfce7; border-color: #4ade80; color: #166534; }
+.teach-card .tc-chip.i { background: #dbeafe; border-color: #60a5fa; color: #1e3a8a; }
+.teach-card .tc-chip.ask {
+  display: flex; flex-direction: column; gap: .25rem; background: #dbeafe; border-color: #3b82f6;
+}
+.teach-card .tc-chip.ask input {
+  width: 100%; padding: .35rem .45rem; border: 1px solid #94a3b8; border-radius: 6px; font-size: .9rem;
+}
+.teach-card .tc-actions { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .5rem; align-items: center; }
+.teach-card .tc-fb { font-size: .82rem; font-weight: 700; min-height: 1.2em; }
+.teach-card .tc-fb.ok { color: #059669; }
+.teach-card .tc-fb.bad { color: #dc2626; }
+.teach-note { font-size: .72rem; color: #64748b; margin: .15rem 0 .4rem; }
+
+/* —— 撳圖放大 lightbox —— */
+.fig img, .fig-sm img, .fig-def img, .fig-row img {
+  cursor: zoom-in;
+}
+.fig-zoom-hint {
+  display: block; text-align: center; font-size: .68rem; color: #64748b; margin-top: .15rem;
+}
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(15, 23, 42, .82);
+  align-items: center; justify-content: center;
+  padding: 1.2rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: min(96vw, 1100px);
+  max-height: 90vh;
+  width: auto; height: auto; object-fit: contain;
+  background: #fff; border-radius: 10px; padding: .5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,.45);
+  cursor: zoom-out;
+}
+.lightbox .lb-close {
+  position: absolute; top: 12px; right: 14px;
+  appearance: none; border: 0; background: #fff; color: #0f172a;
+  border-radius: 8px; padding: .4rem .75rem; font-weight: 800; font-size: .85rem; cursor: pointer;
+}
+.lightbox .lb-caption {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  color: #e2e8f0; font-size: .78rem; background: rgba(15,23,42,.65);
+  padding: .3rem .7rem; border-radius: 999px;
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <h1>電學自學 · DAT 選修電子</h1>
+  <span class="tag" id="progressTag">錯題 0</span>
+  <button type="button" id="btnToggleLeft">隱藏目錄</button>
+  <button type="button" id="btnToggleRight">隱藏支援</button>
+  <button type="button" id="btnReset">重置進度</button>
+</header>
+<div class="shell">
+  <aside class="panel left" aria-label="課程目錄">
+    <div class="panel-h">課程項目</div>
+    <div class="panel-body" id="navList"></div>
+  </aside>
+  <main class="panel mid" aria-label="練習">
+    <div class="panel-h">練習視窗</div>
+    <div class="panel-body" id="practiceBody"></div>
+  </main>
+  <aside class="panel right" aria-label="定義與支援">
+    <div class="panel-h">定義 · 範例 · 提示</div>
+    <div class="panel-body" id="supportBody"></div>
+  </aside>
+</div>
+<p class="credit-muted">校本自製示意圖 · DAT</p>
+<p class="footer-note">離線可用 · 左目錄／中練習／右支援可摺疊 · 今輪主打歐姆／零件／功率／分壓／AC·DC／晶體管</p>
+
+<div class="lightbox" id="imgLightbox" aria-hidden="true" role="dialog" aria-label="放大圖片">
+  <button type="button" class="lb-close" id="btnCloseLightbox">關閉</button>
+  <img id="lightboxImg" src="" alt="放大圖">
+  <div class="lb-caption">撳空白處或按 Esc 關閉</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

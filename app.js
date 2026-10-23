@@ -1,0 +1,13666 @@
+/* DAT 電學三欄自學 */
+const BANK = {
+  "version": 3,
+  "subject": "DAT-electricity",
+  "titleZh": "電學自學：基本概念・零件・歐姆・功率・分壓・AC／電晶體",
+  "levels": [
+    {
+      "levelId": "ohm-intro",
+      "titleZh": "認識 V、I、R 同歐姆定律",
+      "order": 1,
+      "kind": "lesson",
+      "conceptZh": "電壓（電勢差）V、電流 I、電阻值 R 用標準單位：伏特 V、安培 A、歐姆 Ω。\n歐姆定律：通過導體嘅電流同電壓成正比。\n寫成 V＝I×R；亦可 I＝{{frac:V|R}}、R＝{{frac:V|I}}。\n計數前先對齊單位（例如 1 kΩ＝1000 Ω；1 mA＝0.001 A）。",
+      "demoZh": "示範（Given 風格）：V＝1.5 V，R＝5 Ω。\nI＝{{frac:V|R}}＝{{frac:1.5|5}}＝0.3 A。",
+      "figure": "assets/formula_card.png",
+      "extraFigures": [
+        "assets/step_solve.png",
+        "assets/hero_ohm.png"
+      ],
+      "unlockStars": 0,
+      "questions": [
+        {
+          "id": "intro-01",
+          "topic": "ohm",
+          "stemZh": "歐姆定律的基本公式是？請輸入電壓 V 的計算式（用 I 和 R，寫成 IR 或 I*R 或 I×R）。",
+          "given": {
+            "I": null,
+            "R": null
+          },
+          "unknown": "V",
+          "unit": "—",
+          "answer": "IR",
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：電壓＝電流×電阻——你會先做邊一步？",
+          "fullSolutionZh": "正確寫法：V＝I R（電流乘以電阻）。答 IR／I*R／I×R 均可。",
+          "wrongTags": [
+            "formula-form"
+          ],
+          "figure": "assets/formula_card.png",
+          "answerType": "formula-V",
+          "accepted": [
+            "IR",
+            "I*R",
+            "I×R",
+            "I×R",
+            "I R",
+            "ir",
+            "i*r"
+          ]
+        },
+        {
+          "id": "intro-02",
+          "topic": "ohm",
+          "stemZh": "單位：電壓用？請輸入單位符號（例如 V）。",
+          "given": {},
+          "unknown": "unit",
+          "unit": "—",
+          "answer": "V",
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（先記三大單位）想清楚先代入。",
+          "stepHint": "引導：電壓 → 伏特——你會先做邊一步？",
+          "fullSolutionZh": "電壓單位是 V（伏特 Volt）。",
+          "wrongTags": [
+            "unit"
+          ],
+          "figure": "assets/unit_tip.png",
+          "answerType": "text",
+          "accepted": [
+            "V",
+            "v",
+            "伏特"
+          ]
+        },
+        {
+          "id": "intro-03",
+          "topic": "ohm",
+          "stemZh": "單位：電流用？請輸入單位符號（例如 A）。",
+          "given": {},
+          "unknown": "unit",
+          "unit": "—",
+          "answer": "A",
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（先記三大單位）想清楚先代入。",
+          "stepHint": "引導：電流 → 安培——你會先做邊一步？",
+          "fullSolutionZh": "電流單位是 A（安培 Ampere）。",
+          "wrongTags": [
+            "unit"
+          ],
+          "figure": "assets/unit_tip.png",
+          "answerType": "text",
+          "accepted": [
+            "A",
+            "a",
+            "安培"
+          ]
+        },
+        {
+          "id": "intro-04",
+          "topic": "ohm",
+          "stemZh": "單位：電阻用？請輸入單位符號（例如 Ω 或 ohm）。",
+          "given": {},
+          "unknown": "unit",
+          "unit": "—",
+          "answer": "Ω",
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（先記三大單位）想清楚先代入。",
+          "stepHint": "引導：電阻 → 歐姆——你會先做邊一步？",
+          "fullSolutionZh": "電阻單位是 Ω（歐姆 Ohm）。也可接受 ohm。",
+          "wrongTags": [
+            "unit"
+          ],
+          "figure": "assets/unit_tip.png",
+          "answerType": "text",
+          "accepted": [
+            "Ω",
+            "ohm",
+            "Ohm",
+            "OHM",
+            "歐姆",
+            "omega"
+          ]
+        },
+        {
+          "id": "intro-05",
+          "topic": "ohm",
+          "stemZh": "換算：80 mA 等於多少 A？",
+          "given": {
+            "I_mA": 80
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 0.08,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝80 mA＝80÷1000＝0.08 A",
+          "wrongTags": [
+            "unit-mA"
+          ],
+          "figure": "assets/unit_tip.png",
+          "variants": [
+            {
+              "stemZh": "換算：80 mA 等於多少 A？",
+              "given": {
+                "I_mA": 80
+              },
+              "answer": 0.08,
+              "stepHint": "I＝80÷1000",
+              "fullSolutionZh": "I＝80 mA＝80÷1000＝0.08 A"
+            },
+            {
+              "stemZh": "換算：120 mA 等於多少 A？",
+              "given": {
+                "I_mA": 120
+              },
+              "answer": 0.12,
+              "stepHint": "I＝120÷1000",
+              "fullSolutionZh": "I＝120 mA＝120÷1000＝0.12 A"
+            },
+            {
+              "stemZh": "換算：160 mA 等於多少 A？",
+              "given": {
+                "I_mA": 160
+              },
+              "answer": 0.16,
+              "stepHint": "I＝160÷1000",
+              "fullSolutionZh": "I＝160 mA＝160÷1000＝0.16 A"
+            },
+            {
+              "stemZh": "換算：180 mA 等於多少 A？",
+              "given": {
+                "I_mA": 180
+              },
+              "answer": 0.18,
+              "stepHint": "I＝180÷1000",
+              "fullSolutionZh": "I＝180 mA＝180÷1000＝0.18 A"
+            },
+            {
+              "stemZh": "換算：200 mA 等於多少 A？",
+              "given": {
+                "I_mA": 200
+              },
+              "answer": 0.2,
+              "stepHint": "I＝200÷1000",
+              "fullSolutionZh": "I＝200 mA＝200÷1000＝0.2 A"
+            },
+            {
+              "stemZh": "換算：300 mA 等於多少 A？",
+              "given": {
+                "I_mA": 300
+              },
+              "answer": 0.3,
+              "stepHint": "I＝300÷1000",
+              "fullSolutionZh": "I＝300 mA＝300÷1000＝0.3 A"
+            },
+            {
+              "stemZh": "換算：400 mA 等於多少 A？",
+              "given": {
+                "I_mA": 400
+              },
+              "answer": 0.4,
+              "stepHint": "I＝400÷1000",
+              "fullSolutionZh": "I＝400 mA＝400÷1000＝0.4 A"
+            },
+            {
+              "stemZh": "換算：600 mA 等於多少 A？",
+              "given": {
+                "I_mA": 600
+              },
+              "answer": 0.6,
+              "stepHint": "I＝600÷1000",
+              "fullSolutionZh": "I＝600 mA＝600÷1000＝0.6 A"
+            },
+            {
+              "stemZh": "換算：750 mA 等於多少 A？",
+              "given": {
+                "I_mA": 750
+              },
+              "answer": 0.75,
+              "stepHint": "I＝750÷1000",
+              "fullSolutionZh": "I＝750 mA＝750÷1000＝0.75 A"
+            },
+            {
+              "stemZh": "換算：800 mA 等於多少 A？",
+              "given": {
+                "I_mA": 800
+              },
+              "answer": 0.8,
+              "stepHint": "I＝800÷1000",
+              "fullSolutionZh": "I＝800 mA＝800÷1000＝0.8 A"
+            },
+            {
+              "stemZh": "換算：1200 mA 等於多少 A？",
+              "given": {
+                "I_mA": 1200
+              },
+              "answer": 1.2,
+              "stepHint": "I＝1200÷1000",
+              "fullSolutionZh": "I＝1200 mA＝1200÷1000＝1.2 A"
+            },
+            {
+              "stemZh": "換算：1500 mA 等於多少 A？",
+              "given": {
+                "I_mA": 1500
+              },
+              "answer": 1.5,
+              "stepHint": "I＝1500÷1000",
+              "fullSolutionZh": "I＝1500 mA＝1500÷1000＝1.5 A"
+            }
+          ]
+        },
+        {
+          "id": "intro-06",
+          "topic": "ohm",
+          "stemZh": "換算：3 kΩ 等於多少 Ω？",
+          "given": {
+            "R_kΩ": 3
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 3000,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "R＝3 kΩ＝3×1000＝3000 Ω",
+          "wrongTags": [
+            "unit-kΩ"
+          ],
+          "figure": "assets/unit_tip.png",
+          "variants": [
+            {
+              "stemZh": "換算：3 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 3
+              },
+              "answer": 3000,
+              "stepHint": "R＝3×1000",
+              "fullSolutionZh": "R＝3 kΩ＝3×1000＝3000 Ω"
+            },
+            {
+              "stemZh": "換算：1 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 1
+              },
+              "answer": 1000,
+              "stepHint": "R＝1×1000",
+              "fullSolutionZh": "R＝1 kΩ＝1×1000＝1000 Ω"
+            },
+            {
+              "stemZh": "換算：1.5 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 1.5
+              },
+              "answer": 1500,
+              "stepHint": "R＝1.5×1000",
+              "fullSolutionZh": "R＝1.5 kΩ＝1.5×1000＝1500 Ω"
+            },
+            {
+              "stemZh": "換算：4 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 4
+              },
+              "answer": 4000,
+              "stepHint": "R＝4×1000",
+              "fullSolutionZh": "R＝4 kΩ＝4×1000＝4000 Ω"
+            },
+            {
+              "stemZh": "換算：5 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 5
+              },
+              "answer": 5000,
+              "stepHint": "R＝5×1000",
+              "fullSolutionZh": "R＝5 kΩ＝5×1000＝5000 Ω"
+            },
+            {
+              "stemZh": "換算：6 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 6
+              },
+              "answer": 6000,
+              "stepHint": "R＝6×1000",
+              "fullSolutionZh": "R＝6 kΩ＝6×1000＝6000 Ω"
+            },
+            {
+              "stemZh": "換算：8 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 8
+              },
+              "answer": 8000,
+              "stepHint": "R＝8×1000",
+              "fullSolutionZh": "R＝8 kΩ＝8×1000＝8000 Ω"
+            },
+            {
+              "stemZh": "換算：10 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 10
+              },
+              "answer": 10000,
+              "stepHint": "R＝10×1000",
+              "fullSolutionZh": "R＝10 kΩ＝10×1000＝10000 Ω"
+            },
+            {
+              "stemZh": "換算：12 kΩ 等於多少 Ω？",
+              "given": {
+                "R_kΩ": 12
+              },
+              "answer": 12000,
+              "stepHint": "R＝12×1000",
+              "fullSolutionZh": "R＝12 kΩ＝12×1000＝12000 Ω"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "parts-intro",
+      "titleZh": "常用電子零件同換能器",
+      "order": 2,
+      "kind": "lesson",
+      "conceptZh": "電子零件要識功能同電路角色（跟學習資源用語）。\n包括：電阻器、電位器、熱敏電阻器、光敏電阻器（LDR）、電容器、二極管、發光二極管（LED）、晶體管（電晶體）、揚聲器、蜂鳴器、麥克風、集成電路、保險絲、開關、繼電器、變壓器等。\n換能器把一種能量形式轉成另一種（例如光↔電、聲↔電、電→機械）。\n先分清：輸入感測、被動元件、控制／保護、輸出裝置。",
+      "demoZh": "例：光敏電阻器感光→電阻變；熱敏電阻器感溫。\n變壓器只對交流升／降壓。\n繼電器用細控大（隔離）。\n揚聲器／蜂鳴器：電→聲；麥克風：聲→電。\n晶體管常用作放大器或電動開關。",
+      "figure": "assets/card_parts_index.png",
+      "extraFigures": [
+        "assets/card_resistor.png",
+        "assets/card_potentiometer.png",
+        "assets/card_thermistor.png",
+        "assets/card_ldr.png",
+        "assets/card_capacitor.png",
+        "assets/card_diode.png",
+        "assets/card_led.png",
+        "assets/card_transistor.png",
+        "assets/symbols/speaker_buzzer_mic.png",
+        "assets/symbols/fuse_switch_relay.png",
+        "assets/symbols/transformer.png"
+      ],
+      "unlockStars": 0,
+      "questions": [
+        {
+          "id": "parts-01",
+          "topic": "parts",
+          "stemZh": "把光轉成電阻變化嘅零件，通常叫乜？（答：光敏電阻 或 LDR）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "LDR",
+          "tolerance": 0.01,
+          "formulaHint": "引導：佢感應嘅係邊種物理量？",
+          "stepHint": "引導：中文名同英文縮寫都常見，你記得邊個？",
+          "fullSolutionZh": "光敏電阻（LDR）。光照愈強，電阻通常愈細。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_ldr.png",
+          "answerType": "text",
+          "accepted": [
+            "LDR",
+            "ldr",
+            "光敏電阻",
+            "光敏"
+          ]
+        },
+        {
+          "id": "parts-02",
+          "topic": "parts",
+          "stemZh": "把電能轉成機械能嘅輸出裝置，下面邊個最典型？請答：電動機（或摩打）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "電動機",
+          "tolerance": 0.01,
+          "formulaHint": "引導：輸出係郁定發光？",
+          "stepHint": "引導：喇叭、摩打、LED 邊個係「郁」？",
+          "fullSolutionZh": "電動機／摩打：電能→機械能。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_parts_index.png",
+          "answerType": "text",
+          "accepted": [
+            "電動機",
+            "摩打",
+            "馬達",
+            "motor",
+            "Motor"
+          ]
+        },
+        {
+          "id": "parts-03",
+          "topic": "parts",
+          "stemZh": "咪高峰（麥克風）主要把乜轉成電信號？（答：聲／聲能）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "聲",
+          "tolerance": 0.01,
+          "formulaHint": "引導：咪係輸入定輸出？感應邊種能量？",
+          "stepHint": "引導：換能器定義——由邊種能量入？",
+          "fullSolutionZh": "聲能／聲音 → 電信號。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/symbols/speaker_buzzer_mic.png",
+          "answerType": "text",
+          "accepted": [
+            "聲",
+            "聲音",
+            "聲能",
+            "聲能／聲音",
+            "sound"
+          ]
+        },
+        {
+          "id": "parts-04",
+          "topic": "parts",
+          "stemZh": "固定阻值、用來限制電流或做分壓嘅基本零件叫乜？（答：電阻）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "電阻",
+          "tolerance": 0.01,
+          "formulaHint": "引導：歐姆定律入面嘅 R 對應邊個零件？",
+          "stepHint": "引導：固定阻值 vs 可調阻值，呢題係固定嗰種。",
+          "fullSolutionZh": "電阻（resistor）。單位歐姆 Ω。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_resistor.png",
+          "answerType": "text",
+          "accepted": [
+            "電阻",
+            "電阻器",
+            "resistor",
+            "Resistor"
+          ]
+        },
+        {
+          "id": "parts-05",
+          "topic": "parts",
+          "stemZh": "可以手動調阻值、常用嚟調光／調音量嘅零件叫乜？（答：電位器）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "電位器",
+          "tolerance": 0.01,
+          "formulaHint": "引導：同固定電阻差喺邊？可唔可以「轉掣」改阻值？",
+          "stepHint": "引導：英文有時叫 potentiometer／variable resistor。",
+          "fullSolutionZh": "電位器（potentiometer）：可調電阻，常用作分壓調節。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_potentiometer.png",
+          "answerType": "text",
+          "accepted": [
+            "電位器",
+            "可變電阻",
+            "potentiometer",
+            "Potentiometer",
+            "VR",
+            "variable resistor"
+          ]
+        },
+        {
+          "id": "parts-06",
+          "topic": "parts",
+          "stemZh": "電阻隨溫度改變、常用作感溫嘅零件叫乜？（答：熱敏電阻）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "熱敏電阻",
+          "tolerance": 0.01,
+          "formulaHint": "引導：感應嘅係溫度定光照？",
+          "stepHint": "引導：英文常見縮寫 NTC／thermistor。",
+          "fullSolutionZh": "熱敏電阻（thermistor）。NTC 常見：溫度升，電阻降。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_thermistor.png",
+          "answerType": "text",
+          "accepted": [
+            "熱敏電阻",
+            "熱敏",
+            "thermistor",
+            "Thermistor",
+            "NTC",
+            "ntc"
+          ]
+        },
+        {
+          "id": "parts-07",
+          "topic": "parts",
+          "stemZh": "可以儲存電荷、電路中常作濾波或短暫延時嘅零件叫乜？（答：電容／電容器）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "電容",
+          "tolerance": 0.01,
+          "formulaHint": "引導：佢「儲」嘅係電荷定係只係阻電流？",
+          "stepHint": "引導：單位常見 µF、nF；符號兩條平行線。",
+          "fullSolutionZh": "電容器（capacitor）。今關先認功能：儲電／濾波／延時。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_capacitor.png",
+          "answerType": "text",
+          "accepted": [
+            "電容",
+            "電容器",
+            "capacitor",
+            "Capacitor"
+          ]
+        },
+        {
+          "id": "parts-08",
+          "topic": "parts",
+          "stemZh": "主要只允許電流單向通過嘅半導體零件叫乜？（答：二極管）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "二極管",
+          "tolerance": 0.01,
+          "formulaHint": "引導：特徵係「單向」導電。",
+          "stepHint": "引導：LED 係二極管嘅一種，但呢題問一般名稱。",
+          "fullSolutionZh": "二極管（diode）：正向導通、反向大致截止。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_diode.png",
+          "answerType": "text",
+          "accepted": [
+            "二極管",
+            "二極體",
+            "diode",
+            "Diode"
+          ]
+        },
+        {
+          "id": "parts-09",
+          "topic": "parts",
+          "stemZh": "正向導通時會發光嘅二極管叫乜？（答：LED）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "LED",
+          "tolerance": 0.01,
+          "formulaHint": "引導：發光＋二極管特性。",
+          "stepHint": "引導：中文「發光二極管」；電路要限流。",
+          "fullSolutionZh": "LED（發光二極管）。使用時要串限流電阻。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/card_led.png",
+          "answerType": "text",
+          "accepted": [
+            "LED",
+            "led",
+            "發光二極管",
+            "發光二極體"
+          ]
+        },
+        {
+          "id": "parts-10",
+          "topic": "parts",
+          "stemZh": "用手按通断、令電路開／關嘅簡單零件叫乜？（答：開關 或 按鈕）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "開關",
+          "tolerance": 0.01,
+          "formulaHint": "引導：控制通斷，唔係感測溫度／光。",
+          "stepHint": "引導：按鈕係開關嘅一種；答「開關」或「按鈕」都可以。",
+          "fullSolutionZh": "開關／按鈕：控制電路通斷。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/symbols/fuse_switch_relay.png",
+          "answerType": "text",
+          "accepted": [
+            "開關",
+            "按鈕",
+            "按鍵",
+            "switch",
+            "Switch",
+            "button",
+            "Button"
+          ]
+        },
+        {
+          "id": "parts-11",
+          "topic": "parts",
+          "stemZh": "用細電流／低電壓控制大電流負載通斷嘅電磁開關，通常叫乜？（答：繼電器）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "繼電器",
+          "tolerance": 0.01,
+          "formulaHint": "引導：有線圈同觸點；隔離控制同負載。",
+          "stepHint": "引導：英文叫 relay。",
+          "fullSolutionZh": "繼電器（relay）：小信號控大負載通斷。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/symbols/fuse_switch_relay.png",
+          "answerType": "text",
+          "accepted": [
+            "繼電器",
+            "繼電",
+            "relay",
+            "Relay"
+          ]
+        },
+        {
+          "id": "parts-12",
+          "topic": "parts",
+          "stemZh": "把交流電嘅電壓升高或降低（例如市電轉較低交流）嘅零件叫乜？（答：變壓器）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "變壓器",
+          "tolerance": 0.01,
+          "formulaHint": "引導：主要用喺交流；靠電磁感應改電壓。",
+          "stepHint": "引導：英文 transformer；唔係電池、唔係電阻。",
+          "fullSolutionZh": "變壓器（transformer）：改變交流電壓（升壓／降壓），亦提供隔離。直流電池本身唔靠變壓器。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/symbols/transformer.png",
+          "answerType": "text",
+          "accepted": [
+            "變壓器",
+            "變壓",
+            "transformer",
+            "Transformer"
+          ]
+        },
+        {
+          "id": "parts-13",
+          "topic": "parts",
+          "stemZh": "下面邊個係換能器？（請答零件名）選項：電阻、電位器、喇叭、保險絲",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "喇叭",
+          "tolerance": 0.01,
+          "formulaHint": "引導：換能器會轉換能量形式；邊個係電→聲？",
+          "stepHint": "引導：電阻／電位器主要改阻值；保險絲保護過流。",
+          "fullSolutionZh": "喇叭（或蜂鳴器）把電能轉成聲能，屬輸出換能器。",
+          "wrongTags": [
+            "parts",
+            "transducer"
+          ],
+          "figure": "assets/symbols/speaker_buzzer_mic.png",
+          "answerType": "text",
+          "accepted": [
+            "喇叭",
+            "揚聲器",
+            "speaker",
+            "Speaker",
+            "蜂鳴器",
+            "buzzer"
+          ]
+        },
+        {
+          "id": "parts-14",
+          "topic": "parts",
+          "stemZh": "過流時熔斷以保護電路嘅零件叫乜？（答：保險絲）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "保險絲",
+          "tolerance": 0.01,
+          "formulaHint": "引導：保護用途，唔係感測、唔係輸出。",
+          "stepHint": "引導：英文 fuse。",
+          "fullSolutionZh": "保險絲（fuse）：過流熔斷，保護電路同裝置。",
+          "wrongTags": [
+            "parts"
+          ],
+          "figure": "assets/symbols/fuse_switch_relay.png",
+          "answerType": "text",
+          "accepted": [
+            "保險絲",
+            "熔絲",
+            "fuse",
+            "Fuse"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "levelId": "solve-v",
+      "titleZh": "公式變換：求電壓 V",
+      "order": 3,
+      "kind": "practice",
+      "conceptZh": "已知電流 I 同電阻 R，求電壓。\n用 V＝I×R。\n單位先換成 A 同 Ω。",
+      "demoZh": "Given：I＝2.5 A，R＝10 Ω。\nV＝I×R＝2.5×10＝25 V。",
+      "figure": "assets/step_solve.png",
+      "extraFigures": [
+        "assets/find_V.png"
+      ],
+      "unlockPrev": "ohm-intro",
+      "questions": [
+        {
+          "id": "v-01",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": "assets/find_V.png",
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-02",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-03",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-04",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-05",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-06",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-07",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-08",
+          "topic": "solve-v",
+          "stemZh": "I＝80 mA，R＝50 Ω，求 V。",
+          "given": {
+            "I": 0.08,
+            "R": 50,
+            "I_mA": 80
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 V＝I R\nV＝0.08×50＝4\n答：V＝4 V",
+          "wrongTags": [
+            "unit-mA"
+          ],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝80 mA，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.08,
+                "R": 50,
+                "I_mA": 80
+              },
+              "answer": 4,
+              "stepHint": "代入：V＝I(先換 A) × 50",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 V＝I R\nV＝0.08×50＝4\n答：V＝4 V"
+            },
+            {
+              "stemZh": "I＝120 mA，R＝40 Ω，求 V。",
+              "given": {
+                "I": 0.12,
+                "R": 40,
+                "I_mA": 120
+              },
+              "answer": 4.8,
+              "stepHint": "代入：V＝I(先換 A) × 40",
+              "fullSolutionZh": "先換單位：I＝120 mA＝0.12 A\n用公式 V＝I R\nV＝0.12×40＝4.8\n答：V＝4.8 V"
+            },
+            {
+              "stemZh": "I＝160 mA，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.16,
+                "R": 25,
+                "I_mA": 160
+              },
+              "answer": 4,
+              "stepHint": "代入：V＝I(先換 A) × 25",
+              "fullSolutionZh": "先換單位：I＝160 mA＝0.16 A\n用公式 V＝I R\nV＝0.16×25＝4\n答：V＝4 V"
+            },
+            {
+              "stemZh": "I＝200 mA，R＝30 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 30,
+                "I_mA": 200
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 30",
+              "fullSolutionZh": "先換單位：I＝200 mA＝0.2 A\n用公式 V＝I R\nV＝0.2×30＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝300 mA，R＝20 Ω，求 V。",
+              "given": {
+                "I": 0.3,
+                "R": 20,
+                "I_mA": 300
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 20",
+              "fullSolutionZh": "先換單位：I＝300 mA＝0.3 A\n用公式 V＝I R\nV＝0.3×20＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝400 mA，R＝15 Ω，求 V。",
+              "given": {
+                "I": 0.4,
+                "R": 15,
+                "I_mA": 400
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 15",
+              "fullSolutionZh": "先換單位：I＝400 mA＝0.4 A\n用公式 V＝I R\nV＝0.4×15＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝600 mA，R＝10 Ω，求 V。",
+              "given": {
+                "I": 0.6,
+                "R": 10,
+                "I_mA": 600
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 10",
+              "fullSolutionZh": "先換單位：I＝600 mA＝0.6 A\n用公式 V＝I R\nV＝0.6×10＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝800 mA，R＝12 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 12,
+                "I_mA": 800
+              },
+              "answer": 9.6,
+              "stepHint": "代入：V＝I(先換 A) × 12",
+              "fullSolutionZh": "先換單位：I＝800 mA＝0.8 A\n用公式 V＝I R\nV＝0.8×12＝9.6\n答：V＝9.6 V"
+            },
+            {
+              "stemZh": "I＝1200 mA，R＝5 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 5,
+                "I_mA": 1200
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 5",
+              "fullSolutionZh": "先換單位：I＝1200 mA＝1.2 A\n用公式 V＝I R\nV＝1.2×5＝6\n答：V＝6 V"
+            }
+          ],
+          "gen": "solve-v-mA"
+        },
+        {
+          "id": "v-09",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "v-10",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        }
+      ]
+    },
+    {
+      "levelId": "solve-i",
+      "titleZh": "公式變換：求電流 I",
+      "order": 4,
+      "kind": "practice",
+      "conceptZh": "已知電壓 V 同電阻 R，求電流。\nI＝{{frac:V|R}}。",
+      "demoZh": "Given：V＝1.5 V，R＝5 Ω。\nI＝{{frac:V|R}}＝{{frac:1.5|5}}＝0.3 A。",
+      "figure": "assets/step_solve.png",
+      "extraFigures": [
+        "assets/find_I.png"
+      ],
+      "unlockPrev": "solve-v",
+      "questions": [
+        {
+          "id": "i-01",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": "assets/find_I.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-02",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-03",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-04",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-05",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-06",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-07",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-08",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "i-09",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝1 kΩ，求 I。",
+          "given": {
+            "V": 12,
+            "R": 1000,
+            "R_kΩ": 1
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 0.012,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：代入：I＝V ÷ R(先換 Ω)——你會先做邊一步？",
+          "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝12／1000＝0.012 A＝12 mA\n答：I＝0.012 A（或 12 mA）",
+          "wrongTags": [
+            "unit-kΩ"
+          ],
+          "figure": null,
+          "acceptAlt": [
+            12
+          ],
+          "acceptAltNote": "亦接受 12（單位 mA）",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝1 kΩ，求 I。",
+              "given": {
+                "V": 12,
+                "R": 1000,
+                "R_kΩ": 1
+              },
+              "answer": 0.012,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝12／1000＝0.012 A＝12 mA\n答：I＝0.012 A（或 12 mA）",
+              "acceptAlt": [
+                12
+              ],
+              "acceptAltNote": "亦接受 12（單位 mA）"
+            },
+            {
+              "stemZh": "V＝12 V，R＝3 kΩ，求 I。",
+              "given": {
+                "V": 12,
+                "R": 3000,
+                "R_kΩ": 3
+              },
+              "answer": 0.004,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝3 kΩ＝3000 Ω\n用公式 I＝V／R\nI＝12／3000＝0.004 A＝4 mA\n答：I＝0.004 A（或 4 mA）",
+              "acceptAlt": [
+                4
+              ],
+              "acceptAltNote": "亦接受 4（單位 mA）"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 kΩ，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3000,
+                "R_kΩ": 3
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝3 kΩ＝3000 Ω\n用公式 I＝V／R\nI＝9／3000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝24 V，R＝4 kΩ，求 I。",
+              "given": {
+                "V": 24,
+                "R": 4000,
+                "R_kΩ": 4
+              },
+              "answer": 0.006,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝4 kΩ＝4000 Ω\n用公式 I＝V／R\nI＝24／4000＝0.006 A＝6 mA\n答：I＝0.006 A（或 6 mA）",
+              "acceptAlt": [
+                6
+              ],
+              "acceptAltNote": "亦接受 6（單位 mA）"
+            },
+            {
+              "stemZh": "V＝6 V，R＝1.5 kΩ，求 I。",
+              "given": {
+                "V": 6,
+                "R": 1500,
+                "R_kΩ": 1.5
+              },
+              "answer": 0.004,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1.5 kΩ＝1500 Ω\n用公式 I＝V／R\nI＝6／1500＝0.004 A＝4 mA\n答：I＝0.004 A（或 4 mA）",
+              "acceptAlt": [
+                4
+              ],
+              "acceptAltNote": "亦接受 4（單位 mA）"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 kΩ，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5000,
+                "R_kΩ": 5
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝5 kΩ＝5000 Ω\n用公式 I＝V／R\nI＝15／5000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 kΩ，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6000,
+                "R_kΩ": 6
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝6 kΩ＝6000 Ω\n用公式 I＝V／R\nI＝18／6000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝10 V，R＝1 kΩ，求 I。",
+              "given": {
+                "V": 10,
+                "R": 1000,
+                "R_kΩ": 1
+              },
+              "answer": 0.01,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝10／1000＝0.01 A＝10 mA\n答：I＝0.01 A（或 10 mA）",
+              "acceptAlt": [
+                10
+              ],
+              "acceptAltNote": "亦接受 10（單位 mA）"
+            }
+          ],
+          "gen": "solve-i-kOhm"
+        },
+        {
+          "id": "i-10",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        }
+      ]
+    },
+    {
+      "levelId": "solve-r",
+      "titleZh": "公式變換：求電阻 R",
+      "order": 5,
+      "kind": "practice",
+      "conceptZh": "已知電壓 V 同電流 I，求電阻值。\nR＝{{frac:V|I}}。",
+      "demoZh": "Given：V＝12 V，I＝1.2 A。\nR＝{{frac:V|I}}＝{{frac:12|1.2}}＝10 Ω。",
+      "figure": "assets/step_solve.png",
+      "extraFigures": [
+        "assets/find_R.png"
+      ],
+      "unlockPrev": "solve-i",
+      "questions": [
+        {
+          "id": "r-01",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": "assets/find_R.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-02",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-03",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-04",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-05",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-06",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-07",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-08",
+          "topic": "solve-r",
+          "stemZh": "V＝5 V，I＝80 mA，求 R。",
+          "given": {
+            "V": 5,
+            "I": 0.08,
+            "I_mA": 80
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 62.5,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：代入：R＝V ÷ I(先換 A)——你會先做邊一步？",
+          "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝5／0.08＝62.5\n答：R＝62.5 Ω",
+          "wrongTags": [
+            "unit-mA"
+          ],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝5 V，I＝80 mA，求 R。",
+              "given": {
+                "V": 5,
+                "I": 0.08,
+                "I_mA": 80
+              },
+              "answer": 62.5,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝5／0.08＝62.5\n答：R＝62.5 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝120 mA，求 R。",
+              "given": {
+                "V": 6,
+                "I": 0.12,
+                "I_mA": 120
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝120 mA＝0.12 A\n用公式 R＝V／I\nR＝6／0.12＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝150 mA，求 R。",
+              "given": {
+                "V": 9,
+                "I": 0.15,
+                "I_mA": 150
+              },
+              "answer": 60,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝150 mA＝0.15 A\n用公式 R＝V／I\nR＝9／0.15＝60\n答：R＝60 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝200 mA，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.2,
+                "I_mA": 200
+              },
+              "answer": 60,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝200 mA＝0.2 A\n用公式 R＝V／I\nR＝12／0.2＝60\n答：R＝60 Ω"
+            },
+            {
+              "stemZh": "V＝3 V，I＝60 mA，求 R。",
+              "given": {
+                "V": 3,
+                "I": 0.06,
+                "I_mA": 60
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝60 mA＝0.06 A\n用公式 R＝V／I\nR＝3／0.06＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝10 V，I＝400 mA，求 R。",
+              "given": {
+                "V": 10,
+                "I": 0.4,
+                "I_mA": 400
+              },
+              "answer": 25,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝400 mA＝0.4 A\n用公式 R＝V／I\nR＝10／0.4＝25\n答：R＝25 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝160 mA，求 R。",
+              "given": {
+                "V": 8,
+                "I": 0.16,
+                "I_mA": 160
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝160 mA＝0.16 A\n用公式 R＝V／I\nR＝8／0.16＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝300 mA，求 R。",
+              "given": {
+                "V": 15,
+                "I": 0.3,
+                "I_mA": 300
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝300 mA＝0.3 A\n用公式 R＝V／I\nR＝15／0.3＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝4 V，I＝80 mA，求 R。",
+              "given": {
+                "V": 4,
+                "I": 0.08,
+                "I_mA": 80
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝4／0.08＝50\n答：R＝50 Ω"
+            }
+          ],
+          "gen": "solve-r-mA"
+        },
+        {
+          "id": "r-09",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "r-10",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        }
+      ]
+    },
+    {
+      "levelId": "power-basic",
+      "titleZh": "功率：P＝V·I（同 I²R、V²／R）",
+      "order": 6,
+      "kind": "lesson",
+      "conceptZh": "電功率表示消耗咗幾多能量；單位瓦特（W）。\n基本式：P＝V×I。\n同歐姆定律結合後：P＝I²R，或 P＝{{frac:V²|R}}。\n三式等價，按已知量揀用。",
+      "demoZh": "例：汽車電池 12 V，燈泡電流 1.75 A。\nP＝V×I＝12×1.75＝21 W。\n亦可用 P＝{{frac:V²|R}} 反求 R＝{{frac:V²|P}}。",
+      "figure": "assets/led_power.png",
+      "extraFigures": [],
+      "unlockStars": 0,
+      "questions": [
+        {
+          "id": "pow-01",
+          "topic": "power",
+          "stemZh": "某負載兩端 12 V，電流 0.5 A。功率 P 係幾多 W？",
+          "given": {
+            "V": 12,
+            "I": 0.5
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 6,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條？（P＝V·I、P＝I²R、P＝{{frac:V²|R}}）想清楚先代入。",
+          "stepHint": "引導：P 同 V、I 點樣相乘？單位係 W。",
+          "fullSolutionZh": "P＝V I＝12×0.5＝6 W。",
+          "wrongTags": [
+            "power"
+          ],
+          "figure": null,
+          "answerType": null,
+          "gen": "power-vi"
+        },
+        {
+          "id": "pow-02",
+          "topic": "power",
+          "stemZh": "電阻兩端 9 V，通過 0.2 A。功率係幾多 W？",
+          "given": {
+            "V": 9,
+            "I": 0.2
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 1.8,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條？（P＝V·I、P＝I²R、P＝{{frac:V²|R}}）你有冇 R？",
+          "stepHint": "引導：有 V、I 就直接相乘。",
+          "fullSolutionZh": "P＝9×0.2＝1.8 W。",
+          "wrongTags": [
+            "power"
+          ],
+          "figure": null,
+          "answerType": null,
+          "gen": "power-vi"
+        },
+        {
+          "id": "pow-03",
+          "topic": "power",
+          "stemZh": "一個 5 Ω 電阻通過 2 A。用 P＝I²R 求功率（W）。",
+          "given": {
+            "I": 2,
+            "R": 5
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 20,
+          "tolerance": 0.02,
+          "formulaHint": "引導：已知 I、R，用 P＝I²R（亦可用 P＝V·I 或 P＝{{frac:V²|R}}）。",
+          "stepHint": "引導：先平方電流，再乘電阻。",
+          "fullSolutionZh": "P＝I²R＝4×5＝20 W。",
+          "wrongTags": [
+            "power"
+          ],
+          "figure": null,
+          "answerType": null,
+          "gen": "power-i2r"
+        },
+        {
+          "id": "pow-04",
+          "topic": "power",
+          "stemZh": "24 V 加喺 8 Ω 電阻。用 P＝V²／R 求功率（W）。",
+          "given": {
+            "V": 24,
+            "R": 8
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 72,
+          "tolerance": 0.02,
+          "formulaHint": "引導：已知 V、R，用 P＝{{frac:V²|R}}（亦可用 P＝V·I 或 P＝I²R）。",
+          "stepHint": "引導：電壓平方後除以電阻。",
+          "fullSolutionZh": "P＝{{frac:V²|R}}＝576／8＝72 W。",
+          "wrongTags": [
+            "power"
+          ],
+          "figure": null,
+          "answerType": null,
+          "gen": "power-v2r"
+        }
+      ],
+      "locked": false
+    },
+    {
+      "levelId": "divider",
+      "titleZh": "分壓器（串聯）",
+      "order": 7,
+      "kind": "practice",
+      "conceptZh": "分壓定理：串聯電阻器上，電壓降按電阻比例分配。\n電阻愈大，分得電壓愈多。\n兩電阻：V₁＝V×{{frac:R₁|R₁＋R₂}}；V₂＝V×{{frac:R₂|R₁＋R₂}}。\n電位器係常用可變分壓器。",
+      "demoZh": "例：V＝12 V，R₁＝10 Ω，R₂＝20 Ω，R₃＝30 Ω。\nVR1＝12×{{frac:10|10＋20＋30}}＝2 V。",
+      "figure": "assets/voltage_divider.png",
+      "extraFigures": [],
+      "unlockPrev": "color-code",
+      "questions": [
+        {
+          "id": "vd-01",
+          "topic": "divider",
+          "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+          "given": {
+            "V": 12,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "V1",
+          "unit": "V",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分壓：V₁＝V×{{frac:R₁|R₁＋R₂}}\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/voltage_divider.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 12,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "V₁＝12×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝6 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "V₁＝18×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝18×3／(3＋6)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "V₁＝20×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝20×5／(5＋15)＝5\n答：V₁＝5 V"
+            },
+            {
+              "stemZh": "V＝16 V，R₁＝4 Ω，R₂＝12 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 16,
+                "R1": 4,
+                "R2": 12
+              },
+              "answer": 4,
+              "stepHint": "V₁＝16×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝16×4／(4＋12)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝30 V，R₁＝2 Ω，R₂＝8 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 30,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 6,
+              "stepHint": "V₁＝30×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝30×2／(2＋8)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝1 Ω，R₂＝3 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 8,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 2,
+              "stepHint": "V₁＝8×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝8×1／(1＋3)＝2\n答：V₁＝2 V"
+            },
+            {
+              "stemZh": "V＝14 V，R₁＝3 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 14,
+                "R1": 3,
+                "R2": 4
+              },
+              "answer": 6,
+              "stepHint": "V₁＝14×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝14×3／(3＋4)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝21 V，R₁＝2 Ω，R₂＝5 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 21,
+                "R1": 2,
+                "R2": 5
+              },
+              "answer": 6,
+              "stepHint": "V₁＝21×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝21×2／(2＋5)＝6\n答：V₁＝6 V"
+            }
+          ],
+          "gen": "divider"
+        },
+        {
+          "id": "vd-02",
+          "topic": "divider",
+          "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+          "given": {
+            "V": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "V1,V2",
+          "unit": "V",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/series_two_R.png",
+          "answers": {
+            "V1": 3,
+            "V2": 6
+          },
+          "multi": [
+            {
+              "key": "V1",
+              "label": "V₁",
+              "unit": "V",
+              "answer": 3
+            },
+            {
+              "key": "V2",
+              "label": "V₂",
+              "unit": "V",
+              "answer": 6
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 3,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+              "answers": {
+                "V1": 3,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 3
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝10 V，R₁＝4 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 10,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 4,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝10×4／(4＋6)＝4\nV₂＝10×6／(4＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝4 V，V₂＝6 V",
+              "answers": {
+                "V1": 4,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝9 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 4.5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝18×3／(3＋9)＝4.5\nV₂＝18×9／(3＋9)＝13.5（或 V₂＝V－V₁）\n答：V₁＝4.5 V，V₂＝13.5 V",
+              "answers": {
+                "V1": 4.5,
+                "V2": 13.5
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4.5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 13.5
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝20×5／(5＋15)＝5\nV₂＝20×15／(5＋15)＝15（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝15 V",
+              "answers": {
+                "V1": 5,
+                "V2": 15
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 15
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝2 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 2,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝8×2／(2＋6)＝2\nV₂＝8×6／(2＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝2 V，V₂＝6 V",
+              "answers": {
+                "V1": 2,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 2
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝15 V，R₁＝5 Ω，R₂＝10 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 15,
+                "R1": 5,
+                "R2": 10
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝15×5／(5＋10)＝5\nV₂＝15×10／(5＋10)＝10（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝10 V",
+              "answers": {
+                "V1": 5,
+                "V2": 10
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 10
+                }
+              ]
+            }
+          ],
+          "gen": "divider-both"
+        },
+        {
+          "id": "vd-03",
+          "topic": "divider",
+          "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+          "given": {
+            "V": 12,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "V1",
+          "unit": "V",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分壓：V₁＝V×{{frac:R₁|R₁＋R₂}}\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/series_two_R.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 12,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "V₁＝12×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝6 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "V₁＝18×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝18×3／(3＋6)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "V₁＝20×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝20×5／(5＋15)＝5\n答：V₁＝5 V"
+            },
+            {
+              "stemZh": "V＝16 V，R₁＝4 Ω，R₂＝12 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 16,
+                "R1": 4,
+                "R2": 12
+              },
+              "answer": 4,
+              "stepHint": "V₁＝16×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝16×4／(4＋12)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝30 V，R₁＝2 Ω，R₂＝8 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 30,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 6,
+              "stepHint": "V₁＝30×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝30×2／(2＋8)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝1 Ω，R₂＝3 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 8,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 2,
+              "stepHint": "V₁＝8×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝8×1／(1＋3)＝2\n答：V₁＝2 V"
+            },
+            {
+              "stemZh": "V＝14 V，R₁＝3 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 14,
+                "R1": 3,
+                "R2": 4
+              },
+              "answer": 6,
+              "stepHint": "V₁＝14×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝14×3／(3＋4)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝21 V，R₁＝2 Ω，R₂＝5 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 21,
+                "R1": 2,
+                "R2": 5
+              },
+              "answer": 6,
+              "stepHint": "V₁＝21×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝21×2／(2＋5)＝6\n答：V₁＝6 V"
+            }
+          ],
+          "gen": "divider"
+        },
+        {
+          "id": "vd-04",
+          "topic": "divider",
+          "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+          "given": {
+            "V": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "V1,V2",
+          "unit": "V",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/series_two_R.png",
+          "answers": {
+            "V1": 3,
+            "V2": 6
+          },
+          "multi": [
+            {
+              "key": "V1",
+              "label": "V₁",
+              "unit": "V",
+              "answer": 3
+            },
+            {
+              "key": "V2",
+              "label": "V₂",
+              "unit": "V",
+              "answer": 6
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 3,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+              "answers": {
+                "V1": 3,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 3
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝10 V，R₁＝4 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 10,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 4,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝10×4／(4＋6)＝4\nV₂＝10×6／(4＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝4 V，V₂＝6 V",
+              "answers": {
+                "V1": 4,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝9 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 4.5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝18×3／(3＋9)＝4.5\nV₂＝18×9／(3＋9)＝13.5（或 V₂＝V－V₁）\n答：V₁＝4.5 V，V₂＝13.5 V",
+              "answers": {
+                "V1": 4.5,
+                "V2": 13.5
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4.5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 13.5
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝20×5／(5＋15)＝5\nV₂＝20×15／(5＋15)＝15（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝15 V",
+              "answers": {
+                "V1": 5,
+                "V2": 15
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 15
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝2 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 2,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝8×2／(2＋6)＝2\nV₂＝8×6／(2＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝2 V，V₂＝6 V",
+              "answers": {
+                "V1": 2,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 2
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝15 V，R₁＝5 Ω，R₂＝10 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 15,
+                "R1": 5,
+                "R2": 10
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝15×5／(5＋10)＝5\nV₂＝15×10／(5＋10)＝10（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝10 V",
+              "answers": {
+                "V1": 5,
+                "V2": 10
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 10
+                }
+              ]
+            }
+          ],
+          "gen": "divider-both"
+        },
+        {
+          "id": "vd-05",
+          "topic": "divider",
+          "stemZh": "V＝15 V，R₁＝1 kΩ，R₂＝2 kΩ，求 R₁ 兩端電壓 V₁。",
+          "given": {
+            "V": 15,
+            "R1": 1000,
+            "R2": 2000
+          },
+          "unknown": "V1",
+          "unit": "V",
+          "answer": 5,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝15×1／(1＋2)＝5\n答：V₁＝5 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/series_two_R.png",
+          "variants": [
+            {
+              "stemZh": "V＝15 V，R₁＝1 kΩ，R₂＝2 kΩ，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 15,
+                "R1": 1000,
+                "R2": 2000
+              },
+              "answer": 5,
+              "stepHint": "V₁＝15×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝15×1／(1＋2)＝5\n答：V₁＝5 V"
+            },
+            {
+              "stemZh": "V＝12 V，R₁＝1 kΩ，R₂＝3 kΩ，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 12,
+                "R1": 1000,
+                "R2": 3000
+              },
+              "answer": 3,
+              "stepHint": "V₁＝12×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝12×1／(1＋3)＝3\n答：V₁＝3 V"
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝2 kΩ，R₂＝4 kΩ，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 18,
+                "R1": 2000,
+                "R2": 4000
+              },
+              "answer": 6,
+              "stepHint": "V₁＝18×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝18×2／(2＋4)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝24 V，R₁＝1 kΩ，R₂＝5 kΩ，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 24,
+                "R1": 1000,
+                "R2": 5000
+              },
+              "answer": 4,
+              "stepHint": "V₁＝24×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝24×1／(1＋5)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝9 V，R₁＝1.5 kΩ，R₂＝4.5 kΩ，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 9,
+                "R1": 1500,
+                "R2": 4500
+              },
+              "answer": 2.25,
+              "stepHint": "V₁＝9×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "單位可約去（同用 kΩ）：V₁＝9×1.5／(1.5＋4.5)＝2.25\n答：V₁＝2.25 V"
+            }
+          ],
+          "gen": "divider"
+        }
+      ]
+    },
+    {
+      "levelId": "shunt",
+      "titleZh": "分流（並聯）·後段",
+      "order": 8,
+      "kind": "practice",
+      "conceptZh": "分流定理：總電流進入並聯分支後會分開。\n兩電阻：I₁＝I×{{frac:R₂|R₁＋R₂}}（用「另一邊」電阻）。\n電阻愈小，分得電流愈大。\n並聯總電阻細過最小分支；串聯總電阻＝各電阻之和。",
+      "demoZh": "例：I＝10 A，R₁＝10 Ω，R₂＝30 Ω。\nI₁＝10×{{frac:30|10＋30}}＝7.5 A；I₂＝I−I₁＝2.5 A。",
+      "figure": "assets/current_divider.png",
+      "extraFigures": [
+        "assets/ws_series_parallel.png"
+      ],
+      "unlockPrev": "divider",
+      "questions": [
+        {
+          "id": "cd-01",
+          "topic": "shunt",
+          "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+          "given": {
+            "I": 6,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "I1",
+          "unit": "A",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分流：I₁＝I×{{frac:R₂|R₁＋R₂}}\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/current_divider.png",
+          "variants": [
+            {
+              "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 6,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "I₁＝6×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "I₁＝8×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝8×6／(2＋6)＝6\n答：I₁＝6 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝1 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 10,
+                "R1": 1,
+                "R2": 4
+              },
+              "answer": 8,
+              "stepHint": "I₁＝10×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝10×4／(1＋4)＝8\n答：I₁＝8 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝3 Ω，R₂＝9 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 12,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 9,
+              "stepHint": "I₁＝12×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝12×9／(3＋9)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝2 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 15,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 9,
+              "stepHint": "I₁＝15×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝15×3／(2＋3)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝4 A，R₁＝1 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 4,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "I₁＝4×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝4×3／(1＋3)＝3\n答：I₁＝3 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝20 A，R₁＝4 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 20,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 12,
+              "stepHint": "I₁＝20×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝20×6／(4＋6)＝12\n答：I₁＝12 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            }
+          ],
+          "gen": "shunt"
+        },
+        {
+          "id": "cd-02",
+          "topic": "shunt",
+          "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+          "given": {
+            "I": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "I1,I2",
+          "unit": "A",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/parallel_two_R.png",
+          "multi": [
+            {
+              "key": "I1",
+              "label": "I₁",
+              "unit": "A",
+              "answer": 6
+            },
+            {
+              "key": "I2",
+              "label": "I₂",
+              "unit": "A",
+              "answer": 3
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 3
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 3
+              }
+            },
+            {
+              "stemZh": "I＝5 A，R₁＝2 Ω，R₂＝3 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 5,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝5×3／(2＋3)＝3\nI₂＝5×2／(2＋3)＝2（或 I₂＝I－I₁）\n答：I₁＝3 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 3
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 3,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝4 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 12,
+                "R1": 4,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝12×8／(4＋8)＝8\nI₂＝12×4／(4＋8)＝4（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝4 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 4
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 4
+              }
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝8×6／(2＋6)＝6\nI₂＝8×2／(2＋6)＝2（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 15,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 10,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝15×6／(3＋6)＝10\nI₂＝15×3／(3＋6)＝5（或 I₂＝I－I₁）\n答：I₁＝10 A，I₂＝5 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 10
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 5
+                }
+              ],
+              "answers": {
+                "I1": 10,
+                "I2": 5
+              }
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝2 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 10,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝10×8／(2＋8)＝8\nI₂＝10×2／(2＋8)＝2（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 2
+              }
+            }
+          ],
+          "gen": "shunt-both",
+          "answers": {
+            "I1": 6,
+            "I2": 3
+          }
+        },
+        {
+          "id": "cd-03",
+          "topic": "shunt",
+          "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+          "given": {
+            "I": 6,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "I1",
+          "unit": "A",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分流：I₁＝I×{{frac:R₂|R₁＋R₂}}\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/parallel_two_R.png",
+          "variants": [
+            {
+              "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 6,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "I₁＝6×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "I₁＝8×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝8×6／(2＋6)＝6\n答：I₁＝6 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝1 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 10,
+                "R1": 1,
+                "R2": 4
+              },
+              "answer": 8,
+              "stepHint": "I₁＝10×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝10×4／(1＋4)＝8\n答：I₁＝8 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝3 Ω，R₂＝9 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 12,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 9,
+              "stepHint": "I₁＝12×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝12×9／(3＋9)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝2 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 15,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 9,
+              "stepHint": "I₁＝15×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝15×3／(2＋3)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝4 A，R₁＝1 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 4,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "I₁＝4×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝4×3／(1＋3)＝3\n答：I₁＝3 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝20 A，R₁＝4 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 20,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 12,
+              "stepHint": "I₁＝20×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝20×6／(4＋6)＝12\n答：I₁＝12 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            }
+          ],
+          "gen": "shunt"
+        },
+        {
+          "id": "cd-04",
+          "topic": "shunt",
+          "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+          "given": {
+            "I": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "I1,I2",
+          "unit": "A",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/parallel_two_R.png",
+          "multi": [
+            {
+              "key": "I1",
+              "label": "I₁",
+              "unit": "A",
+              "answer": 6
+            },
+            {
+              "key": "I2",
+              "label": "I₂",
+              "unit": "A",
+              "answer": 3
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 3
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 3
+              }
+            },
+            {
+              "stemZh": "I＝5 A，R₁＝2 Ω，R₂＝3 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 5,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝5×3／(2＋3)＝3\nI₂＝5×2／(2＋3)＝2（或 I₂＝I－I₁）\n答：I₁＝3 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 3
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 3,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝4 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 12,
+                "R1": 4,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝12×8／(4＋8)＝8\nI₂＝12×4／(4＋8)＝4（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝4 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 4
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 4
+              }
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝8×6／(2＋6)＝6\nI₂＝8×2／(2＋6)＝2（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 15,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 10,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝15×6／(3＋6)＝10\nI₂＝15×3／(3＋6)＝5（或 I₂＝I－I₁）\n答：I₁＝10 A，I₂＝5 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 10
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 5
+                }
+              ],
+              "answers": {
+                "I1": 10,
+                "I2": 5
+              }
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝2 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 10,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝10×8／(2＋8)＝8\nI₂＝10×2／(2＋8)＝2（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 2
+              }
+            }
+          ],
+          "gen": "shunt-both",
+          "answers": {
+            "I1": 6,
+            "I2": 3
+          }
+        },
+        {
+          "id": "cd-05",
+          "topic": "shunt",
+          "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+          "given": {
+            "I": 6,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "I1",
+          "unit": "A",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分流：I₁＝I×{{frac:R₂|R₁＋R₂}}\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/parallel_two_R.png",
+          "variants": [
+            {
+              "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 6,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "I₁＝6×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "I₁＝8×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝8×6／(2＋6)＝6\n答：I₁＝6 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝1 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 10,
+                "R1": 1,
+                "R2": 4
+              },
+              "answer": 8,
+              "stepHint": "I₁＝10×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝10×4／(1＋4)＝8\n答：I₁＝8 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝3 Ω，R₂＝9 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 12,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 9,
+              "stepHint": "I₁＝12×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝12×9／(3＋9)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝2 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 15,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 9,
+              "stepHint": "I₁＝15×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝15×3／(2＋3)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝4 A，R₁＝1 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 4,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "I₁＝4×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝4×3／(1＋3)＝3\n答：I₁＝3 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝20 A，R₁＝4 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 20,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 12,
+              "stepHint": "I₁＝20×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝20×6／(4＋6)＝12\n答：I₁＝12 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            }
+          ],
+          "gen": "shunt"
+        }
+      ]
+    },
+    {
+      "levelId": "color-code",
+      "titleZh": "電阻色環·後段",
+      "order": 9,
+      "kind": "practice",
+      "conceptZh": "彩色編碼用於軸向引線電阻器。\n四色環讀法：前兩環＝第一、第二位數值；第三環＝倍數（10 倍增值）；第四環＝製造商誤差率（精確度）。\n五色環多一位有效數字（第三環仍係倍數前嘅位）。\n標稱 R＝(10×位1＋位2)×倍數；絕對誤差 δR＝R×tol。",
+      "demoZh": "例：紅・紅・橙・金 → 22×1k＝22 kΩ，金＝±5%。\n棕・黑・紅・金 → 10×100＝1 kΩ，±5%。",
+      "figure": "assets/color_code_chart.png",
+      "extraFigures": [
+        "assets/color_code_example.png",
+        "assets/card_color_code.png"
+      ],
+      "unlockPrev": "solve-r",
+      "questions": [
+        {
+          "id": "cc-01",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求標稱電阻值（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 220,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n阻值＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%\n答：220 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 220,
+              "unit": "Ω",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n阻值＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%\n答：220 Ω"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 470,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 470,
+              "unit": "Ω",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n阻值＝47 × 10 ＝ 470 Ω\n第4環 金＝誤差 ±5%\n答：470 Ω"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 330,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 330,
+              "unit": "Ω",
+              "stepHint": "第1、2環：橙＝3、橙＝3 → 有效數字 33；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 棕＝×10\n阻值＝33 × 10 ＝ 330 Ω\n第4環 金＝誤差 ±5%\n答：330 Ω"
+            },
+            {
+              "stemZh": "四色環為「綠・藍・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "綠",
+                "d2": "藍",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 560,
+                "bands": [
+                  "綠",
+                  "藍",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 560,
+              "unit": "Ω",
+              "stepHint": "第1、2環：綠＝5、藍＝6 → 有效數字 56；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 綠＝5，第2環 藍＝6 → 有效數字 56\n第3環 棕＝×10\n阻值＝56 × 10 ＝ 560 Ω\n第4環 金＝誤差 ±5%\n答：560 Ω"
+            }
+          ]
+        },
+        {
+          "id": "cc-02",
+          "topic": "color-code",
+          "stemZh": "四色環為「棕・紅・紅・金」。求標稱電阻值（kΩ）。",
+          "given": {
+            "d1": "棕",
+            "d2": "紅",
+            "mult": "紅",
+            "tol": "金",
+            "ohm": 1200,
+            "bands": [
+              "棕",
+              "紅",
+              "紅",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "kΩ",
+          "answer": 1.2,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 紅＝×100\n阻值＝12 × 100 ＝ 1200 Ω ＝ 1.2 kΩ\n第4環 金＝誤差 ±5%\n答：1.2 kΩ",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「棕・紅・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1200,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1.2,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、紅＝2 → 有效數字 12；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 紅＝×100\n阻值＝12 × 100 ＝ 1200 Ω ＝ 1.2 kΩ\n第4環 金＝誤差 ±5%\n答：1.2 kΩ"
+            },
+            {
+              "stemZh": "四色環為「棕・綠・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "綠",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1500,
+                "bands": [
+                  "棕",
+                  "綠",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1.5,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、綠＝5 → 有效數字 15；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 棕＝1，第2環 綠＝5 → 有效數字 15\n第3環 紅＝×100\n阻值＝15 × 100 ＝ 1500 Ω ＝ 1.5 kΩ\n第4環 金＝誤差 ±5%\n答：1.5 kΩ"
+            },
+            {
+              "stemZh": "四色環為「棕・灰・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "灰",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1800,
+                "bands": [
+                  "棕",
+                  "灰",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1.8,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、灰＝8 → 有效數字 18；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 棕＝1，第2環 灰＝8 → 有效數字 18\n第3環 紅＝×100\n阻值＝18 × 100 ＝ 1800 Ω ＝ 1.8 kΩ\n第4環 金＝誤差 ±5%\n答：1.8 kΩ"
+            },
+            {
+              "stemZh": "四色環為「棕・紫・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1700,
+                "bands": [
+                  "棕",
+                  "紫",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1.7,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、紫＝7 → 有效數字 17；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紫＝7 → 有效數字 17\n第3環 紅＝×100\n阻值＝17 × 100 ＝ 1700 Ω ＝ 1.7 kΩ\n第4環 金＝誤差 ±5%\n答：1.7 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "cc-03",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・紅・金」。求標稱電阻值（kΩ）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "紅",
+            "tol": "金",
+            "ohm": 2200,
+            "bands": [
+              "紅",
+              "紅",
+              "紅",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "kΩ",
+          "answer": 2.2,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 紅＝×100\n阻值＝22 × 100 ＝ 2200 Ω ＝ 2.2 kΩ\n第4環 金＝誤差 ±5%\n答：2.2 kΩ",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 2.2,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 紅＝×100\n阻值＝22 × 100 ＝ 2200 Ω ＝ 2.2 kΩ\n第4環 金＝誤差 ±5%\n答：2.2 kΩ"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 4700,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 4.7,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 紅＝×100\n阻值＝47 × 100 ＝ 4700 Ω ＝ 4.7 kΩ\n第4環 金＝誤差 ±5%\n答：4.7 kΩ"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 3300,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 3.3,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：橙＝3、橙＝3 → 有效數字 33；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 紅＝×100\n阻值＝33 × 100 ＝ 3300 Ω ＝ 3.3 kΩ\n第4環 金＝誤差 ±5%\n答：3.3 kΩ"
+            },
+            {
+              "stemZh": "四色環為「綠・藍・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "綠",
+                "d2": "藍",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 5600,
+                "bands": [
+                  "綠",
+                  "藍",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 5.6,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：綠＝5、藍＝6 → 有效數字 56；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 綠＝5，第2環 藍＝6 → 有效數字 56\n第3環 紅＝×100\n阻值＝56 × 100 ＝ 5600 Ω ＝ 5.6 kΩ\n第4環 金＝誤差 ±5%\n答：5.6 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "cc-04",
+          "topic": "color-code",
+          "stemZh": "四色環為「棕・黑・橙・金」。求標稱電阻值（kΩ）。",
+          "given": {
+            "d1": "棕",
+            "d2": "黑",
+            "mult": "橙",
+            "tol": "金",
+            "ohm": 10000,
+            "bands": [
+              "棕",
+              "黑",
+              "橙",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "kΩ",
+          "answer": 10,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n阻值＝10 × 1000 ＝ 10000 Ω ＝ 10 kΩ\n第4環 金＝誤差 ±5%\n答：10 kΩ",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「棕・黑・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 10000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 10,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、黑＝0 → 有效數字 10；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n阻值＝10 × 1000 ＝ 10000 Ω ＝ 10 kΩ\n第4環 金＝誤差 ±5%\n答：10 kΩ"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 22000,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 22,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 橙＝×1000\n阻值＝22 × 1000 ＝ 22000 Ω ＝ 22 kΩ\n第4環 金＝誤差 ±5%\n答：22 kΩ"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 47000,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 47,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 橙＝×1000\n阻值＝47 × 1000 ＝ 47000 Ω ＝ 47 kΩ\n第4環 金＝誤差 ±5%\n答：47 kΩ"
+            },
+            {
+              "stemZh": "四色環為「棕・紅・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 12000,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 12,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、紅＝2 → 有效數字 12；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 橙＝×1000\n阻值＝12 × 1000 ＝ 12000 Ω ＝ 12 kΩ\n第4環 金＝誤差 ±5%\n答：12 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "cc-05",
+          "topic": "color-code",
+          "stemZh": "四色環為「棕・黑・黃・金」。求標稱電阻值（kΩ）。",
+          "given": {
+            "d1": "棕",
+            "d2": "黑",
+            "mult": "黃",
+            "tol": "金",
+            "ohm": 100000,
+            "bands": [
+              "棕",
+              "黑",
+              "黃",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "kΩ",
+          "answer": 100,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 黃＝×10000\n阻值＝10 × 10000 ＝ 100000 Ω ＝ 100 kΩ\n第4環 金＝誤差 ±5%\n答：100 kΩ",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「棕・黑・黃・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "黃",
+                "tol": "金",
+                "ohm": 100000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "黃",
+                  "金"
+                ]
+              },
+              "answer": 100,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、黑＝0 → 有效數字 10；第3環 黃＝×10000",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 黃＝×10000\n阻值＝10 × 10000 ＝ 100000 Ω ＝ 100 kΩ\n第4環 金＝誤差 ±5%\n答：100 kΩ"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・黃・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "黃",
+                "tol": "金",
+                "ohm": 220000,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "黃",
+                  "金"
+                ]
+              },
+              "answer": 220,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 黃＝×10000",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 黃＝×10000\n阻值＝22 × 10000 ＝ 220000 Ω ＝ 220 kΩ\n第4環 金＝誤差 ±5%\n答：220 kΩ"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・黃・銀」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "黃",
+                "tol": "銀",
+                "ohm": 470000,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "黃",
+                  "銀"
+                ]
+              },
+              "answer": 470,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 黃＝×10000",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 黃＝×10000\n阻值＝47 × 10000 ＝ 470000 Ω ＝ 470 kΩ\n第4環 銀＝誤差 ±10%\n答：470 kΩ"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・黃・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "黃",
+                "tol": "金",
+                "ohm": 330000,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "黃",
+                  "金"
+                ]
+              },
+              "answer": 330,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：橙＝3、橙＝3 → 有效數字 33；第3環 黃＝×10000",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 黃＝×10000\n阻值＝33 × 10000 ＝ 330000 Ω ＝ 330 kΩ\n第4環 金＝誤差 ±5%\n答：330 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "cc-06",
+          "topic": "color-code",
+          "stemZh": "標準電阻 220 Ω，四色環前兩環為「紅・紅」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+          "given": {
+            "R_ohm": 220,
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "exp": 1
+          },
+          "unknown": "exp",
+          "unit": "",
+          "answer": 1,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "前兩環 紅紅＝22\n標稱值 220 Ω＝22 × 10ⁿ\n10ⁿ＝220/22＝10 → n＝1（第3環「棕」）\n答：1",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "標準電阻 220 Ω，四色環前兩環為「紅・紅」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+              "given": {
+                "R_ohm": 220,
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "exp": 1
+              },
+              "answer": 1,
+              "unit": "",
+              "stepHint": "有效數字 22；220 Ω＝22×10ⁿ → 10ⁿ＝220/22＝10 → n＝1",
+              "fullSolutionZh": "前兩環 紅紅＝22\n標稱值 220 Ω＝22 × 10ⁿ\n10ⁿ＝220/22＝10 → n＝1（第3環「棕」）\n答：1"
+            },
+            {
+              "stemZh": "標準電阻 1 kΩ，四色環前兩環為「棕・黑」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+              "given": {
+                "R_ohm": 1000,
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "紅",
+                "exp": 2
+              },
+              "answer": 2,
+              "unit": "",
+              "stepHint": "有效數字 10；1 kΩ＝10×10ⁿ → 10ⁿ＝1000/10＝100 → n＝2",
+              "fullSolutionZh": "前兩環 棕黑＝10\n標稱值 1 kΩ＝10 × 10ⁿ\n10ⁿ＝1000/10＝100 → n＝2（第3環「紅」）\n答：2"
+            },
+            {
+              "stemZh": "標準電阻 4.7 kΩ，四色環前兩環為「黃・紫」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+              "given": {
+                "R_ohm": 4700,
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "紅",
+                "exp": 2
+              },
+              "answer": 2,
+              "unit": "",
+              "stepHint": "有效數字 47；4.7 kΩ＝47×10ⁿ → 10ⁿ＝4700/47＝100 → n＝2",
+              "fullSolutionZh": "前兩環 黃紫＝47\n標稱值 4.7 kΩ＝47 × 10ⁿ\n10ⁿ＝4700/47＝100 → n＝2（第3環「紅」）\n答：2"
+            },
+            {
+              "stemZh": "標準電阻 10 kΩ，四色環前兩環為「棕・黑」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+              "given": {
+                "R_ohm": 10000,
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "exp": 3
+              },
+              "answer": 3,
+              "unit": "",
+              "stepHint": "有效數字 10；10 kΩ＝10×10ⁿ → 10ⁿ＝10000/10＝1000 → n＝3",
+              "fullSolutionZh": "前兩環 棕黑＝10\n標稱值 10 kΩ＝10 × 10ⁿ\n10ⁿ＝10000/10＝1000 → n＝3（第3環「橙」）\n答：3"
+            },
+            {
+              "stemZh": "標準電阻 47 kΩ，四色環前兩環為「黃・紫」。第3環倍數是 10 的幾次方？（只填指數，例如 ×100＝10² 則填 2）",
+              "given": {
+                "R_ohm": 47000,
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "橙",
+                "exp": 3
+              },
+              "answer": 3,
+              "unit": "",
+              "stepHint": "有效數字 47；47 kΩ＝47×10ⁿ → 10ⁿ＝47000/47＝1000 → n＝3",
+              "fullSolutionZh": "前兩環 黃紫＝47\n標稱值 47 kΩ＝47 × 10ⁿ\n10ⁿ＝47000/47＝1000 → n＝3（第3環「橙」）\n答：3"
+            }
+          ]
+        },
+        {
+          "id": "cc-07",
+          "topic": "color-code",
+          "stemZh": "色環「紅・紅・棕・金」對應哪一個標準阻值？請填標稱值（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 220,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "有效數字 22，倍數 ×10\n阻值＝220 Ω＝220 Ω\n答：220 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "色環「紅・紅・棕・金」對應哪一個標準阻值？請填標稱值（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220
+              },
+              "answer": 220,
+              "unit": "Ω",
+              "stepHint": "22 × 10 ＝ 220 Ω",
+              "fullSolutionZh": "有效數字 22，倍數 ×10\n阻值＝220 Ω＝220 Ω\n答：220 Ω"
+            },
+            {
+              "stemZh": "色環「黃・紫・棕・金」對應哪一個標準阻值？請填標稱值（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 470
+              },
+              "answer": 470,
+              "unit": "Ω",
+              "stepHint": "47 × 10 ＝ 470 Ω",
+              "fullSolutionZh": "有效數字 47，倍數 ×10\n阻值＝470 Ω＝470 Ω\n答：470 Ω"
+            },
+            {
+              "stemZh": "色環「紅・紅・紅・金」對應哪一個標準阻值？請填標稱值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200
+              },
+              "answer": 2.2,
+              "unit": "kΩ",
+              "stepHint": "22 × 100 ＝ 2200 Ω",
+              "fullSolutionZh": "有效數字 22，倍數 ×100\n阻值＝2200 Ω＝2.2 kΩ\n答：2.2 kΩ"
+            },
+            {
+              "stemZh": "色環「紅・紅・橙・金」對應哪一個標準阻值？請填標稱值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 22000
+              },
+              "answer": 22,
+              "unit": "kΩ",
+              "stepHint": "22 × 1000 ＝ 22000 Ω",
+              "fullSolutionZh": "有效數字 22，倍數 ×1000\n阻值＝22000 Ω＝22 kΩ\n答：22 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "cc-08",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求絕對誤差 δR（Ω）。（只填數值）",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "dR",
+          "unit": "Ω",
+          "answer": 11,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：δR＝11 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 11,
+              "unit": "Ω",
+              "stepHint": "先求 R＝220 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：δR＝11 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 470,
+                "tolFrac": 0.05,
+                "dR": 23.5,
+                "Rmin": 446.5,
+                "Rmax": 493.5,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 23.5,
+              "unit": "Ω",
+              "stepHint": "先求 R＝470 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n標稱 R＝47 × 10 ＝ 470 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝470×0.05＝23.5 Ω\nR_min＝R−δR＝446.5 Ω；R_max＝R＋δR＝493.5 Ω\n答：δR＝23.5 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・紅・紅・銀」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 1200,
+                "tolFrac": 0.1,
+                "dR": 120,
+                "Rmin": 1080,
+                "Rmax": 1320,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 120,
+              "unit": "Ω",
+              "stepHint": "先求 R＝1200 Ω，tol＝0.1；δR＝R×tol",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 紅＝×100\n標稱 R＝12 × 100 ＝ 1200 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝1200×0.1＝120 Ω\nR_min＝R−δR＝1080 Ω；R_max＝R＋δR＝1320 Ω\n答：δR＝120 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・紅・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200,
+                "tolFrac": 0.05,
+                "dR": 110,
+                "Rmin": 2090,
+                "Rmax": 2310,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 110,
+              "unit": "Ω",
+              "stepHint": "先求 R＝2200 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 紅＝×100\n標稱 R＝22 × 100 ＝ 2200 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝2200×0.05＝110 Ω\nR_min＝R−δR＝2090 Ω；R_max＝R＋δR＝2310 Ω\n答：δR＝110 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・紅・銀」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 4700,
+                "tolFrac": 0.1,
+                "dR": 470,
+                "Rmin": 4230,
+                "Rmax": 5170,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 470,
+              "unit": "Ω",
+              "stepHint": "先求 R＝4700 Ω，tol＝0.1；δR＝R×tol",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 紅＝×100\n標稱 R＝47 × 100 ＝ 4700 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝4700×0.1＝470 Ω\nR_min＝R−δR＝4230 Ω；R_max＝R＋δR＝5170 Ω\n答：δR＝470 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・黑・橙・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 10000,
+                "tolFrac": 0.05,
+                "dR": 500,
+                "Rmin": 9500,
+                "Rmax": 10500,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 500,
+              "unit": "Ω",
+              "stepHint": "先求 R＝10000 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n標稱 R＝10 × 1000 ＝ 10000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝10000×0.05＝500 Ω\nR_min＝R−δR＝9500 Ω；R_max＝R＋δR＝10500 Ω\n答：δR＝500 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・橙・銀」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 22000,
+                "tolFrac": 0.1,
+                "dR": 2200,
+                "Rmin": 19800,
+                "Rmax": 24200,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 2200,
+              "unit": "Ω",
+              "stepHint": "先求 R＝22000 Ω，tol＝0.1；δR＝R×tol",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 橙＝×1000\n標稱 R＝22 × 1000 ＝ 22000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝22000×0.1＝2200 Ω\nR_min＝R−δR＝19800 Ω；R_max＝R＋δR＝24200 Ω\n答：δR＝2200 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・橙・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 47000,
+                "tolFrac": 0.05,
+                "dR": 2350,
+                "Rmin": 44650,
+                "Rmax": 49350,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 2350,
+              "unit": "Ω",
+              "stepHint": "先求 R＝47000 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 橙＝×1000\n標稱 R＝47 × 1000 ＝ 47000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝47000×0.05＝2350 Ω\nR_min＝R−δR＝44650 Ω；R_max＝R＋δR＝49350 Ω\n答：δR＝2350 Ω",
+              "figure": "assets/color_code_tol.png"
+            }
+          ]
+        },
+        {
+          "id": "cc-09",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求允許下限 R_min（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "Rmin",
+          "unit": "Ω",
+          "answer": 209,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：先求 R 同 δR，再 R_min＝R−δR——你會先做邊一步？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 209,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "銀",
+                "ohm": 470,
+                "tolFrac": 0.1,
+                "dR": 47,
+                "Rmin": 423,
+                "Rmax": 517,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "銀"
+                ]
+              },
+              "answer": 423,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n標稱 R＝47 × 10 ＝ 470 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝470×0.1＝47 Ω\nR_min＝R−δR＝423 Ω；R_max＝R＋δR＝517 Ω\n答：R_min＝423 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・綠・紅・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "綠",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1500,
+                "tolFrac": 0.05,
+                "dR": 75,
+                "Rmin": 1425,
+                "Rmax": 1575,
+                "bands": [
+                  "棕",
+                  "綠",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1425,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 棕＝1，第2環 綠＝5 → 有效數字 15\n第3環 紅＝×100\n標稱 R＝15 × 100 ＝ 1500 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝1500×0.05＝75 Ω\nR_min＝R−δR＝1425 Ω；R_max＝R＋δR＝1575 Ω\n答：R_min＝1425 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・紅・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 3300,
+                "tolFrac": 0.1,
+                "dR": 330,
+                "Rmin": 2970,
+                "Rmax": 3630,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 2970,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 紅＝×100\n標稱 R＝33 × 100 ＝ 3300 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝3300×0.1＝330 Ω\nR_min＝R−δR＝2970 Ω；R_max＝R＋δR＝3630 Ω\n答：R_min＝2970 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「藍・灰・紅・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "藍",
+                "d2": "灰",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 6800,
+                "tolFrac": 0.05,
+                "dR": 340,
+                "Rmin": 6460,
+                "Rmax": 7140,
+                "bands": [
+                  "藍",
+                  "灰",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 6460,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 藍＝6，第2環 灰＝8 → 有效數字 68\n第3環 紅＝×100\n標稱 R＝68 × 100 ＝ 6800 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝6800×0.05＝340 Ω\nR_min＝R−δR＝6460 Ω；R_max＝R＋δR＝7140 Ω\n答：R_min＝6460 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・綠・橙・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "綠",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 15000,
+                "tolFrac": 0.1,
+                "dR": 1500,
+                "Rmin": 13500,
+                "Rmax": 16500,
+                "bands": [
+                  "棕",
+                  "綠",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 13500,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 棕＝1，第2環 綠＝5 → 有效數字 15\n第3環 橙＝×1000\n標稱 R＝15 × 1000 ＝ 15000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝15000×0.1＝1500 Ω\nR_min＝R−δR＝13500 Ω；R_max＝R＋δR＝16500 Ω\n答：R_min＝13500 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・橙・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 33000,
+                "tolFrac": 0.05,
+                "dR": 1650,
+                "Rmin": 31350,
+                "Rmax": 34650,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 31350,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 橙＝×1000\n標稱 R＝33 × 1000 ＝ 33000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝33000×0.05＝1650 Ω\nR_min＝R−δR＝31350 Ω；R_max＝R＋δR＝34650 Ω\n答：R_min＝31350 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「藍・灰・橙・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "藍",
+                "d2": "灰",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 68000,
+                "tolFrac": 0.1,
+                "dR": 6800,
+                "Rmin": 61200,
+                "Rmax": 74800,
+                "bands": [
+                  "藍",
+                  "灰",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 61200,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 藍＝6，第2環 灰＝8 → 有效數字 68\n第3環 橙＝×1000\n標稱 R＝68 × 1000 ＝ 68000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝68000×0.1＝6800 Ω\nR_min＝R−δR＝61200 Ω；R_max＝R＋δR＝74800 Ω\n答：R_min＝61200 Ω",
+              "figure": "assets/color_code_tol.png"
+            }
+          ]
+        },
+        {
+          "id": "cc-10",
+          "topic": "color-code",
+          "stemZh": "四色環為「橙・橙・棕・金」。求允許上限 R_max（Ω）。",
+          "given": {
+            "d1": "橙",
+            "d2": "橙",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 330,
+            "tolFrac": 0.05,
+            "dR": 16.5,
+            "Rmin": 313.5,
+            "Rmax": 346.5,
+            "bands": [
+              "橙",
+              "橙",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "Rmax",
+          "unit": "Ω",
+          "answer": 346.5,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：先求 R 同 δR，再 R_max＝R＋δR——你會先做邊一步？",
+          "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 棕＝×10\n標稱 R＝33 × 10 ＝ 330 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝330×0.05＝16.5 Ω\nR_min＝R−δR＝313.5 Ω；R_max＝R＋δR＝346.5 Ω\n答：R_max＝346.5 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「橙・橙・棕・金」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 330,
+                "tolFrac": 0.05,
+                "dR": 16.5,
+                "Rmin": 313.5,
+                "Rmax": 346.5,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 346.5,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 棕＝×10\n標稱 R＝33 × 10 ＝ 330 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝330×0.05＝16.5 Ω\nR_min＝R−δR＝313.5 Ω；R_max＝R＋δR＝346.5 Ω\n答：R_max＝346.5 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「綠・藍・棕・銀」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "綠",
+                "d2": "藍",
+                "mult": "棕",
+                "tol": "銀",
+                "ohm": 560,
+                "tolFrac": 0.1,
+                "dR": 56,
+                "Rmin": 504,
+                "Rmax": 616,
+                "bands": [
+                  "綠",
+                  "藍",
+                  "棕",
+                  "銀"
+                ]
+              },
+              "answer": 616,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 綠＝5，第2環 藍＝6 → 有效數字 56\n第3環 棕＝×10\n標稱 R＝56 × 10 ＝ 560 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝560×0.1＝56 Ω\nR_min＝R−δR＝504 Ω；R_max＝R＋δR＝616 Ω\n答：R_max＝616 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・灰・紅・金」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "灰",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1800,
+                "tolFrac": 0.05,
+                "dR": 90,
+                "Rmin": 1710,
+                "Rmax": 1890,
+                "bands": [
+                  "棕",
+                  "灰",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1890,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 棕＝1，第2環 灰＝8 → 有效數字 18\n第3環 紅＝×100\n標稱 R＝18 × 100 ＝ 1800 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝1800×0.05＝90 Ω\nR_min＝R−δR＝1710 Ω；R_max＝R＋δR＝1890 Ω\n答：R_max＝1890 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「紅・紫・紅・銀」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 2700,
+                "tolFrac": 0.1,
+                "dR": 270,
+                "Rmin": 2430,
+                "Rmax": 2970,
+                "bands": [
+                  "紅",
+                  "紫",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 2970.0000000000005,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紫＝7 → 有效數字 27\n第3環 紅＝×100\n標稱 R＝27 × 100 ＝ 2700 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝2700×0.1＝270 Ω\nR_min＝R−δR＝2430 Ω；R_max＝R＋δR＝2970 Ω\n答：R_max＝2970 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「綠・藍・紅・金」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "綠",
+                "d2": "藍",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 5600,
+                "tolFrac": 0.05,
+                "dR": 280,
+                "Rmin": 5320,
+                "Rmax": 5880,
+                "bands": [
+                  "綠",
+                  "藍",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 5880,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 綠＝5，第2環 藍＝6 → 有效數字 56\n第3環 紅＝×100\n標稱 R＝56 × 100 ＝ 5600 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝5600×0.05＝280 Ω\nR_min＝R−δR＝5320 Ω；R_max＝R＋δR＝5880 Ω\n答：R_max＝5880 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・紅・橙・銀」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 12000,
+                "tolFrac": 0.1,
+                "dR": 1200,
+                "Rmin": 10800,
+                "Rmax": 13200,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 13200.000000000002,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 橙＝×1000\n標稱 R＝12 × 1000 ＝ 12000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝12000×0.1＝1200 Ω\nR_min＝R−δR＝10800 Ω；R_max＝R＋δR＝13200 Ω\n答：R_max＝13200 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「紅・紫・橙・金」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紫",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 27000,
+                "tolFrac": 0.05,
+                "dR": 1350,
+                "Rmin": 25650,
+                "Rmax": 28350,
+                "bands": [
+                  "紅",
+                  "紫",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 28350,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紫＝7 → 有效數字 27\n第3環 橙＝×1000\n標稱 R＝27 × 1000 ＝ 27000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝27000×0.05＝1350 Ω\nR_min＝R−δR＝25650 Ω；R_max＝R＋δR＝28350 Ω\n答：R_max＝28350 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「灰・紅・橙・銀」。求允許上限 R_max（Ω）。",
+              "given": {
+                "d1": "灰",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 82000,
+                "tolFrac": 0.1,
+                "dR": 8200,
+                "Rmin": 73800,
+                "Rmax": 90200,
+                "bands": [
+                  "灰",
+                  "紅",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 90200.00000000001,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_max＝R＋δR",
+              "fullSolutionZh": "第1環 灰＝8，第2環 紅＝2 → 有效數字 82\n第3環 橙＝×1000\n標稱 R＝82 × 1000 ＝ 82000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝82000×0.1＝8200 Ω\nR_min＝R−δR＝73800 Ω；R_max＝R＋δR＝90200 Ω\n答：R_max＝90200 Ω",
+              "figure": "assets/color_code_tol.png"
+            }
+          ]
+        },
+        {
+          "id": "cc-11",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求允許範圍 R_min 及 R_max（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "Rmin,Rmax",
+          "unit": "Ω",
+          "answer": 209,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：先求 R、δR，再填 R_min、R_max——你會先做邊一步？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω，R_max＝231 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 209,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω，R_max＝231 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 209,
+                "Rmax": 231
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 209
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 231
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・金」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 470,
+                "tolFrac": 0.05,
+                "dR": 23.5,
+                "Rmin": 446.5,
+                "Rmax": 493.5,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 446.5,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n標稱 R＝47 × 10 ＝ 470 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝470×0.05＝23.5 Ω\nR_min＝R−δR＝446.5 Ω；R_max＝R＋δR＝493.5 Ω\n答：R_min＝446.5 Ω，R_max＝493.5 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 446.5,
+                "Rmax": 493.5
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 446.5
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 493.5
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「棕・紅・紅・銀」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 1200,
+                "tolFrac": 0.1,
+                "dR": 120,
+                "Rmin": 1080,
+                "Rmax": 1320,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 1080,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 紅＝×100\n標稱 R＝12 × 100 ＝ 1200 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝1200×0.1＝120 Ω\nR_min＝R−δR＝1080 Ω；R_max＝R＋δR＝1320 Ω\n答：R_min＝1080 Ω，R_max＝1320 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 1080,
+                "Rmax": 1320
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 1080
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 1320
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「橙・白・紅・金」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "白",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 3900,
+                "tolFrac": 0.05,
+                "dR": 195,
+                "Rmin": 3705,
+                "Rmax": 4095,
+                "bands": [
+                  "橙",
+                  "白",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 3705,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 橙＝3，第2環 白＝9 → 有效數字 39\n第3環 紅＝×100\n標稱 R＝39 × 100 ＝ 3900 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝3900×0.05＝195 Ω\nR_min＝R−δR＝3705 Ω；R_max＝R＋δR＝4095 Ω\n答：R_min＝3705 Ω，R_max＝4095 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 3705,
+                "Rmax": 4095
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 3705
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 4095
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「灰・紅・紅・銀」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "灰",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 8200,
+                "tolFrac": 0.1,
+                "dR": 820,
+                "Rmin": 7380,
+                "Rmax": 9020,
+                "bands": [
+                  "灰",
+                  "紅",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 7380,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 灰＝8，第2環 紅＝2 → 有效數字 82\n第3環 紅＝×100\n標稱 R＝82 × 100 ＝ 8200 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝8200×0.1＝820 Ω\nR_min＝R−δR＝7380 Ω；R_max＝R＋δR＝9020 Ω\n答：R_min＝7380 Ω，R_max＝9020 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 7380,
+                "Rmax": 9020
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 7380
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 9020
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「紅・紅・橙・金」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 22000,
+                "tolFrac": 0.05,
+                "dR": 1100,
+                "Rmin": 20900,
+                "Rmax": 23100,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 20900,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 橙＝×1000\n標稱 R＝22 × 1000 ＝ 22000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝22000×0.05＝1100 Ω\nR_min＝R−δR＝20900 Ω；R_max＝R＋δR＝23100 Ω\n答：R_min＝20900 Ω，R_max＝23100 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 20900,
+                "Rmax": 23100
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 20900
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 23100
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「黃・紫・橙・銀」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 47000,
+                "tolFrac": 0.1,
+                "dR": 4700,
+                "Rmin": 42300,
+                "Rmax": 51700,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 42300,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 橙＝×1000\n標稱 R＝47 × 1000 ＝ 47000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝47000×0.1＝4700 Ω\nR_min＝R−δR＝42300 Ω；R_max＝R＋δR＝51700 Ω\n答：R_min＝42300 Ω，R_max＝51700 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 42300,
+                "Rmax": 51700
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 42300
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 51700
+                }
+              ]
+            },
+            {
+              "stemZh": "四色環為「棕・黑・黃・金」。求允許範圍 R_min 及 R_max（Ω）。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "黃",
+                "tol": "金",
+                "ohm": 100000,
+                "tolFrac": 0.05,
+                "dR": 5000,
+                "Rmin": 95000,
+                "Rmax": 105000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "黃",
+                  "金"
+                ]
+              },
+              "answer": 95000,
+              "unit": "Ω",
+              "stepHint": "先求 R、δR，再填 R_min、R_max",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 黃＝×10000\n標稱 R＝10 × 10000 ＝ 100000 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝100000×0.05＝5000 Ω\nR_min＝R−δR＝95000 Ω；R_max＝R＋δR＝105000 Ω\n答：R_min＝95000 Ω，R_max＝105000 Ω",
+              "figure": "assets/color_code_tol.png",
+              "answers": {
+                "Rmin": 95000,
+                "Rmax": 105000
+              },
+              "multi": [
+                {
+                  "key": "Rmin",
+                  "label": "R_min",
+                  "unit": "Ω",
+                  "answer": 95000
+                },
+                {
+                  "key": "Rmax",
+                  "label": "R_max",
+                  "unit": "Ω",
+                  "answer": 105000
+                }
+              ]
+            }
+          ],
+          "multi": [
+            {
+              "key": "Rmin",
+              "label": "R_min",
+              "unit": "Ω",
+              "answer": 209
+            },
+            {
+              "key": "Rmax",
+              "label": "R_max",
+              "unit": "Ω",
+              "answer": 231
+            }
+          ],
+          "answers": {
+            "Rmin": 209,
+            "Rmax": 231
+          }
+        },
+        {
+          "id": "cc-12",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。用量度值 210 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "measured": 210,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "inRange",
+          "unit": "—",
+          "answer": 1,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "標稱 R＝220 Ω，tol＝0.05（±5%）\nδR＝11 Ω → 允許範圍 209～231 Ω\n量度值 210 Ω　在範圍內\n答：1（是）",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。用量度值 210 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "measured": 210,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 1,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 210",
+              "fullSolutionZh": "標稱 R＝220 Ω，tol＝0.05（±5%）\nδR＝11 Ω → 允許範圍 209～231 Ω\n量度值 210 Ω　在範圍內\n答：1（是）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "1",
+                "是",
+                "喺",
+                "喺範圍",
+                "喺範圍內",
+                "YES",
+                "Yes",
+                "yes",
+                "Y",
+                "y",
+                "true",
+                "TRUE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。用量度值 240 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "measured": 240,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 0,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 240",
+              "fullSolutionZh": "標稱 R＝220 Ω，tol＝0.05（±5%）\nδR＝11 Ω → 允許範圍 209～231 Ω\n量度值 240 Ω　不在範圍內\n答：0（否）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "0",
+                "否",
+                "唔喺",
+                "不在",
+                "唔喺範圍",
+                "不在範圍內",
+                "NO",
+                "No",
+                "no",
+                "N",
+                "n",
+                "false",
+                "FALSE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・銀」。用量度值 430 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "銀",
+                "ohm": 470,
+                "tolFrac": 0.1,
+                "dR": 47,
+                "Rmin": 423,
+                "Rmax": 517,
+                "measured": 430,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "銀"
+                ]
+              },
+              "answer": 1,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 430",
+              "fullSolutionZh": "標稱 R＝470 Ω，tol＝0.1（±10%）\nδR＝47 Ω → 允許範圍 423～517 Ω\n量度值 430 Ω　在範圍內\n答：1（是）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "1",
+                "是",
+                "喺",
+                "喺範圍",
+                "喺範圍內",
+                "YES",
+                "Yes",
+                "yes",
+                "Y",
+                "y",
+                "true",
+                "TRUE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・銀」。用量度值 520 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "銀",
+                "ohm": 470,
+                "tolFrac": 0.1,
+                "dR": 47,
+                "Rmin": 423,
+                "Rmax": 517,
+                "measured": 520,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "銀"
+                ]
+              },
+              "answer": 0,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 520",
+              "fullSolutionZh": "標稱 R＝470 Ω，tol＝0.1（±10%）\nδR＝47 Ω → 允許範圍 423～517 Ω\n量度值 520 Ω　不在範圍內\n答：0（否）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "0",
+                "否",
+                "唔喺",
+                "不在",
+                "唔喺範圍",
+                "不在範圍內",
+                "NO",
+                "No",
+                "no",
+                "N",
+                "n",
+                "false",
+                "FALSE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「紅・紅・紅・金」。用量度值 2150 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200,
+                "tolFrac": 0.05,
+                "dR": 110,
+                "Rmin": 2090,
+                "Rmax": 2310,
+                "measured": 2150,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 1,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 2150",
+              "fullSolutionZh": "標稱 R＝2200 Ω，tol＝0.05（±5%）\nδR＝110 Ω → 允許範圍 2090～2310 Ω\n量度值 2150 Ω　在範圍內\n答：1（是）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "1",
+                "是",
+                "喺",
+                "喺範圍",
+                "喺範圍內",
+                "YES",
+                "Yes",
+                "yes",
+                "Y",
+                "y",
+                "true",
+                "TRUE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「紅・紅・紅・金」。用量度值 2400 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200,
+                "tolFrac": 0.05,
+                "dR": 110,
+                "Rmin": 2090,
+                "Rmax": 2310,
+                "measured": 2400,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 0,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 2400",
+              "fullSolutionZh": "標稱 R＝2200 Ω，tol＝0.05（±5%）\nδR＝110 Ω → 允許範圍 2090～2310 Ω\n量度值 2400 Ω　不在範圍內\n答：0（否）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "0",
+                "否",
+                "唔喺",
+                "不在",
+                "唔喺範圍",
+                "不在範圍內",
+                "NO",
+                "No",
+                "no",
+                "N",
+                "n",
+                "false",
+                "FALSE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「棕・黑・橙・銀」。用量度值 9200 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 10000,
+                "tolFrac": 0.1,
+                "dR": 1000,
+                "Rmin": 9000,
+                "Rmax": 11000,
+                "measured": 9200,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 1,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 9200",
+              "fullSolutionZh": "標稱 R＝10000 Ω，tol＝0.1（±10%）\nδR＝1000 Ω → 允許範圍 9000～11000 Ω\n量度值 9200 Ω　在範圍內\n答：1（是）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "1",
+                "是",
+                "喺",
+                "喺範圍",
+                "喺範圍內",
+                "YES",
+                "Yes",
+                "yes",
+                "Y",
+                "y",
+                "true",
+                "TRUE"
+              ]
+            },
+            {
+              "stemZh": "四色環為「棕・黑・橙・銀」。用量度值 11100 Ω，問是否在允許範圍 R_min～R_max 內？填 1＝是／0＝否。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 10000,
+                "tolFrac": 0.1,
+                "dR": 1000,
+                "Rmin": 9000,
+                "Rmax": 11000,
+                "measured": 11100,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 0,
+              "unit": "—",
+              "stepHint": "先求 R、δR、範圍，再比較量度值 11100",
+              "fullSolutionZh": "標稱 R＝10000 Ω，tol＝0.1（±10%）\nδR＝1000 Ω → 允許範圍 9000～11000 Ω\n量度值 11100 Ω　不在範圍內\n答：0（否）",
+              "figure": "assets/color_code_tol.png",
+              "answerType": "text",
+              "accepted": [
+                "0",
+                "否",
+                "唔喺",
+                "不在",
+                "唔喺範圍",
+                "不在範圍內",
+                "NO",
+                "No",
+                "no",
+                "N",
+                "n",
+                "false",
+                "FALSE"
+              ]
+            }
+          ],
+          "answerType": "text",
+          "accepted": [
+            "1",
+            "是",
+            "喺",
+            "喺範圍",
+            "喺範圍內",
+            "YES",
+            "Yes",
+            "yes",
+            "Y",
+            "y",
+            "true",
+            "TRUE"
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "led-limit",
+      "titleZh": "LED 限流與功率·後段",
+      "order": 10,
+      "kind": "practice",
+      "conceptZh": "LED 要串聯限流電阻。\n公式：R＝{{frac:Vs−Vf|I}}。\n電流常以 mA 給出，先÷1000 成 A。\n電阻功耗可用三式：P＝V·I、P＝I²R、P＝{{frac:V²|R}}（V 取電阻兩端電壓 Vr＝Vs−Vf）。\n實際功耗要小於電阻額定功率才安全。\n提示卡例子永不入練習池。",
+      "demoZh": "示範：Vs＝9 V，Vf＝3 V，I＝6 mA＝0.006 A。\nR＝{{frac:9−3|0.006}}＝1000 Ω。\nVr＝6 V → P＝0.006×6＝0.036 W（遠小於 0.25 W 額定）。\n提示卡例子（如 12 V／2 V／20 mA）永不入練習池。",
+      "figure": "assets/led_series_R.png",
+      "extraFigures": [
+        "assets/led_power.png",
+        "assets/unit_tip.png"
+      ],
+      "unlockPrev": "shunt",
+      "questions": [
+        {
+          "id": "led-r-01",
+          "topic": "led-limit",
+          "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3 V，額定電流 I＝6 mA。求串聯限流電阻 R（Ω）。",
+          "given": {
+            "Vs": 9,
+            "Vf": 3,
+            "I_mA": 6,
+            "I": 0.006
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 1000,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（R＝{{frac:Vs−Vf|I}}；I 要先由 mA 換成 A）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝6 mA＝0.006 A\nR＝{{frac:Vs−Vf|I}}＝(9−3)／0.006＝1000 Ω\n答：R＝1000 Ω",
+          "wrongTags": [
+            "forgot-divide-1000",
+            "used-Vs-not-drop"
+          ],
+          "figure": "assets/led_series_R.png",
+          "variants": [
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3 V，額定電流 I＝6 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3,
+                "I_mA": 6,
+                "I": 0.006
+              },
+              "answer": 1000,
+              "stepHint": "先換單位：I＝6÷1000＝0.006 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝6 mA＝0.006 A\nR＝(Vs−Vf)／I＝(9−3)／0.006＝1000 Ω\n答：R＝1000 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3.3 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3.3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 570,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(9−3.3)／0.01＝570 Ω\n答：R＝570 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝15 V，LED 正向電壓 Vf＝3 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 1200,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(15−3)／0.01＝1200 Ω\n答：R＝1200 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝24 V，LED 正向電壓 Vf＝3 V，額定電流 I＝30 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 3,
+                "I_mA": 30,
+                "I": 0.03
+              },
+              "answer": 700,
+              "stepHint": "先換單位：I＝30÷1000＝0.03 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝30 mA＝0.03 A\nR＝(Vs−Vf)／I＝(24−3)／0.03＝700 Ω\n答：R＝700 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝6 V，LED 正向電壓 Vf＝3 V，額定電流 I＝12 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 6,
+                "Vf": 3,
+                "I_mA": 12,
+                "I": 0.012
+              },
+              "answer": 250,
+              "stepHint": "先換單位：I＝12÷1000＝0.012 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝12 mA＝0.012 A\nR＝(Vs−Vf)／I＝(6−3)／0.012＝250 Ω\n答：R＝250 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝18 V，LED 正向電壓 Vf＝3.6 V，額定電流 I＝24 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 18,
+                "Vf": 3.6,
+                "I_mA": 24,
+                "I": 0.024
+              },
+              "answer": 600,
+              "stepHint": "先換單位：I＝24÷1000＝0.024 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝24 mA＝0.024 A\nR＝(Vs−Vf)／I＝(18−3.6)／0.024＝600 Ω\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝5 V，LED 正向電壓 Vf＝3 V，額定電流 I＝8 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 5,
+                "Vf": 3,
+                "I_mA": 8,
+                "I": 0.008
+              },
+              "answer": 250,
+              "stepHint": "先換單位：I＝8÷1000＝0.008 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝8 mA＝0.008 A\nR＝(Vs−Vf)／I＝(5−3)／0.008＝250 Ω\n答：R＝250 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝15 V，LED 正向電壓 Vf＝3.3 V，額定電流 I＝15 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3.3,
+                "I_mA": 15,
+                "I": 0.015
+              },
+              "answer": 780,
+              "stepHint": "先換單位：I＝15÷1000＝0.015 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝15 mA＝0.015 A\nR＝(Vs−Vf)／I＝(15−3.3)／0.015＝780 Ω\n答：R＝780 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝2.5 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 2.5,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 650,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(9−2.5)／0.01＝650 Ω\n答：R＝650 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝24 V，LED 正向電壓 Vf＝4 V，額定電流 I＝25 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 4,
+                "I_mA": 25,
+                "I": 0.025
+              },
+              "answer": 800,
+              "stepHint": "先換單位：I＝25÷1000＝0.025 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝25 mA＝0.025 A\nR＝(Vs−Vf)／I＝(24−4)／0.025＝800 Ω\n答：R＝800 Ω"
+            }
+          ]
+        },
+        {
+          "id": "led-r-02",
+          "topic": "led-limit",
+          "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3.3 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+          "given": {
+            "Vs": 9,
+            "Vf": 3.3,
+            "I_mA": 10,
+            "I": 0.01
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 570,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（R＝{{frac:Vs−Vf|I}}；I 要先由 mA 換成 A）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝{{frac:Vs−Vf|I}}＝(9−3.3)／0.01＝570 Ω\n答：R＝570 Ω",
+          "wrongTags": [
+            "forgot-divide-1000"
+          ],
+          "figure": "assets/led_series_R.png",
+          "variants": [
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3 V，額定電流 I＝6 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3,
+                "I_mA": 6,
+                "I": 0.006
+              },
+              "answer": 1000,
+              "stepHint": "先換單位：I＝6÷1000＝0.006 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝6 mA＝0.006 A\nR＝(Vs−Vf)／I＝(9−3)／0.006＝1000 Ω\n答：R＝1000 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝3.3 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3.3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 570,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(9−3.3)／0.01＝570 Ω\n答：R＝570 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝15 V，LED 正向電壓 Vf＝3 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 1200,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(15−3)／0.01＝1200 Ω\n答：R＝1200 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝24 V，LED 正向電壓 Vf＝3 V，額定電流 I＝30 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 3,
+                "I_mA": 30,
+                "I": 0.03
+              },
+              "answer": 700,
+              "stepHint": "先換單位：I＝30÷1000＝0.03 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝30 mA＝0.03 A\nR＝(Vs−Vf)／I＝(24−3)／0.03＝700 Ω\n答：R＝700 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝6 V，LED 正向電壓 Vf＝3 V，額定電流 I＝12 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 6,
+                "Vf": 3,
+                "I_mA": 12,
+                "I": 0.012
+              },
+              "answer": 250,
+              "stepHint": "先換單位：I＝12÷1000＝0.012 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝12 mA＝0.012 A\nR＝(Vs−Vf)／I＝(6−3)／0.012＝250 Ω\n答：R＝250 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝18 V，LED 正向電壓 Vf＝3.6 V，額定電流 I＝24 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 18,
+                "Vf": 3.6,
+                "I_mA": 24,
+                "I": 0.024
+              },
+              "answer": 600,
+              "stepHint": "先換單位：I＝24÷1000＝0.024 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝24 mA＝0.024 A\nR＝(Vs−Vf)／I＝(18−3.6)／0.024＝600 Ω\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝5 V，LED 正向電壓 Vf＝3 V，額定電流 I＝8 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 5,
+                "Vf": 3,
+                "I_mA": 8,
+                "I": 0.008
+              },
+              "answer": 250,
+              "stepHint": "先換單位：I＝8÷1000＝0.008 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝8 mA＝0.008 A\nR＝(Vs−Vf)／I＝(5−3)／0.008＝250 Ω\n答：R＝250 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝15 V，LED 正向電壓 Vf＝3.3 V，額定電流 I＝15 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3.3,
+                "I_mA": 15,
+                "I": 0.015
+              },
+              "answer": 780,
+              "stepHint": "先換單位：I＝15÷1000＝0.015 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝15 mA＝0.015 A\nR＝(Vs−Vf)／I＝(15−3.3)／0.015＝780 Ω\n答：R＝780 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝9 V，LED 正向電壓 Vf＝2.5 V，額定電流 I＝10 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 2.5,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 650,
+              "stepHint": "先換單位：I＝10÷1000＝0.01 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝10 mA＝0.01 A\nR＝(Vs−Vf)／I＝(9−2.5)／0.01＝650 Ω\n答：R＝650 Ω"
+            },
+            {
+              "stemZh": "電源 Vs＝24 V，LED 正向電壓 Vf＝4 V，額定電流 I＝25 mA。求串聯限流電阻 R（Ω）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 4,
+                "I_mA": 25,
+                "I": 0.025
+              },
+              "answer": 800,
+              "stepHint": "先換單位：I＝25÷1000＝0.025 A；再 R＝(Vs−Vf)／I",
+              "fullSolutionZh": "I＝25 mA＝0.025 A\nR＝(Vs−Vf)／I＝(24−4)／0.025＝800 Ω\n答：R＝800 Ω"
+            }
+          ]
+        },
+        {
+          "id": "led-p-01",
+          "topic": "led-limit",
+          "stemZh": "Vs＝9 V，Vf＝3 V，I＝6 mA。求限流電阻 R 的功耗 P（W）。",
+          "given": {
+            "Vs": 9,
+            "Vf": 3,
+            "I_mA": 6,
+            "I": 0.006
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 0.036,
+          "tolerance": 0.002,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝0.006 A，Vr＝9−3＝6 V\nP＝I×Vr＝0.006×6＝0.036 W\n答：P＝0.036 W",
+          "wrongTags": [
+            "power-unit",
+            "forgot-divide-1000"
+          ],
+          "figure": "assets/led_power.png",
+          "variants": [
+            {
+              "stemZh": "Vs＝9 V，Vf＝3 V，I＝6 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3,
+                "I_mA": 6,
+                "I": 0.006
+              },
+              "answer": 0.036,
+              "stepHint": "Vr＝Vs−Vf＝6 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.006 A，Vr＝9−3＝6 V\nP＝I×Vr＝0.006×6＝0.036 W\n答：P＝0.036 W"
+            },
+            {
+              "stemZh": "Vs＝15 V，Vf＝3 V，I＝10 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 0.12,
+              "stepHint": "Vr＝Vs−Vf＝12 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.01 A，Vr＝15−3＝12 V\nP＝I×Vr＝0.01×12＝0.12 W\n答：P＝0.12 W"
+            },
+            {
+              "stemZh": "Vs＝24 V，Vf＝3 V，I＝30 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 3,
+                "I_mA": 30,
+                "I": 0.03
+              },
+              "answer": 0.63,
+              "stepHint": "Vr＝Vs−Vf＝21 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.03 A，Vr＝24−3＝21 V\nP＝I×Vr＝0.03×21＝0.63 W\n答：P＝0.63 W"
+            },
+            {
+              "stemZh": "Vs＝6 V，Vf＝3 V，I＝12 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 6,
+                "Vf": 3,
+                "I_mA": 12,
+                "I": 0.012
+              },
+              "answer": 0.036,
+              "stepHint": "Vr＝Vs−Vf＝3 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.012 A，Vr＝6−3＝3 V\nP＝I×Vr＝0.012×3＝0.036 W\n答：P＝0.036 W"
+            },
+            {
+              "stemZh": "Vs＝18 V，Vf＝3.6 V，I＝24 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 18,
+                "Vf": 3.6,
+                "I_mA": 24,
+                "I": 0.024
+              },
+              "answer": 0.3456,
+              "stepHint": "Vr＝Vs−Vf＝14.4 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.024 A，Vr＝18−3.6＝14.4 V\nP＝I×Vr＝0.024×14.4＝0.3456 W\n答：P＝0.3456 W"
+            },
+            {
+              "stemZh": "Vs＝15 V，Vf＝3.3 V，I＝15 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3.3,
+                "I_mA": 15,
+                "I": 0.015
+              },
+              "answer": 0.1755,
+              "stepHint": "Vr＝Vs−Vf＝11.7 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.015 A，Vr＝15−3.3＝11.7 V\nP＝I×Vr＝0.015×11.7＝0.1755 W\n答：P＝0.1755 W"
+            },
+            {
+              "stemZh": "Vs＝9 V，Vf＝2.5 V，I＝10 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 2.5,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 0.065,
+              "stepHint": "Vr＝Vs−Vf＝6.5 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.01 A，Vr＝9−2.5＝6.5 V\nP＝I×Vr＝0.01×6.5＝0.065 W\n答：P＝0.065 W"
+            },
+            {
+              "stemZh": "Vs＝24 V，Vf＝4 V，I＝25 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 4,
+                "I_mA": 25,
+                "I": 0.025
+              },
+              "answer": 0.5,
+              "stepHint": "Vr＝Vs−Vf＝20 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.025 A，Vr＝24−4＝20 V\nP＝I×Vr＝0.025×20＝0.5 W\n答：P＝0.5 W"
+            }
+          ]
+        },
+        {
+          "id": "led-p-02",
+          "topic": "led-limit",
+          "stemZh": "Vs＝15 V，Vf＝3 V，I＝10 mA。求限流電阻 R 的功耗 P（W）。",
+          "given": {
+            "Vs": 15,
+            "Vf": 3,
+            "I_mA": 10,
+            "I": 0.01
+          },
+          "unknown": "P",
+          "unit": "W",
+          "answer": 0.12,
+          "tolerance": 0.002,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝0.01 A，Vr＝15−3＝12 V\nP＝I×Vr＝0.01×12＝0.12 W\n答：P＝0.12 W",
+          "wrongTags": [
+            "power-unit"
+          ],
+          "figure": "assets/led_power.png",
+          "variants": [
+            {
+              "stemZh": "Vs＝9 V，Vf＝3 V，I＝6 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 3,
+                "I_mA": 6,
+                "I": 0.006
+              },
+              "answer": 0.036,
+              "stepHint": "Vr＝Vs−Vf＝6 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.006 A，Vr＝9−3＝6 V\nP＝I×Vr＝0.006×6＝0.036 W\n答：P＝0.036 W"
+            },
+            {
+              "stemZh": "Vs＝15 V，Vf＝3 V，I＝10 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 0.12,
+              "stepHint": "Vr＝Vs−Vf＝12 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.01 A，Vr＝15−3＝12 V\nP＝I×Vr＝0.01×12＝0.12 W\n答：P＝0.12 W"
+            },
+            {
+              "stemZh": "Vs＝24 V，Vf＝3 V，I＝30 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 3,
+                "I_mA": 30,
+                "I": 0.03
+              },
+              "answer": 0.63,
+              "stepHint": "Vr＝Vs−Vf＝21 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.03 A，Vr＝24−3＝21 V\nP＝I×Vr＝0.03×21＝0.63 W\n答：P＝0.63 W"
+            },
+            {
+              "stemZh": "Vs＝6 V，Vf＝3 V，I＝12 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 6,
+                "Vf": 3,
+                "I_mA": 12,
+                "I": 0.012
+              },
+              "answer": 0.036,
+              "stepHint": "Vr＝Vs−Vf＝3 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.012 A，Vr＝6−3＝3 V\nP＝I×Vr＝0.012×3＝0.036 W\n答：P＝0.036 W"
+            },
+            {
+              "stemZh": "Vs＝18 V，Vf＝3.6 V，I＝24 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 18,
+                "Vf": 3.6,
+                "I_mA": 24,
+                "I": 0.024
+              },
+              "answer": 0.3456,
+              "stepHint": "Vr＝Vs−Vf＝14.4 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.024 A，Vr＝18−3.6＝14.4 V\nP＝I×Vr＝0.024×14.4＝0.3456 W\n答：P＝0.3456 W"
+            },
+            {
+              "stemZh": "Vs＝15 V，Vf＝3.3 V，I＝15 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 15,
+                "Vf": 3.3,
+                "I_mA": 15,
+                "I": 0.015
+              },
+              "answer": 0.1755,
+              "stepHint": "Vr＝Vs−Vf＝11.7 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.015 A，Vr＝15−3.3＝11.7 V\nP＝I×Vr＝0.015×11.7＝0.1755 W\n答：P＝0.1755 W"
+            },
+            {
+              "stemZh": "Vs＝9 V，Vf＝2.5 V，I＝10 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 9,
+                "Vf": 2.5,
+                "I_mA": 10,
+                "I": 0.01
+              },
+              "answer": 0.065,
+              "stepHint": "Vr＝Vs−Vf＝6.5 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.01 A，Vr＝9−2.5＝6.5 V\nP＝I×Vr＝0.01×6.5＝0.065 W\n答：P＝0.065 W"
+            },
+            {
+              "stemZh": "Vs＝24 V，Vf＝4 V，I＝25 mA。求限流電阻 R 的功耗 P（W）。",
+              "given": {
+                "Vs": 24,
+                "Vf": 4,
+                "I_mA": 25,
+                "I": 0.025
+              },
+              "answer": 0.5,
+              "stepHint": "Vr＝Vs−Vf＝20 V；P＝I×Vr（或先求 R 再 P＝I²R）",
+              "fullSolutionZh": "I＝0.025 A，Vr＝24−4＝20 V\nP＝I×Vr＝0.025×20＝0.5 W\n答：P＝0.5 W"
+            }
+          ]
+        },
+        {
+          "id": "led-safe-01",
+          "topic": "led-limit",
+          "stemZh": "限流電阻實際功耗 P＝0.036 W，額定功率＝0.25 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+          "given": {
+            "P": 0.036,
+            "rating": 0.25,
+            "I_mA": 6
+          },
+          "unknown": "margin",
+          "unit": "W",
+          "answer": 0.214,
+          "tolerance": 0.002,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "尚餘＝0.25−0.036＝0.214 W\n因為尚餘＞0，用 0.25 W 額定電阻是足夠／偏安全的。\n答：0.214 W",
+          "wrongTags": [
+            "compare-rating"
+          ],
+          "figure": "assets/led_power.png",
+          "variants": [
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.036 W，額定功率＝0.25 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.036,
+                "rating": 0.25,
+                "I_mA": 6
+              },
+              "answer": 0.214,
+              "stepHint": "尚餘＝額定−實際＝0.25−0.036",
+              "fullSolutionZh": "尚餘＝0.25−0.036＝0.214 W\n因為尚餘＞0，用 0.25 W 額定電阻是足夠／偏安全的。\n答：0.214 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.12 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.12,
+                "rating": 0.5,
+                "I_mA": 10
+              },
+              "answer": 0.38,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.12",
+              "fullSolutionZh": "尚餘＝0.5−0.12＝0.38 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.38 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.63 W，額定功率＝1 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.63,
+                "rating": 1,
+                "I_mA": 30
+              },
+              "answer": 0.37,
+              "stepHint": "尚餘＝額定−實際＝1−0.63",
+              "fullSolutionZh": "尚餘＝1−0.63＝0.37 W\n因為尚餘＞0，用 1 W 額定電阻是足夠／偏安全的。\n答：0.37 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.036 W，額定功率＝0.25 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.036,
+                "rating": 0.25,
+                "I_mA": 12
+              },
+              "answer": 0.214,
+              "stepHint": "尚餘＝額定−實際＝0.25−0.036",
+              "fullSolutionZh": "尚餘＝0.25−0.036＝0.214 W\n因為尚餘＞0，用 0.25 W 額定電阻是足夠／偏安全的。\n答：0.214 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.3456 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.3456,
+                "rating": 0.5,
+                "I_mA": 24
+              },
+              "answer": 0.1544,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.3456",
+              "fullSolutionZh": "尚餘＝0.5−0.3456＝0.1544 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.1544 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.1755 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.1755,
+                "rating": 0.5,
+                "I_mA": 15
+              },
+              "answer": 0.3245,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.1755",
+              "fullSolutionZh": "尚餘＝0.5−0.1755＝0.3245 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.3245 W"
+            }
+          ]
+        },
+        {
+          "id": "led-safe-02",
+          "topic": "led-limit",
+          "stemZh": "限流電阻實際功耗 P＝0.12 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+          "given": {
+            "P": 0.12,
+            "rating": 0.5,
+            "I_mA": 10
+          },
+          "unknown": "margin",
+          "unit": "W",
+          "answer": 0.38,
+          "tolerance": 0.002,
+          "formulaHint": "引導：可用邊條關係？（尚餘＝額定−實際）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "尚餘＝0.5−0.12＝0.38 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.38 W",
+          "wrongTags": [
+            "compare-rating"
+          ],
+          "figure": "assets/led_power.png",
+          "variants": [
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.036 W，額定功率＝0.25 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.036,
+                "rating": 0.25,
+                "I_mA": 6
+              },
+              "answer": 0.214,
+              "stepHint": "尚餘＝額定−實際＝0.25−0.036",
+              "fullSolutionZh": "尚餘＝0.25−0.036＝0.214 W\n因為尚餘＞0，用 0.25 W 額定電阻是足夠／偏安全的。\n答：0.214 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.12 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.12,
+                "rating": 0.5,
+                "I_mA": 10
+              },
+              "answer": 0.38,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.12",
+              "fullSolutionZh": "尚餘＝0.5−0.12＝0.38 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.38 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.63 W，額定功率＝1 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.63,
+                "rating": 1,
+                "I_mA": 30
+              },
+              "answer": 0.37,
+              "stepHint": "尚餘＝額定−實際＝1−0.63",
+              "fullSolutionZh": "尚餘＝1−0.63＝0.37 W\n因為尚餘＞0，用 1 W 額定電阻是足夠／偏安全的。\n答：0.37 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.036 W，額定功率＝0.25 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.036,
+                "rating": 0.25,
+                "I_mA": 12
+              },
+              "answer": 0.214,
+              "stepHint": "尚餘＝額定−實際＝0.25−0.036",
+              "fullSolutionZh": "尚餘＝0.25−0.036＝0.214 W\n因為尚餘＞0，用 0.25 W 額定電阻是足夠／偏安全的。\n答：0.214 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.3456 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.3456,
+                "rating": 0.5,
+                "I_mA": 24
+              },
+              "answer": 0.1544,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.3456",
+              "fullSolutionZh": "尚餘＝0.5−0.3456＝0.1544 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.1544 W"
+            },
+            {
+              "stemZh": "限流電阻實際功耗 P＝0.1755 W，額定功率＝0.5 W。求「額定−實際」尚餘功率（W）。（>0 表示額定足夠）",
+              "given": {
+                "P": 0.1755,
+                "rating": 0.5,
+                "I_mA": 15
+              },
+              "answer": 0.3245,
+              "stepHint": "尚餘＝額定−實際＝0.5−0.1755",
+              "fullSolutionZh": "尚餘＝0.5−0.1755＝0.3245 W\n因為尚餘＞0，用 0.5 W 額定電阻是足夠／偏安全的。\n答：0.3245 W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "battery-ir",
+      "titleZh": "電池內阻·後段",
+      "order": 11,
+      "kind": "practice",
+      "conceptZh": "真實電池可看成理想電動勢 E 串聯內阻 r。有電流時：I＝E／(R＋r)，端電壓 V＝E−I r＝I R。端電壓永遠低於 E（有負載時）。",
+      "demoZh": "示範：E＝12 V，r＝1 Ω，R＝99 Ω → I＝12／100＝0.12 A；V＝12−0.12×1＝11.88 V。提示卡例子（E＝1.5／r＝0.5／I＝0.2／V＝1.4）永不入練習池。",
+      "figure": "assets/battery_internal_r.png",
+      "extraFigures": [
+        "assets/battery_pack.png",
+        "assets/formula_card.png"
+      ],
+      "unlockPrev": "led-limit",
+      "questions": [
+        {
+          "id": "bat-i-01",
+          "topic": "battery-ir",
+          "stemZh": "電池電動勢 E＝12 V，內阻 r＝1 Ω，外接負載 R＝99 Ω。求電流 I（A）。",
+          "given": {
+            "E": 12,
+            "r": 1,
+            "R": 99
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 0.12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（I＝E／(R＋r)）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝E／(R＋r)＝12／(99＋1)＝12／100＝0.12 A\n答：I＝0.12 A",
+          "wrongTags": [
+            "forgot-internal-r"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝1 Ω，外接負載 R＝99 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 1,
+                "R": 99
+              },
+              "answer": 0.12,
+              "stepHint": "I＝E／(R＋r)＝12／(99＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(99＋1)＝12／100＝0.12 A\n答：I＝0.12 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝2 Ω，外接負載 R＝38 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 2,
+                "R": 38
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝12／(38＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(38＋2)＝12／40＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝3 V，內阻 r＝1 Ω，外接負載 R＝9 Ω。求電流 I（A）。",
+              "given": {
+                "E": 3,
+                "r": 1,
+                "R": 9
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝3／(9＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝3／(9＋1)＝3／10＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝18 V，內阻 r＝2 Ω，外接負載 R＝58 Ω。求電流 I（A）。",
+              "given": {
+                "E": 18,
+                "r": 2,
+                "R": 58
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝18／(58＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝18／(58＋2)＝18／60＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝9 V，內阻 r＝3 Ω，外接負載 R＝27 Ω。求電流 I（A）。",
+              "given": {
+                "E": 9,
+                "r": 3,
+                "R": 27
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝9／(27＋3)",
+              "fullSolutionZh": "I＝E／(R＋r)＝9／(27＋3)＝9／30＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝1.5 Ω，外接負載 R＝38.5 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 1.5,
+                "R": 38.5
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝12／(38.5＋1.5)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(38.5＋1.5)＝12／40＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝24 V，內阻 r＝2 Ω，外接負載 R＝78 Ω。求電流 I（A）。",
+              "given": {
+                "E": 24,
+                "r": 2,
+                "R": 78
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝24／(78＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝24／(78＋2)＝24／80＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝6 V，內阻 r＝1 Ω，外接負載 R＝19 Ω。求電流 I（A）。",
+              "given": {
+                "E": 6,
+                "r": 1,
+                "R": 19
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝6／(19＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝6／(19＋1)＝6／20＝0.3 A\n答：I＝0.3 A"
+            }
+          ]
+        },
+        {
+          "id": "bat-i-02",
+          "topic": "battery-ir",
+          "stemZh": "電池電動勢 E＝12 V，內阻 r＝2 Ω，外接負載 R＝38 Ω。求電流 I（A）。",
+          "given": {
+            "E": 12,
+            "r": 2,
+            "R": 38
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 0.3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（I＝E／(R＋r)）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I＝E／(R＋r)＝12／(38＋2)＝12／40＝0.3 A\n答：I＝0.3 A",
+          "wrongTags": [
+            "forgot-internal-r"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝1 Ω，外接負載 R＝99 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 1,
+                "R": 99
+              },
+              "answer": 0.12,
+              "stepHint": "I＝E／(R＋r)＝12／(99＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(99＋1)＝12／100＝0.12 A\n答：I＝0.12 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝2 Ω，外接負載 R＝38 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 2,
+                "R": 38
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝12／(38＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(38＋2)＝12／40＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝3 V，內阻 r＝1 Ω，外接負載 R＝9 Ω。求電流 I（A）。",
+              "given": {
+                "E": 3,
+                "r": 1,
+                "R": 9
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝3／(9＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝3／(9＋1)＝3／10＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝18 V，內阻 r＝2 Ω，外接負載 R＝58 Ω。求電流 I（A）。",
+              "given": {
+                "E": 18,
+                "r": 2,
+                "R": 58
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝18／(58＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝18／(58＋2)＝18／60＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝9 V，內阻 r＝3 Ω，外接負載 R＝27 Ω。求電流 I（A）。",
+              "given": {
+                "E": 9,
+                "r": 3,
+                "R": 27
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝9／(27＋3)",
+              "fullSolutionZh": "I＝E／(R＋r)＝9／(27＋3)＝9／30＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝12 V，內阻 r＝1.5 Ω，外接負載 R＝38.5 Ω。求電流 I（A）。",
+              "given": {
+                "E": 12,
+                "r": 1.5,
+                "R": 38.5
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝12／(38.5＋1.5)",
+              "fullSolutionZh": "I＝E／(R＋r)＝12／(38.5＋1.5)＝12／40＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝24 V，內阻 r＝2 Ω，外接負載 R＝78 Ω。求電流 I（A）。",
+              "given": {
+                "E": 24,
+                "r": 2,
+                "R": 78
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝24／(78＋2)",
+              "fullSolutionZh": "I＝E／(R＋r)＝24／(78＋2)＝24／80＝0.3 A\n答：I＝0.3 A"
+            },
+            {
+              "stemZh": "電池電動勢 E＝6 V，內阻 r＝1 Ω，外接負載 R＝19 Ω。求電流 I（A）。",
+              "given": {
+                "E": 6,
+                "r": 1,
+                "R": 19
+              },
+              "answer": 0.3,
+              "stepHint": "I＝E／(R＋r)＝6／(19＋1)",
+              "fullSolutionZh": "I＝E／(R＋r)＝6／(19＋1)＝6／20＝0.3 A\n答：I＝0.3 A"
+            }
+          ]
+        },
+        {
+          "id": "bat-v-01",
+          "topic": "battery-ir",
+          "stemZh": "E＝12 V，I＝0.12 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+          "given": {
+            "E": 12,
+            "I": 0.12,
+            "r": 1
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 11.88,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（V＝E−I r（亦＝I R））想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "V＝E−I r＝12−0.12×1＝12−0.12＝11.88 V\n答：V＝11.88 V",
+          "wrongTags": [
+            "used-E-as-V"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "E＝12 V，I＝0.12 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 12,
+                "I": 0.12,
+                "r": 1
+              },
+              "answer": 11.88,
+              "stepHint": "V＝E−I r＝12−0.12×1",
+              "fullSolutionZh": "V＝E−I r＝12−0.12×1＝12−0.12＝11.88 V\n答：V＝11.88 V"
+            },
+            {
+              "stemZh": "E＝12 V，I＝0.3 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 12,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 11.4,
+              "stepHint": "V＝E−I r＝12−0.3×2",
+              "fullSolutionZh": "V＝E−I r＝12−0.3×2＝12−0.6＝11.4 V\n答：V＝11.4 V"
+            },
+            {
+              "stemZh": "E＝3 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 3,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 2.7,
+              "stepHint": "V＝E−I r＝3−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝3−0.3×1＝3−0.3＝2.7 V\n答：V＝2.7 V"
+            },
+            {
+              "stemZh": "E＝18 V，I＝0.4 A，內阻 r＝1.5 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 18,
+                "I": 0.4,
+                "r": 1.5
+              },
+              "answer": 17.4,
+              "stepHint": "V＝E−I r＝18−0.4×1.5",
+              "fullSolutionZh": "V＝E−I r＝18−0.4×1.5＝18−0.6＝17.4 V\n答：V＝17.4 V"
+            },
+            {
+              "stemZh": "E＝9 V，I＝0.3 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 9,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 8.4,
+              "stepHint": "V＝E−I r＝9−0.3×2",
+              "fullSolutionZh": "V＝E−I r＝9−0.3×2＝9−0.6＝8.4 V\n答：V＝8.4 V"
+            },
+            {
+              "stemZh": "E＝15 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 15,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 14.7,
+              "stepHint": "V＝E−I r＝15−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝15−0.3×1＝15−0.3＝14.7 V\n答：V＝14.7 V"
+            },
+            {
+              "stemZh": "E＝6 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 6,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 5.7,
+              "stepHint": "V＝E−I r＝6−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝6−0.3×1＝6−0.3＝5.7 V\n答：V＝5.7 V"
+            },
+            {
+              "stemZh": "E＝24 V，I＝0.4 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 24,
+                "I": 0.4,
+                "r": 2
+              },
+              "answer": 23.2,
+              "stepHint": "V＝E−I r＝24−0.4×2",
+              "fullSolutionZh": "V＝E−I r＝24−0.4×2＝24−0.8＝23.2 V\n答：V＝23.2 V"
+            }
+          ]
+        },
+        {
+          "id": "bat-v-02",
+          "topic": "battery-ir",
+          "stemZh": "E＝12 V，I＝0.3 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+          "given": {
+            "E": 12,
+            "I": 0.3,
+            "r": 2
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 11.4,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（V＝E−I r）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "V＝E−I r＝12−0.3×2＝12−0.6＝11.4 V\n答：V＝11.4 V",
+          "wrongTags": [
+            "used-E-as-V"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "E＝12 V，I＝0.12 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 12,
+                "I": 0.12,
+                "r": 1
+              },
+              "answer": 11.88,
+              "stepHint": "V＝E−I r＝12−0.12×1",
+              "fullSolutionZh": "V＝E−I r＝12−0.12×1＝12−0.12＝11.88 V\n答：V＝11.88 V"
+            },
+            {
+              "stemZh": "E＝12 V，I＝0.3 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 12,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 11.4,
+              "stepHint": "V＝E−I r＝12−0.3×2",
+              "fullSolutionZh": "V＝E−I r＝12−0.3×2＝12−0.6＝11.4 V\n答：V＝11.4 V"
+            },
+            {
+              "stemZh": "E＝3 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 3,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 2.7,
+              "stepHint": "V＝E−I r＝3−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝3−0.3×1＝3−0.3＝2.7 V\n答：V＝2.7 V"
+            },
+            {
+              "stemZh": "E＝18 V，I＝0.4 A，內阻 r＝1.5 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 18,
+                "I": 0.4,
+                "r": 1.5
+              },
+              "answer": 17.4,
+              "stepHint": "V＝E−I r＝18−0.4×1.5",
+              "fullSolutionZh": "V＝E−I r＝18−0.4×1.5＝18−0.6＝17.4 V\n答：V＝17.4 V"
+            },
+            {
+              "stemZh": "E＝9 V，I＝0.3 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 9,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 8.4,
+              "stepHint": "V＝E−I r＝9−0.3×2",
+              "fullSolutionZh": "V＝E−I r＝9−0.3×2＝9−0.6＝8.4 V\n答：V＝8.4 V"
+            },
+            {
+              "stemZh": "E＝15 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 15,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 14.7,
+              "stepHint": "V＝E−I r＝15−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝15−0.3×1＝15−0.3＝14.7 V\n答：V＝14.7 V"
+            },
+            {
+              "stemZh": "E＝6 V，I＝0.3 A，內阻 r＝1 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 6,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 5.7,
+              "stepHint": "V＝E−I r＝6−0.3×1",
+              "fullSolutionZh": "V＝E−I r＝6−0.3×1＝6−0.3＝5.7 V\n答：V＝5.7 V"
+            },
+            {
+              "stemZh": "E＝24 V，I＝0.4 A，內阻 r＝2 Ω。求端電壓 V（V）。",
+              "given": {
+                "E": 24,
+                "I": 0.4,
+                "r": 2
+              },
+              "answer": 23.2,
+              "stepHint": "V＝E−I r＝24−0.4×2",
+              "fullSolutionZh": "V＝E−I r＝24−0.4×2＝24−0.8＝23.2 V\n答：V＝23.2 V"
+            }
+          ]
+        },
+        {
+          "id": "bat-r-01",
+          "topic": "battery-ir",
+          "stemZh": "E＝12 V，端電壓 V＝11.4 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+          "given": {
+            "E": 12,
+            "V": 11.4,
+            "I": 0.3
+          },
+          "unknown": "r",
+          "unit": "Ω",
+          "answer": 2,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（r＝(E−V)／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "r＝(E−V)／I＝(12−11.4)／0.3＝0.6／0.3＝2 Ω\n答：r＝2 Ω",
+          "wrongTags": [
+            "r-formula"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "E＝12 V，端電壓 V＝11.4 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 12,
+                "V": 11.4,
+                "I": 0.3
+              },
+              "answer": 2,
+              "stepHint": "r＝(E−V)／I＝(12−11.4)／0.3",
+              "fullSolutionZh": "r＝(E−V)／I＝(12−11.4)／0.3＝0.6／0.3＝2 Ω\n答：r＝2 Ω"
+            },
+            {
+              "stemZh": "E＝9 V，端電壓 V＝8.4 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 9,
+                "V": 8.4,
+                "I": 0.3
+              },
+              "answer": 2,
+              "stepHint": "r＝(E−V)／I＝(9−8.4)／0.3",
+              "fullSolutionZh": "r＝(E−V)／I＝(9−8.4)／0.3＝0.6／0.3＝2 Ω\n答：r＝2 Ω"
+            },
+            {
+              "stemZh": "E＝3 V，端電壓 V＝2.7 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 3,
+                "V": 2.7,
+                "I": 0.3
+              },
+              "answer": 1,
+              "stepHint": "r＝(E−V)／I＝(3−2.7)／0.3",
+              "fullSolutionZh": "r＝(E−V)／I＝(3−2.7)／0.3＝0.3／0.3＝1 Ω\n答：r＝1 Ω"
+            },
+            {
+              "stemZh": "E＝18 V，端電壓 V＝17.4 V，電流 I＝0.4 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 18,
+                "V": 17.4,
+                "I": 0.4
+              },
+              "answer": 1.5,
+              "stepHint": "r＝(E−V)／I＝(18−17.4)／0.4",
+              "fullSolutionZh": "r＝(E−V)／I＝(18−17.4)／0.4＝0.6／0.4＝1.5 Ω\n答：r＝1.5 Ω"
+            },
+            {
+              "stemZh": "E＝15 V，端電壓 V＝14.7 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 15,
+                "V": 14.7,
+                "I": 0.3
+              },
+              "answer": 1,
+              "stepHint": "r＝(E−V)／I＝(15−14.7)／0.3",
+              "fullSolutionZh": "r＝(E−V)／I＝(15−14.7)／0.3＝0.3／0.3＝1 Ω\n答：r＝1 Ω"
+            },
+            {
+              "stemZh": "E＝6 V，端電壓 V＝5.7 V，電流 I＝0.3 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 6,
+                "V": 5.7,
+                "I": 0.3
+              },
+              "answer": 1,
+              "stepHint": "r＝(E−V)／I＝(6−5.7)／0.3",
+              "fullSolutionZh": "r＝(E−V)／I＝(6−5.7)／0.3＝0.3／0.3＝1 Ω\n答：r＝1 Ω"
+            },
+            {
+              "stemZh": "E＝24 V，端電壓 V＝23.2 V，電流 I＝0.4 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 24,
+                "V": 23.2,
+                "I": 0.4
+              },
+              "answer": 2,
+              "stepHint": "r＝(E−V)／I＝(24−23.2)／0.4",
+              "fullSolutionZh": "r＝(E−V)／I＝(24−23.2)／0.4＝0.8／0.4＝2 Ω\n答：r＝2 Ω"
+            },
+            {
+              "stemZh": "E＝12 V，端電壓 V＝11.76 V，電流 I＝0.12 A。求內阻 r（Ω）。",
+              "given": {
+                "E": 12,
+                "V": 11.76,
+                "I": 0.12
+              },
+              "answer": 2,
+              "stepHint": "r＝(E−V)／I＝(12−11.76)／0.12",
+              "fullSolutionZh": "r＝(E−V)／I＝(12−11.76)／0.12＝0.24／0.12＝2 Ω\n答：r＝2 Ω"
+            }
+          ]
+        },
+        {
+          "id": "bat-e-01",
+          "topic": "battery-ir",
+          "stemZh": "端電壓 V＝11.88 V，I＝0.12 A，內阻 r＝1 Ω。求電動勢 E（V）。",
+          "given": {
+            "V": 11.88,
+            "I": 0.12,
+            "r": 1
+          },
+          "unknown": "E",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.02,
+          "formulaHint": "引導：可用邊條關係？（E＝V＋I r）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "E＝V＋I r＝11.88＋0.12×1＝11.88＋0.12＝12 V\n答：E＝12 V",
+          "wrongTags": [
+            "e-formula"
+          ],
+          "figure": "assets/battery_internal_r.png",
+          "variants": [
+            {
+              "stemZh": "端電壓 V＝11.88 V，I＝0.12 A，內阻 r＝1 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 11.88,
+                "I": 0.12,
+                "r": 1
+              },
+              "answer": 12,
+              "stepHint": "E＝V＋I r＝11.88＋0.12×1",
+              "fullSolutionZh": "E＝V＋I r＝11.88＋0.12×1＝11.88＋0.12＝12 V\n答：E＝12 V"
+            },
+            {
+              "stemZh": "端電壓 V＝11.4 V，I＝0.3 A，內阻 r＝2 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 11.4,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 12,
+              "stepHint": "E＝V＋I r＝11.4＋0.3×2",
+              "fullSolutionZh": "E＝V＋I r＝11.4＋0.3×2＝11.4＋0.6＝12 V\n答：E＝12 V"
+            },
+            {
+              "stemZh": "端電壓 V＝2.7 V，I＝0.3 A，內阻 r＝1 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 2.7,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 3,
+              "stepHint": "E＝V＋I r＝2.7＋0.3×1",
+              "fullSolutionZh": "E＝V＋I r＝2.7＋0.3×1＝2.7＋0.3＝3 V\n答：E＝3 V"
+            },
+            {
+              "stemZh": "端電壓 V＝17.4 V，I＝0.4 A，內阻 r＝1.5 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 17.4,
+                "I": 0.4,
+                "r": 1.5
+              },
+              "answer": 18,
+              "stepHint": "E＝V＋I r＝17.4＋0.4×1.5",
+              "fullSolutionZh": "E＝V＋I r＝17.4＋0.4×1.5＝17.4＋0.6＝18 V\n答：E＝18 V"
+            },
+            {
+              "stemZh": "端電壓 V＝8.4 V，I＝0.3 A，內阻 r＝2 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 8.4,
+                "I": 0.3,
+                "r": 2
+              },
+              "answer": 9,
+              "stepHint": "E＝V＋I r＝8.4＋0.3×2",
+              "fullSolutionZh": "E＝V＋I r＝8.4＋0.3×2＝8.4＋0.6＝9 V\n答：E＝9 V"
+            },
+            {
+              "stemZh": "端電壓 V＝14.7 V，I＝0.3 A，內阻 r＝1 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 14.7,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 15,
+              "stepHint": "E＝V＋I r＝14.7＋0.3×1",
+              "fullSolutionZh": "E＝V＋I r＝14.7＋0.3×1＝14.7＋0.3＝15 V\n答：E＝15 V"
+            },
+            {
+              "stemZh": "端電壓 V＝5.7 V，I＝0.3 A，內阻 r＝1 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 5.7,
+                "I": 0.3,
+                "r": 1
+              },
+              "answer": 6,
+              "stepHint": "E＝V＋I r＝5.7＋0.3×1",
+              "fullSolutionZh": "E＝V＋I r＝5.7＋0.3×1＝5.7＋0.3＝6 V\n答：E＝6 V"
+            },
+            {
+              "stemZh": "端電壓 V＝23.2 V，I＝0.4 A，內阻 r＝2 Ω。求電動勢 E（V）。",
+              "given": {
+                "V": 23.2,
+                "I": 0.4,
+                "r": 2
+              },
+              "answer": 24,
+              "stepHint": "E＝V＋I r＝23.2＋0.4×2",
+              "fullSolutionZh": "E＝V＋I r＝23.2＋0.4×2＝23.2＋0.8＝24 V\n答：E＝24 V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "boss-mix",
+      "titleZh": "綜合小測",
+      "order": 12,
+      "kind": "boss",
+      "conceptZh": "綜合歐姆定律、分壓、分流。先判斷「求邊個量」，再揀公式。",
+      "demoZh": "解題口訣：① 睇齊單位 ② 寫公式 ③ 代入 ④ 寫單位答案。",
+      "figure": "assets/step_solve.png",
+      "unlockPrev": "battery-ir",
+      "questions": [
+        {
+          "id": "boss-01",
+          "topic": "solve-v",
+          "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+          "given": {
+            "I": 3,
+            "R": 4
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 12,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V",
+          "wrongTags": [],
+          "figure": "assets/find_V.png",
+          "variants": [
+            {
+              "stemZh": "I＝3 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 4
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝3 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×4＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝1.5 A，R＝8 Ω，求 V。",
+              "given": {
+                "I": 1.5,
+                "R": 8
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1.5 × 8",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.5×8＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝4 A，R＝2.5 Ω，求 V。",
+              "given": {
+                "I": 4,
+                "R": 2.5
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝4 × 2.5",
+              "fullSolutionZh": "用公式 V＝I R\nV＝4×2.5＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝0.2 A，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 50
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝0.2 × 50",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.2×50＝10\n答：V＝10 V"
+            },
+            {
+              "stemZh": "I＝6 A，R＝3 Ω，求 V。",
+              "given": {
+                "I": 6,
+                "R": 3
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝6 × 3",
+              "fullSolutionZh": "用公式 V＝I R\nV＝6×3＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1.2 A，R＝15 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 15
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝1.2 × 15",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1.2×15＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝5 A，R＝1.6 Ω，求 V。",
+              "given": {
+                "I": 5,
+                "R": 1.6
+              },
+              "answer": 8,
+              "stepHint": "代入：V＝5 × 1.6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝5×1.6＝8\n答：V＝8 V"
+            },
+            {
+              "stemZh": "I＝0.8 A，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 25
+              },
+              "answer": 20,
+              "stepHint": "代入：V＝0.8 × 25",
+              "fullSolutionZh": "用公式 V＝I R\nV＝0.8×25＝20\n答：V＝20 V"
+            },
+            {
+              "stemZh": "I＝3 A，R＝6 Ω，求 V。",
+              "given": {
+                "I": 3,
+                "R": 6
+              },
+              "answer": 18,
+              "stepHint": "代入：V＝3 × 6",
+              "fullSolutionZh": "用公式 V＝I R\nV＝3×6＝18\n答：V＝18 V"
+            },
+            {
+              "stemZh": "I＝1 A，R＝12 Ω，求 V。",
+              "given": {
+                "I": 1,
+                "R": 12
+              },
+              "answer": 12,
+              "stepHint": "代入：V＝1 × 12",
+              "fullSolutionZh": "用公式 V＝I R\nV＝1×12＝12\n答：V＝12 V"
+            },
+            {
+              "stemZh": "I＝2.5 A，R＝4 Ω，求 V。",
+              "given": {
+                "I": 2.5,
+                "R": 4
+              },
+              "answer": 10,
+              "stepHint": "代入：V＝2.5 × 4",
+              "fullSolutionZh": "用公式 V＝I R\nV＝2.5×4＝10\n答：V＝10 V"
+            }
+          ],
+          "gen": "solve-v"
+        },
+        {
+          "id": "boss-02",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+          "given": {
+            "V": 12,
+            "R": 4
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A",
+          "wrongTags": [],
+          "figure": "assets/find_I.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 12,
+                "R": 4
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝12 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝12／4＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 Ω，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝9 ÷ 3",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝9／3＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝24 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 24,
+                "R": 8
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝24 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝24／8＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 Ω，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝15 ÷ 5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝15／5＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝6 V，R＝12 Ω，求 I。",
+              "given": {
+                "V": 6,
+                "R": 12
+              },
+              "answer": 0.5,
+              "stepHint": "代入：I＝6 ÷ 12",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝6／12＝0.5\n答：I＝0.5 A"
+            },
+            {
+              "stemZh": "V＝10 V，R＝25 Ω，求 I。",
+              "given": {
+                "V": 10,
+                "R": 25
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝10 ÷ 25",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝10／25＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 Ω，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝18 ÷ 6",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝18／6＝3\n答：I＝3 A"
+            },
+            {
+              "stemZh": "V＝5 V，R＝2.5 Ω，求 I。",
+              "given": {
+                "V": 5,
+                "R": 2.5
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝5 ÷ 2.5",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝5／2.5＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝20 V，R＝50 Ω，求 I。",
+              "given": {
+                "V": 20,
+                "R": 50
+              },
+              "answer": 0.4,
+              "stepHint": "代入：I＝20 ÷ 50",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝20／50＝0.4\n答：I＝0.4 A"
+            },
+            {
+              "stemZh": "V＝8 V，R＝4 Ω，求 I。",
+              "given": {
+                "V": 8,
+                "R": 4
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝8 ÷ 4",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝8／4＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝16 V，R＝8 Ω，求 I。",
+              "given": {
+                "V": 16,
+                "R": 8
+              },
+              "answer": 2,
+              "stepHint": "代入：I＝16 ÷ 8",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝16／8＝2\n答：I＝2 A"
+            },
+            {
+              "stemZh": "V＝21 V，R＝7 Ω，求 I。",
+              "given": {
+                "V": 21,
+                "R": 7
+              },
+              "answer": 3,
+              "stepHint": "代入：I＝21 ÷ 7",
+              "fullSolutionZh": "用公式 I＝V／R\nI＝21／7＝3\n答：I＝3 A"
+            }
+          ],
+          "gen": "solve-i"
+        },
+        {
+          "id": "boss-03",
+          "topic": "solve-r",
+          "stemZh": "V＝12 V，I＝2 A，求 R。",
+          "given": {
+            "V": 12,
+            "I": 2
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω",
+          "wrongTags": [],
+          "figure": "assets/find_R.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，I＝2 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 2
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝12 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／2＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝3 A，求 R。",
+              "given": {
+                "V": 9,
+                "I": 3
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝9 ÷ 3",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝9／3＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝24 V，I＝4 A，求 R。",
+              "given": {
+                "V": 24,
+                "I": 4
+              },
+              "answer": 6,
+              "stepHint": "代入：R＝24 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝24／4＝6\n答：R＝6 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝5 A，求 R。",
+              "given": {
+                "V": 15,
+                "I": 5
+              },
+              "answer": 3,
+              "stepHint": "代入：R＝15 ÷ 5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝15／5＝3\n答：R＝3 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝1.5 A，求 R。",
+              "given": {
+                "V": 6,
+                "I": 1.5
+              },
+              "answer": 4,
+              "stepHint": "代入：R＝6 ÷ 1.5",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝6／1.5＝4\n答：R＝4 Ω"
+            },
+            {
+              "stemZh": "V＝18 V，I＝2 A，求 R。",
+              "given": {
+                "V": 18,
+                "I": 2
+              },
+              "answer": 9,
+              "stepHint": "代入：R＝18 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝18／2＝9\n答：R＝9 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝0.02 A，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.02
+              },
+              "answer": 600,
+              "stepHint": "代入：R＝12 ÷ 0.02",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝12／0.02＝600\n答：R＝600 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝1.6 A，求 R。",
+              "given": {
+                "V": 8,
+                "I": 1.6
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝8 ÷ 1.6",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝8／1.6＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝20 V，I＝4 A，求 R。",
+              "given": {
+                "V": 20,
+                "I": 4
+              },
+              "answer": 5,
+              "stepHint": "代入：R＝20 ÷ 4",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝20／4＝5\n答：R＝5 Ω"
+            },
+            {
+              "stemZh": "V＝16 V，I＝2 A，求 R。",
+              "given": {
+                "V": 16,
+                "I": 2
+              },
+              "answer": 8,
+              "stepHint": "代入：R＝16 ÷ 2",
+              "fullSolutionZh": "用公式 R＝V／I\nR＝16／2＝8\n答：R＝8 Ω"
+            }
+          ],
+          "gen": "solve-r"
+        },
+        {
+          "id": "boss-04",
+          "topic": "divider",
+          "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+          "given": {
+            "V": 12,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "V1",
+          "unit": "V",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分壓：V₁＝V×{{frac:R₁|R₁＋R₂}}\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/voltage_divider.png",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R₁＝2 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 12,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "V₁＝12×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝12×2／(2＋4)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝6 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "V₁＝18×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝18×3／(3＋6)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "V₁＝20×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝20×5／(5＋15)＝5\n答：V₁＝5 V"
+            },
+            {
+              "stemZh": "V＝16 V，R₁＝4 Ω，R₂＝12 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 16,
+                "R1": 4,
+                "R2": 12
+              },
+              "answer": 4,
+              "stepHint": "V₁＝16×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝16×4／(4＋12)＝4\n答：V₁＝4 V"
+            },
+            {
+              "stemZh": "V＝30 V，R₁＝2 Ω，R₂＝8 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 30,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 6,
+              "stepHint": "V₁＝30×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝30×2／(2＋8)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝1 Ω，R₂＝3 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 8,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 2,
+              "stepHint": "V₁＝8×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝8×1／(1＋3)＝2\n答：V₁＝2 V"
+            },
+            {
+              "stemZh": "V＝14 V，R₁＝3 Ω，R₂＝4 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 14,
+                "R1": 3,
+                "R2": 4
+              },
+              "answer": 6,
+              "stepHint": "V₁＝14×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝14×3／(3＋4)＝6\n答：V₁＝6 V"
+            },
+            {
+              "stemZh": "V＝21 V，R₁＝2 Ω，R₂＝5 Ω，求 R₁ 兩端電壓 V₁。",
+              "given": {
+                "V": 21,
+                "R1": 2,
+                "R2": 5
+              },
+              "answer": 6,
+              "stepHint": "V₁＝21×R₁／(R₁＋R₂)",
+              "fullSolutionZh": "分壓：V₁＝V×R₁／(R₁＋R₂)\nV₁＝21×2／(2＋5)＝6\n答：V₁＝6 V"
+            }
+          ],
+          "gen": "divider"
+        },
+        {
+          "id": "boss-05",
+          "topic": "shunt",
+          "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+          "given": {
+            "I": 6,
+            "R1": 2,
+            "R2": 4
+          },
+          "unknown": "I1",
+          "unit": "A",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "分流：I₁＝I×{{frac:R₂|R₁＋R₂}}\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/current_divider.png",
+          "variants": [
+            {
+              "stemZh": "I＝6 A，R₁＝2 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 6,
+                "R1": 2,
+                "R2": 4
+              },
+              "answer": 4,
+              "stepHint": "I₁＝6×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝6×4／(2＋4)＝4\n答：I₁＝4 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "I₁＝8×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝8×6／(2＋6)＝6\n答：I₁＝6 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝1 Ω，R₂＝4 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 10,
+                "R1": 1,
+                "R2": 4
+              },
+              "answer": 8,
+              "stepHint": "I₁＝10×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝10×4／(1＋4)＝8\n答：I₁＝8 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝3 Ω，R₂＝9 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 12,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 9,
+              "stepHint": "I₁＝12×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝12×9／(3＋9)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝2 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 15,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 9,
+              "stepHint": "I₁＝15×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝15×3／(2＋3)＝9\n答：I₁＝9 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝4 A，R₁＝1 Ω，R₂＝3 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 4,
+                "R1": 1,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "I₁＝4×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝4×3／(1＋3)＝3\n答：I₁＝3 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            },
+            {
+              "stemZh": "I＝20 A，R₁＝4 Ω，R₂＝6 Ω，求流經 R₁ 的電流 I₁。",
+              "given": {
+                "I": 20,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 12,
+              "stepHint": "I₁＝20×R₂／(R₁＋R₂)",
+              "fullSolutionZh": "分流：I₁＝I×R₂／(R₁＋R₂)\nI₁＝20×6／(4＋6)＝12\n答：I₁＝12 A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）"
+            }
+          ],
+          "gen": "shunt"
+        },
+        {
+          "id": "boss-06",
+          "topic": "solve-v",
+          "stemZh": "I＝80 mA，R＝50 Ω，求 V。",
+          "given": {
+            "I": 0.08,
+            "R": 50,
+            "I_mA": 80
+          },
+          "unknown": "V",
+          "unit": "V",
+          "answer": 4,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：V＝I R）想清楚先代入。",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 V＝I R\nV＝0.08×50＝4\n答：V＝4 V",
+          "wrongTags": [
+            "unit-mA"
+          ],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "I＝80 mA，R＝50 Ω，求 V。",
+              "given": {
+                "I": 0.08,
+                "R": 50,
+                "I_mA": 80
+              },
+              "answer": 4,
+              "stepHint": "代入：V＝I(先換 A) × 50",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 V＝I R\nV＝0.08×50＝4\n答：V＝4 V"
+            },
+            {
+              "stemZh": "I＝120 mA，R＝40 Ω，求 V。",
+              "given": {
+                "I": 0.12,
+                "R": 40,
+                "I_mA": 120
+              },
+              "answer": 4.8,
+              "stepHint": "代入：V＝I(先換 A) × 40",
+              "fullSolutionZh": "先換單位：I＝120 mA＝0.12 A\n用公式 V＝I R\nV＝0.12×40＝4.8\n答：V＝4.8 V"
+            },
+            {
+              "stemZh": "I＝160 mA，R＝25 Ω，求 V。",
+              "given": {
+                "I": 0.16,
+                "R": 25,
+                "I_mA": 160
+              },
+              "answer": 4,
+              "stepHint": "代入：V＝I(先換 A) × 25",
+              "fullSolutionZh": "先換單位：I＝160 mA＝0.16 A\n用公式 V＝I R\nV＝0.16×25＝4\n答：V＝4 V"
+            },
+            {
+              "stemZh": "I＝200 mA，R＝30 Ω，求 V。",
+              "given": {
+                "I": 0.2,
+                "R": 30,
+                "I_mA": 200
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 30",
+              "fullSolutionZh": "先換單位：I＝200 mA＝0.2 A\n用公式 V＝I R\nV＝0.2×30＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝300 mA，R＝20 Ω，求 V。",
+              "given": {
+                "I": 0.3,
+                "R": 20,
+                "I_mA": 300
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 20",
+              "fullSolutionZh": "先換單位：I＝300 mA＝0.3 A\n用公式 V＝I R\nV＝0.3×20＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝400 mA，R＝15 Ω，求 V。",
+              "given": {
+                "I": 0.4,
+                "R": 15,
+                "I_mA": 400
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 15",
+              "fullSolutionZh": "先換單位：I＝400 mA＝0.4 A\n用公式 V＝I R\nV＝0.4×15＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝600 mA，R＝10 Ω，求 V。",
+              "given": {
+                "I": 0.6,
+                "R": 10,
+                "I_mA": 600
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 10",
+              "fullSolutionZh": "先換單位：I＝600 mA＝0.6 A\n用公式 V＝I R\nV＝0.6×10＝6\n答：V＝6 V"
+            },
+            {
+              "stemZh": "I＝800 mA，R＝12 Ω，求 V。",
+              "given": {
+                "I": 0.8,
+                "R": 12,
+                "I_mA": 800
+              },
+              "answer": 9.6,
+              "stepHint": "代入：V＝I(先換 A) × 12",
+              "fullSolutionZh": "先換單位：I＝800 mA＝0.8 A\n用公式 V＝I R\nV＝0.8×12＝9.6\n答：V＝9.6 V"
+            },
+            {
+              "stemZh": "I＝1200 mA，R＝5 Ω，求 V。",
+              "given": {
+                "I": 1.2,
+                "R": 5,
+                "I_mA": 1200
+              },
+              "answer": 6,
+              "stepHint": "代入：V＝I(先換 A) × 5",
+              "fullSolutionZh": "先換單位：I＝1200 mA＝1.2 A\n用公式 V＝I R\nV＝1.2×5＝6\n答：V＝6 V"
+            }
+          ],
+          "gen": "solve-v-mA"
+        },
+        {
+          "id": "boss-07",
+          "topic": "solve-i",
+          "stemZh": "V＝12 V，R＝1 kΩ，求 I。",
+          "given": {
+            "V": 12,
+            "R": 1000,
+            "R_kΩ": 1
+          },
+          "unknown": "I",
+          "unit": "A",
+          "answer": 0.012,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。",
+          "stepHint": "引導：代入：I＝V ÷ R(先換 Ω)——你會先做邊一步？",
+          "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝12／1000＝0.012 A＝12 mA\n答：I＝0.012 A（或 12 mA）",
+          "wrongTags": [
+            "unit-kΩ"
+          ],
+          "figure": null,
+          "acceptAlt": [
+            12
+          ],
+          "acceptAltNote": "亦接受 12（單位 mA）",
+          "variants": [
+            {
+              "stemZh": "V＝12 V，R＝1 kΩ，求 I。",
+              "given": {
+                "V": 12,
+                "R": 1000,
+                "R_kΩ": 1
+              },
+              "answer": 0.012,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝12／1000＝0.012 A＝12 mA\n答：I＝0.012 A（或 12 mA）",
+              "acceptAlt": [
+                12
+              ],
+              "acceptAltNote": "亦接受 12（單位 mA）"
+            },
+            {
+              "stemZh": "V＝12 V，R＝3 kΩ，求 I。",
+              "given": {
+                "V": 12,
+                "R": 3000,
+                "R_kΩ": 3
+              },
+              "answer": 0.004,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝3 kΩ＝3000 Ω\n用公式 I＝V／R\nI＝12／3000＝0.004 A＝4 mA\n答：I＝0.004 A（或 4 mA）",
+              "acceptAlt": [
+                4
+              ],
+              "acceptAltNote": "亦接受 4（單位 mA）"
+            },
+            {
+              "stemZh": "V＝9 V，R＝3 kΩ，求 I。",
+              "given": {
+                "V": 9,
+                "R": 3000,
+                "R_kΩ": 3
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝3 kΩ＝3000 Ω\n用公式 I＝V／R\nI＝9／3000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝24 V，R＝4 kΩ，求 I。",
+              "given": {
+                "V": 24,
+                "R": 4000,
+                "R_kΩ": 4
+              },
+              "answer": 0.006,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝4 kΩ＝4000 Ω\n用公式 I＝V／R\nI＝24／4000＝0.006 A＝6 mA\n答：I＝0.006 A（或 6 mA）",
+              "acceptAlt": [
+                6
+              ],
+              "acceptAltNote": "亦接受 6（單位 mA）"
+            },
+            {
+              "stemZh": "V＝6 V，R＝1.5 kΩ，求 I。",
+              "given": {
+                "V": 6,
+                "R": 1500,
+                "R_kΩ": 1.5
+              },
+              "answer": 0.004,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1.5 kΩ＝1500 Ω\n用公式 I＝V／R\nI＝6／1500＝0.004 A＝4 mA\n答：I＝0.004 A（或 4 mA）",
+              "acceptAlt": [
+                4
+              ],
+              "acceptAltNote": "亦接受 4（單位 mA）"
+            },
+            {
+              "stemZh": "V＝15 V，R＝5 kΩ，求 I。",
+              "given": {
+                "V": 15,
+                "R": 5000,
+                "R_kΩ": 5
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝5 kΩ＝5000 Ω\n用公式 I＝V／R\nI＝15／5000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝18 V，R＝6 kΩ，求 I。",
+              "given": {
+                "V": 18,
+                "R": 6000,
+                "R_kΩ": 6
+              },
+              "answer": 0.003,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝6 kΩ＝6000 Ω\n用公式 I＝V／R\nI＝18／6000＝0.003 A＝3 mA\n答：I＝0.003 A（或 3 mA）",
+              "acceptAlt": [
+                3
+              ],
+              "acceptAltNote": "亦接受 3（單位 mA）"
+            },
+            {
+              "stemZh": "V＝10 V，R＝1 kΩ，求 I。",
+              "given": {
+                "V": 10,
+                "R": 1000,
+                "R_kΩ": 1
+              },
+              "answer": 0.01,
+              "stepHint": "代入：I＝V ÷ R(先換 Ω)",
+              "fullSolutionZh": "先換單位：R＝1 kΩ＝1000 Ω\n用公式 I＝V／R\nI＝10／1000＝0.01 A＝10 mA\n答：I＝0.01 A（或 10 mA）",
+              "acceptAlt": [
+                10
+              ],
+              "acceptAltNote": "亦接受 10（單位 mA）"
+            }
+          ],
+          "gen": "solve-i-kOhm"
+        },
+        {
+          "id": "boss-08",
+          "topic": "solve-r",
+          "stemZh": "V＝5 V，I＝80 mA，求 R。",
+          "given": {
+            "V": 5,
+            "I": 0.08,
+            "I_mA": 80
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 62.5,
+          "tolerance": 0.01,
+          "formulaHint": "引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。",
+          "stepHint": "引導：代入：R＝V ÷ I(先換 A)——你會先做邊一步？",
+          "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝5／0.08＝62.5\n答：R＝62.5 Ω",
+          "wrongTags": [
+            "unit-mA"
+          ],
+          "figure": null,
+          "variants": [
+            {
+              "stemZh": "V＝5 V，I＝80 mA，求 R。",
+              "given": {
+                "V": 5,
+                "I": 0.08,
+                "I_mA": 80
+              },
+              "answer": 62.5,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝5／0.08＝62.5\n答：R＝62.5 Ω"
+            },
+            {
+              "stemZh": "V＝6 V，I＝120 mA，求 R。",
+              "given": {
+                "V": 6,
+                "I": 0.12,
+                "I_mA": 120
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝120 mA＝0.12 A\n用公式 R＝V／I\nR＝6／0.12＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝9 V，I＝150 mA，求 R。",
+              "given": {
+                "V": 9,
+                "I": 0.15,
+                "I_mA": 150
+              },
+              "answer": 60,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝150 mA＝0.15 A\n用公式 R＝V／I\nR＝9／0.15＝60\n答：R＝60 Ω"
+            },
+            {
+              "stemZh": "V＝12 V，I＝200 mA，求 R。",
+              "given": {
+                "V": 12,
+                "I": 0.2,
+                "I_mA": 200
+              },
+              "answer": 60,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝200 mA＝0.2 A\n用公式 R＝V／I\nR＝12／0.2＝60\n答：R＝60 Ω"
+            },
+            {
+              "stemZh": "V＝3 V，I＝60 mA，求 R。",
+              "given": {
+                "V": 3,
+                "I": 0.06,
+                "I_mA": 60
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝60 mA＝0.06 A\n用公式 R＝V／I\nR＝3／0.06＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝10 V，I＝400 mA，求 R。",
+              "given": {
+                "V": 10,
+                "I": 0.4,
+                "I_mA": 400
+              },
+              "answer": 25,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝400 mA＝0.4 A\n用公式 R＝V／I\nR＝10／0.4＝25\n答：R＝25 Ω"
+            },
+            {
+              "stemZh": "V＝8 V，I＝160 mA，求 R。",
+              "given": {
+                "V": 8,
+                "I": 0.16,
+                "I_mA": 160
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝160 mA＝0.16 A\n用公式 R＝V／I\nR＝8／0.16＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝15 V，I＝300 mA，求 R。",
+              "given": {
+                "V": 15,
+                "I": 0.3,
+                "I_mA": 300
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝300 mA＝0.3 A\n用公式 R＝V／I\nR＝15／0.3＝50\n答：R＝50 Ω"
+            },
+            {
+              "stemZh": "V＝4 V，I＝80 mA，求 R。",
+              "given": {
+                "V": 4,
+                "I": 0.08,
+                "I_mA": 80
+              },
+              "answer": 50,
+              "stepHint": "代入：R＝V ÷ I(先換 A)",
+              "fullSolutionZh": "先換單位：I＝80 mA＝0.08 A\n用公式 R＝V／I\nR＝4／0.08＝50\n答：R＝50 Ω"
+            }
+          ],
+          "gen": "solve-r-mA"
+        },
+        {
+          "id": "boss-09",
+          "topic": "divider",
+          "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+          "given": {
+            "V": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "V1,V2",
+          "unit": "V",
+          "answer": 3,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+          "wrongTags": [
+            "forget-series"
+          ],
+          "figure": "assets/series_two_R.png",
+          "answers": {
+            "V1": 3,
+            "V2": 6
+          },
+          "multi": [
+            {
+              "key": "V1",
+              "label": "V₁",
+              "unit": "V",
+              "answer": 3
+            },
+            {
+              "key": "V2",
+              "label": "V₂",
+              "unit": "V",
+              "answer": 6
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "V＝9 V，R₁＝3 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 3,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝9×3／(3＋6)＝3\nV₂＝9×6／(3＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝3 V，V₂＝6 V",
+              "answers": {
+                "V1": 3,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 3
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝10 V，R₁＝4 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 10,
+                "R1": 4,
+                "R2": 6
+              },
+              "answer": 4,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝10×4／(4＋6)＝4\nV₂＝10×6／(4＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝4 V，V₂＝6 V",
+              "answers": {
+                "V1": 4,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝18 V，R₁＝3 Ω，R₂＝9 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 18,
+                "R1": 3,
+                "R2": 9
+              },
+              "answer": 4.5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝18×3／(3＋9)＝4.5\nV₂＝18×9／(3＋9)＝13.5（或 V₂＝V－V₁）\n答：V₁＝4.5 V，V₂＝13.5 V",
+              "answers": {
+                "V1": 4.5,
+                "V2": 13.5
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 4.5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 13.5
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝20 V，R₁＝5 Ω，R₂＝15 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 20,
+                "R1": 5,
+                "R2": 15
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝20×5／(5＋15)＝5\nV₂＝20×15／(5＋15)＝15（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝15 V",
+              "answers": {
+                "V1": 5,
+                "V2": 15
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 15
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝8 V，R₁＝2 Ω，R₂＝6 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 2,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝8×2／(2＋6)＝2\nV₂＝8×6／(2＋6)＝6（或 V₂＝V－V₁）\n答：V₁＝2 V，V₂＝6 V",
+              "answers": {
+                "V1": 2,
+                "V2": 6
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 2
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 6
+                }
+              ]
+            },
+            {
+              "stemZh": "V＝15 V，R₁＝5 Ω，R₂＝10 Ω，求 V₁ 及 V₂。",
+              "given": {
+                "V": 15,
+                "R1": 5,
+                "R2": 10
+              },
+              "answer": 5,
+              "stepHint": "先求 V₁，再求 V₂（或 V₂＝V－V₁）",
+              "fullSolutionZh": "V₁＝15×5／(5＋10)＝5\nV₂＝15×10／(5＋10)＝10（或 V₂＝V－V₁）\n答：V₁＝5 V，V₂＝10 V",
+              "answers": {
+                "V1": 5,
+                "V2": 10
+              },
+              "multi": [
+                {
+                  "key": "V1",
+                  "label": "V₁",
+                  "unit": "V",
+                  "answer": 5
+                },
+                {
+                  "key": "V2",
+                  "label": "V₂",
+                  "unit": "V",
+                  "answer": 10
+                }
+              ]
+            }
+          ],
+          "gen": "divider-both"
+        },
+        {
+          "id": "boss-10",
+          "topic": "shunt",
+          "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+          "given": {
+            "I": 9,
+            "R1": 3,
+            "R2": 6
+          },
+          "unknown": "I1,I2",
+          "unit": "A",
+          "answer": 6,
+          "tolerance": 0.01,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+          "wrongTags": [
+            "forget-parallel",
+            "swap-R"
+          ],
+          "figure": "assets/parallel_two_R.png",
+          "multi": [
+            {
+              "key": "I1",
+              "label": "I₁",
+              "unit": "A",
+              "answer": 6
+            },
+            {
+              "key": "I2",
+              "label": "I₂",
+              "unit": "A",
+              "answer": 3
+            }
+          ],
+          "variants": [
+            {
+              "stemZh": "I＝9 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 9,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝9×6／(3＋6)＝6\nI₂＝9×3／(3＋6)＝3（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝3 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 3
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 3
+              }
+            },
+            {
+              "stemZh": "I＝5 A，R₁＝2 Ω，R₂＝3 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 5,
+                "R1": 2,
+                "R2": 3
+              },
+              "answer": 3,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝5×3／(2＋3)＝3\nI₂＝5×2／(2＋3)＝2（或 I₂＝I－I₁）\n答：I₁＝3 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 3
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 3,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝12 A，R₁＝4 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 12,
+                "R1": 4,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝12×8／(4＋8)＝8\nI₂＝12×4／(4＋8)＝4（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝4 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 4
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 4
+              }
+            },
+            {
+              "stemZh": "I＝8 A，R₁＝2 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 8,
+                "R1": 2,
+                "R2": 6
+              },
+              "answer": 6,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝8×6／(2＋6)＝6\nI₂＝8×2／(2＋6)＝2（或 I₂＝I－I₁）\n答：I₁＝6 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 6
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 6,
+                "I2": 2
+              }
+            },
+            {
+              "stemZh": "I＝15 A，R₁＝3 Ω，R₂＝6 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 15,
+                "R1": 3,
+                "R2": 6
+              },
+              "answer": 10,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝15×6／(3＋6)＝10\nI₂＝15×3／(3＋6)＝5（或 I₂＝I－I₁）\n答：I₁＝10 A，I₂＝5 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 10
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 5
+                }
+              ],
+              "answers": {
+                "I1": 10,
+                "I2": 5
+              }
+            },
+            {
+              "stemZh": "I＝10 A，R₁＝2 Ω，R₂＝8 Ω，求 I₁ 及 I₂。",
+              "given": {
+                "I": 10,
+                "R1": 2,
+                "R2": 8
+              },
+              "answer": 8,
+              "stepHint": "先求 I₁，再求 I₂（或 I₂＝I－I₁）",
+              "fullSolutionZh": "I₁＝10×8／(2＋8)＝8\nI₂＝10×2／(2＋8)＝2（或 I₂＝I－I₁）\n答：I₁＝8 A，I₂＝2 A",
+              "multi": [
+                {
+                  "key": "I1",
+                  "label": "I₁",
+                  "unit": "A",
+                  "answer": 8
+                },
+                {
+                  "key": "I2",
+                  "label": "I₂",
+                  "unit": "A",
+                  "answer": 2
+                }
+              ],
+              "answers": {
+                "I1": 8,
+                "I2": 2
+              }
+            }
+          ],
+          "gen": "shunt-both",
+          "answers": {
+            "I1": 6,
+            "I2": 3
+          }
+        },
+        {
+          "id": "boss-cc-01",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求標稱電阻值（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "Ω",
+          "answer": 220,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n阻值＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%\n答：220 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 220,
+              "unit": "Ω",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n阻值＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%\n答：220 Ω"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・金」。求標稱電阻值（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 470,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 470,
+              "unit": "Ω",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 棕＝×10",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n阻值＝47 × 10 ＝ 470 Ω\n第4環 金＝誤差 ±5%\n答：470 Ω"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 2200,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 2.2,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 紅＝×100\n阻值＝22 × 100 ＝ 2200 Ω ＝ 2.2 kΩ\n第4環 金＝誤差 ±5%\n答：2.2 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "boss-cc-02",
+          "topic": "color-code",
+          "stemZh": "四色環為「棕・黑・橙・金」。求標稱電阻值（kΩ）。",
+          "given": {
+            "d1": "棕",
+            "d2": "黑",
+            "mult": "橙",
+            "tol": "金",
+            "ohm": 10000,
+            "bands": [
+              "棕",
+              "黑",
+              "橙",
+              "金"
+            ]
+          },
+          "unknown": "R",
+          "unit": "kΩ",
+          "answer": 10,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n阻值＝10 × 1000 ＝ 10000 Ω ＝ 10 kΩ\n第4環 金＝誤差 ±5%\n答：10 kΩ",
+          "wrongTags": [],
+          "figure": "assets/color_code_chart.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「棕・黑・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 10000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 10,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、黑＝0 → 有效數字 10；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n阻值＝10 × 1000 ＝ 10000 Ω ＝ 10 kΩ\n第4環 金＝誤差 ±5%\n答：10 kΩ"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・橙・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "金",
+                "ohm": 22000,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "橙",
+                  "金"
+                ]
+              },
+              "answer": 22,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：紅＝2、紅＝2 → 有效數字 22；第3環 橙＝×1000",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 橙＝×1000\n阻值＝22 × 1000 ＝ 22000 Ω ＝ 22 kΩ\n第4環 金＝誤差 ±5%\n答：22 kΩ"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・紅・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 4700,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 4.7,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：黃＝4、紫＝7 → 有效數字 47；第3環 紅＝×100",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 紅＝×100\n阻值＝47 × 100 ＝ 4700 Ω ＝ 4.7 kΩ\n第4環 金＝誤差 ±5%\n答：4.7 kΩ"
+            },
+            {
+              "stemZh": "四色環為「棕・黑・黃・金」。求標稱電阻值（kΩ）。",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "黃",
+                "tol": "金",
+                "ohm": 100000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "黃",
+                  "金"
+                ]
+              },
+              "answer": 100,
+              "unit": "kΩ",
+              "stepHint": "第1、2環：棕＝1、黑＝0 → 有效數字 10；第3環 黃＝×10000",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 黃＝×10000\n阻值＝10 × 10000 ＝ 100000 Ω ＝ 100 kΩ\n第4環 金＝誤差 ±5%\n答：100 kΩ"
+            }
+          ]
+        },
+        {
+          "id": "boss-cc-03",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求絕對誤差 δR（Ω）。（只填數值）",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "dR",
+          "unit": "Ω",
+          "answer": 11,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：δR＝11 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 11,
+              "unit": "Ω",
+              "stepHint": "先求 R＝220 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：δR＝11 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・棕・銀」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "棕",
+                "tol": "銀",
+                "ohm": 470,
+                "tolFrac": 0.1,
+                "dR": 47,
+                "Rmin": 423,
+                "Rmax": 517,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "棕",
+                  "銀"
+                ]
+              },
+              "answer": 47,
+              "unit": "Ω",
+              "stepHint": "先求 R＝470 Ω，tol＝0.1；δR＝R×tol",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 棕＝×10\n標稱 R＝47 × 10 ＝ 470 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝470×0.1＝47 Ω\nR_min＝R−δR＝423 Ω；R_max＝R＋δR＝517 Ω\n答：δR＝47 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・紅・紅・金」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "棕",
+                "d2": "紅",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 1200,
+                "tolFrac": 0.05,
+                "dR": 60,
+                "Rmin": 1140,
+                "Rmax": 1260,
+                "bands": [
+                  "棕",
+                  "紅",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 60,
+              "unit": "Ω",
+              "stepHint": "先求 R＝1200 Ω，tol＝0.05；δR＝R×tol",
+              "fullSolutionZh": "第1環 棕＝1，第2環 紅＝2 → 有效數字 12\n第3環 紅＝×100\n標稱 R＝12 × 100 ＝ 1200 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝1200×0.05＝60 Ω\nR_min＝R−δR＝1140 Ω；R_max＝R＋δR＝1260 Ω\n答：δR＝60 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「棕・黑・橙・銀」。求絕對誤差 δR（Ω）。（只填數值）",
+              "given": {
+                "d1": "棕",
+                "d2": "黑",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 10000,
+                "tolFrac": 0.1,
+                "dR": 1000,
+                "Rmin": 9000,
+                "Rmax": 11000,
+                "bands": [
+                  "棕",
+                  "黑",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 1000,
+              "unit": "Ω",
+              "stepHint": "先求 R＝10000 Ω，tol＝0.1；δR＝R×tol",
+              "fullSolutionZh": "第1環 棕＝1，第2環 黑＝0 → 有效數字 10\n第3環 橙＝×1000\n標稱 R＝10 × 1000 ＝ 10000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝10000×0.1＝1000 Ω\nR_min＝R−δR＝9000 Ω；R_max＝R＋δR＝11000 Ω\n答：δR＝1000 Ω",
+              "figure": "assets/color_code_tol.png"
+            }
+          ]
+        },
+        {
+          "id": "boss-cc-04",
+          "topic": "color-code",
+          "stemZh": "四色環為「紅・紅・棕・金」。求允許下限 R_min（Ω）。",
+          "given": {
+            "d1": "紅",
+            "d2": "紅",
+            "mult": "棕",
+            "tol": "金",
+            "ohm": 220,
+            "tolFrac": 0.05,
+            "dR": 11,
+            "Rmin": 209,
+            "Rmax": 231,
+            "bands": [
+              "紅",
+              "紅",
+              "棕",
+              "金"
+            ]
+          },
+          "unknown": "Rmin",
+          "unit": "Ω",
+          "answer": 209,
+          "tolerance": 0.02,
+          "formulaHint": "引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）",
+          "stepHint": "引導：先求 R 同 δR，再 R_min＝R−δR——你會先做邊一步？",
+          "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω",
+          "wrongTags": [],
+          "figure": "assets/color_code_tol.png",
+          "variants": [
+            {
+              "stemZh": "四色環為「紅・紅・棕・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "棕",
+                "tol": "金",
+                "ohm": 220,
+                "tolFrac": 0.05,
+                "dR": 11,
+                "Rmin": 209,
+                "Rmax": 231,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "棕",
+                  "金"
+                ]
+              },
+              "answer": 209,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 棕＝×10\n標稱 R＝22 × 10 ＝ 220 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝220×0.05＝11 Ω\nR_min＝R−δR＝209 Ω；R_max＝R＋δR＝231 Ω\n答：R_min＝209 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「橙・橙・紅・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "橙",
+                "d2": "橙",
+                "mult": "紅",
+                "tol": "銀",
+                "ohm": 3300,
+                "tolFrac": 0.1,
+                "dR": 330,
+                "Rmin": 2970,
+                "Rmax": 3630,
+                "bands": [
+                  "橙",
+                  "橙",
+                  "紅",
+                  "銀"
+                ]
+              },
+              "answer": 2970,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 橙＝3，第2環 橙＝3 → 有效數字 33\n第3環 紅＝×100\n標稱 R＝33 × 100 ＝ 3300 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝3300×0.1＝330 Ω\nR_min＝R−δR＝2970 Ω；R_max＝R＋δR＝3630 Ω\n答：R_min＝2970 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「黃・紫・紅・金」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "黃",
+                "d2": "紫",
+                "mult": "紅",
+                "tol": "金",
+                "ohm": 4700,
+                "tolFrac": 0.05,
+                "dR": 235,
+                "Rmin": 4465,
+                "Rmax": 4935,
+                "bands": [
+                  "黃",
+                  "紫",
+                  "紅",
+                  "金"
+                ]
+              },
+              "answer": 4465,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 黃＝4，第2環 紫＝7 → 有效數字 47\n第3環 紅＝×100\n標稱 R＝47 × 100 ＝ 4700 Ω\n第4環 金＝誤差 ±5%（tol＝0.05）\n絕對誤差 δR＝R×tol＝4700×0.05＝235 Ω\nR_min＝R−δR＝4465 Ω；R_max＝R＋δR＝4935 Ω\n答：R_min＝4465 Ω",
+              "figure": "assets/color_code_tol.png"
+            },
+            {
+              "stemZh": "四色環為「紅・紅・橙・銀」。求允許下限 R_min（Ω）。",
+              "given": {
+                "d1": "紅",
+                "d2": "紅",
+                "mult": "橙",
+                "tol": "銀",
+                "ohm": 22000,
+                "tolFrac": 0.1,
+                "dR": 2200,
+                "Rmin": 19800,
+                "Rmax": 24200,
+                "bands": [
+                  "紅",
+                  "紅",
+                  "橙",
+                  "銀"
+                ]
+              },
+              "answer": 19800,
+              "unit": "Ω",
+              "stepHint": "先求 R 同 δR，再 R_min＝R−δR",
+              "fullSolutionZh": "第1環 紅＝2，第2環 紅＝2 → 有效數字 22\n第3環 橙＝×1000\n標稱 R＝22 × 1000 ＝ 22000 Ω\n第4環 銀＝誤差 ±10%（tol＝0.1）\n絕對誤差 δR＝R×tol＝22000×0.1＝2200 Ω\nR_min＝R−δR＝19800 Ω；R_max＝R＋δR＝24200 Ω\n答：R_min＝19800 Ω",
+              "figure": "assets/color_code_tol.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "wrong-book",
+      "titleZh": "錯題挑戰",
+      "order": 13,
+      "kind": "wrongbook",
+      "conceptZh": "從你錯過嘅題再練。答對會從錯題本移除。",
+      "demoZh": "少用提示、一次答對，進步最快！",
+      "figure": "assets/check_try.png",
+      "unlockPrev": "boss-mix",
+      "questions": []
+    },
+    {
+      "levelId": "ac-dc",
+      "titleZh": "交流／直流 AC·DC",
+      "order": 14,
+      "kind": "lesson",
+      "conceptZh": "電力可以直流（DC）或交流（AC）流動，分別在電子流動方向。\n直流：電流穩定流向同一方向；電池等固定／調節電壓常用 DC。\n交流：方向不斷前後改變；發電機輸出常用正弦波描述。\n一個完整重複叫一個週期（360°）；頻率（Hz）＝每秒完成嘅週期數。\n頻率＝{{frac:1|週期}}（週期以秒計）。\n變壓器主要服務交流電壓轉換。",
+      "demoZh": "對比：乾電池 1.5 V 係直流。\n市電約 220 V、50 Hz 係交流。\n若週期 0.1 s，頻率＝10 Hz。",
+      "figure": "assets/ac_dc_wave.png",
+      "extraFigures": [],
+      "unlockStars": 0,
+      "questions": [
+        {
+          "id": "acdc-01",
+          "topic": "ac-dc",
+          "stemZh": "方向大致唔變（只有正負極性固定嗰邊）嘅電流／電壓，叫交流定直流？（答：直流 或 DC）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "直流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：重點睇「方向有冇週期性反轉」。",
+          "stepHint": "引導：電池輸出通常屬邊類？",
+          "fullSolutionZh": "直流（DC）：方向不變（極性固定）。",
+          "wrongTags": [
+            "ac-dc"
+          ],
+          "figure": "assets/ac_dc_wave.png",
+          "answerType": "text",
+          "accepted": [
+            "直流",
+            "DC",
+            "dc",
+            "Direct current",
+            "direct current"
+          ]
+        },
+        {
+          "id": "acdc-02",
+          "topic": "ac-dc",
+          "stemZh": "大小同方向會隨時間週期性改變（會「轉正負」）嘅電壓／電流，叫乜？（答：交流 或 AC）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "交流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：市電插頭入面通常係邊類？",
+          "stepHint": "引導：英文縮寫 AC＝Alternating Current。",
+          "fullSolutionZh": "交流（AC）：週期性改變方向（同通常亦改大小）。",
+          "wrongTags": [
+            "ac-dc"
+          ],
+          "figure": "assets/ac_dc_wave.png",
+          "answerType": "text",
+          "accepted": [
+            "交流",
+            "AC",
+            "ac",
+            "Alternating current",
+            "alternating current"
+          ]
+        },
+        {
+          "id": "acdc-03",
+          "topic": "ac-dc",
+          "stemZh": "乾電池／蓄電池輸出，典型係交流定直流？（答：直流）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "直流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：電池有冇標正負極？方向會唔會自己反轉？",
+          "stepHint": "引導：正極、負極固定 → 邊類電源？",
+          "fullSolutionZh": "電池典型輸出直流（DC）。",
+          "wrongTags": [
+            "ac-dc"
+          ],
+          "figure": "assets/battery_pack.png",
+          "answerType": "text",
+          "accepted": [
+            "直流",
+            "DC",
+            "dc"
+          ]
+        },
+        {
+          "id": "acdc-04",
+          "topic": "ac-dc",
+          "stemZh": "家用市電（牆上插座）典型係交流定直流？（答：交流）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "交流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：牆上插座同電池正負極固定嗰種，邊樣會「轉方向」？",
+          "stepHint": "引導：香港市電約 220 V、50 Hz——Hz 提示邊類？",
+          "fullSolutionZh": "市電係交流（AC）。香港典型約 220 V、50 Hz。",
+          "wrongTags": [
+            "ac-dc"
+          ],
+          "figure": null,
+          "answerType": "text",
+          "accepted": [
+            "交流",
+            "AC",
+            "ac"
+          ]
+        },
+        {
+          "id": "acdc-05",
+          "topic": "ac-dc",
+          "stemZh": "「頻率 50 Hz」大致解作一秒內波形完成幾多次週期？（答一個整數）",
+          "given": {
+            "f_Hz": 50
+          },
+          "unknown": "週期數",
+          "unit": "次／秒",
+          "answer": 50,
+          "tolerance": 0.01,
+          "formulaHint": "引導：Hz 嘅定義同「每秒週期數」有咩關係？",
+          "stepHint": "引導：1 Hz＝每秒 1 個週期；咁 50 Hz 呢？",
+          "fullSolutionZh": "50 Hz＝每秒約 50 個完整週期。",
+          "wrongTags": [
+            "ac-dc",
+            "frequency"
+          ],
+          "figure": null,
+          "answerType": null
+        },
+        {
+          "id": "acdc-06",
+          "topic": "ac-dc",
+          "stemZh": "下列邊句正確？請答正確嗰句嘅關鍵詞（直流／交流／兩者都有電壓）：A 交流冇電壓　B 直流方向會自己週期反轉　C 交流同直流都可以有電壓大小",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "兩者都有電壓",
+          "tolerance": 0.01,
+          "formulaHint": "引導：AC／DC 分別在方向／變化，唔係「有冇電壓」。",
+          "stepHint": "引導：市電 220 V 同電池 1.5 V 都係在講電壓大小。",
+          "fullSolutionZh": "正確係 C：交流同直流都可以有電壓（同電流）大小；分別主要在方向是否週期改變。A、B 係常見謬誤。",
+          "wrongTags": [
+            "ac-dc",
+            "misconception"
+          ],
+          "figure": null,
+          "answerType": "text",
+          "accepted": [
+            "兩者都有電壓",
+            "交流同直流都可以有電壓大小",
+            "都有電壓",
+            "都可以有電壓"
+          ]
+        },
+        {
+          "id": "acdc-07",
+          "topic": "ac-dc",
+          "stemZh": "若示波器（或波形圖）見到電壓隨時間上下穿過零點、正負交替，呢個波形較似交流定直流？（答：交流）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "交流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：有冇「轉正負／過零」？",
+          "stepHint": "引導：理想穩壓直流波形大致係水平線。",
+          "fullSolutionZh": "正負交替、週期過零 → 交流（AC）特徵。",
+          "wrongTags": [
+            "ac-dc"
+          ],
+          "figure": "assets/ac_dc_wave.png",
+          "answerType": "text",
+          "accepted": [
+            "交流",
+            "AC",
+            "ac"
+          ]
+        },
+        {
+          "id": "acdc-08",
+          "topic": "ac-dc",
+          "stemZh": "變壓器主要用來改變邊一類電嘅電壓？（答：交流）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "交流",
+          "tolerance": 0.01,
+          "formulaHint": "引導：變壓器靠電磁感應，需要變化嘅磁場——邊類電較啱？",
+          "stepHint": "引導：純穩直流通常唔可以直接用變壓器升／降壓。",
+          "fullSolutionZh": "變壓器主要用於交流（AC）升壓／降壓。",
+          "wrongTags": [
+            "ac-dc",
+            "transformer"
+          ],
+          "figure": null,
+          "answerType": "text",
+          "accepted": [
+            "交流",
+            "AC",
+            "ac",
+            "交流電"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "levelId": "transistor",
+      "titleZh": "電晶體作開關／驅動",
+      "order": 15,
+      "kind": "lesson",
+      "conceptZh": "晶體管（電晶體）係半導體器件，常用作放大器或電動開關。\n中四深度：NPN 可當電子開關——基極（B）控制、集極（C）接負載、發射極（E）常接地。\n用細小基極電流控制集極較大電流，適合驅動 LED、繼電器、細摩打。\n開關模式：截止≈開路、飽和導通≈近似短路。\n可用 Ib≈{{frac:Ic|β}} 粗估。\n今關唔做套件步驟、唔深入偏壓放大器。",
+      "demoZh": "例：單片機腳 → 基極電阻 → 基極；LED＋限流在集極到 Vcc；發射極接地。",
+      "figure": "assets/card_transistor.png",
+      "extraFigures": [
+        "assets/transistor_switch.png"
+      ],
+      "unlockStars": 0,
+      "questions": [
+        {
+          "id": "tr-01",
+          "topic": "transistor",
+          "stemZh": "NPN 電晶體三個接腳通常叫基極、集極、發射極。控制用、輸入細電流嘅係邊一極？（答：基極）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "基極",
+          "tolerance": 0.01,
+          "formulaHint": "引導：邊個係「控」嘅入口？",
+          "stepHint": "引導：英文 Base；集極／發射極多數接負載同地／電源路徑。",
+          "fullSolutionZh": "基極（Base）：用細小基極電流去控制集極—發射極路徑。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "基極",
+            "基",
+            "Base",
+            "base"
+          ]
+        },
+        {
+          "id": "tr-02",
+          "topic": "transistor",
+          "stemZh": "NPN 作開關時，負載（例如 LED 串電阻）多數接喺邊一極嗰邊嘅路徑？（答：集極）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "集極",
+          "tolerance": 0.01,
+          "formulaHint": "引導：受控嘅「大電流」路徑通常經集極到發射極。",
+          "stepHint": "引導：英文 Collector；發射極常近地（共射開關）。",
+          "fullSolutionZh": "集極（Collector）一路經負載；發射極常接地。基極控制通斷。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "集極",
+            "集電極",
+            "Collector",
+            "collector"
+          ]
+        },
+        {
+          "id": "tr-03",
+          "topic": "transistor",
+          "stemZh": "電晶體作開關嘅核心概念：用____電流，控制____電流。（請依序答兩個詞，中間用逗號或頓號：細,大 或 基極,集極）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "細,大",
+          "tolerance": 0.01,
+          "formulaHint": "引導：開關模式強調「小控大」，唔係放大公式深算。",
+          "stepHint": "引導：基極細電流 → 集極較大電流通路。",
+          "fullSolutionZh": "用細（基極）電流，控制大（集極）電流。答「細,大」或「基極,集極」都可。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "細,大",
+            "細，大",
+            "細、大",
+            "小,大",
+            "小，大",
+            "基極,集極",
+            "基極，集極",
+            "基極、集極",
+            "細大",
+            "小大",
+            "基極集極"
+          ]
+        },
+        {
+          "id": "tr-04",
+          "topic": "transistor",
+          "stemZh": "課堂常見：用電晶體驅動邊啲負載？（請答其中一個：LED／繼電器／摩打）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "LED",
+          "tolerance": 0.01,
+          "formulaHint": "引導：單片機腳位電流有限，所以要「驅動」較大負載。",
+          "stepHint": "引導：LED、繼電器線圈、細摩打都係典型例子。",
+          "fullSolutionZh": "常見驅動 LED、繼電器或細摩打（注意繼電器／摩打要有保護二極管等，今關先記用途）。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "LED",
+            "led",
+            "繼電器",
+            "摩打",
+            "馬達",
+            "電動機",
+            "relay",
+            "motor",
+            "發光二極管"
+          ]
+        },
+        {
+          "id": "tr-05",
+          "topic": "transistor",
+          "stemZh": "若集極電流約 100 mA，電流增益 β（hFE）約 100，基極大約需要幾多 mA？（用 Ib≈Ic/β，答數值）",
+          "given": {
+            "Ic_mA": 100,
+            "beta": 100
+          },
+          "unknown": "Ib",
+          "unit": "mA",
+          "answer": 1,
+          "tolerance": 0.05,
+          "formulaHint": "引導：開關設計常用 Ib≈Ic/β 估下限（實際會取裕量）。",
+          "stepHint": "引導：100÷100＝？單位同 Ic 一樣用 mA。",
+          "fullSolutionZh": "Ib≈Ic/β＝100 mA／100＝1 mA。（實務常再加大基極驅動裕量，今關先掌握比例。）",
+          "wrongTags": [
+            "transistor",
+            "beta"
+          ],
+          "figure": null,
+          "answerType": null
+        },
+        {
+          "id": "tr-06",
+          "topic": "transistor",
+          "stemZh": "NPN 開關「導通」時，集極—發射極近似短路定開路？（答：短路 或 導通）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "短路",
+          "tolerance": 0.01,
+          "formulaHint": "引導：開關 ON 時負載有冇電流？",
+          "stepHint": "引導：OFF≈開路；ON≈近似短路（實際有細飽和壓降）。",
+          "fullSolutionZh": "導通（ON）時 C–E 近似短路，負載有電流；截止（OFF）近似開路。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "短路",
+            "導通",
+            "ON",
+            "on",
+            "近似短路",
+            "低阻"
+          ]
+        },
+        {
+          "id": "tr-07",
+          "topic": "transistor",
+          "stemZh": "想用單片機腳位經電晶體去開一盞要 80 mA 嘅 LED 燈串，為乜唔建議直接由腳位供應 80 mA？（請答關鍵：電流太大 或 腳位電流有限）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "腳位電流有限",
+          "tolerance": 0.01,
+          "formulaHint": "引導：電晶體喺度扮乜角色？保護邊樣？",
+          "stepHint": "引導：腳位只出細基極電流；大電流行集極路徑。",
+          "fullSolutionZh": "單片機腳位電流有限／易過載；用電晶體把大電流交俾集極—電源路徑負擔。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": null,
+          "answerType": "text",
+          "accepted": [
+            "腳位電流有限",
+            "電流太大",
+            "腳位唔夠電流",
+            "保護腳位",
+            "過流",
+            "MCU電流有限",
+            "單片機電流有限",
+            "電流有限"
+          ]
+        },
+        {
+          "id": "tr-08",
+          "topic": "transistor",
+          "stemZh": "共射 NPN 開關：發射極通常接边？（答：地／0V／GND）",
+          "given": {},
+          "unknown": "—",
+          "unit": "—",
+          "answer": "地",
+          "tolerance": 0.01,
+          "formulaHint": "引導：課堂最常見「發射極接地」接法。",
+          "stepHint": "引導：英文 emitter → GND。",
+          "fullSolutionZh": "共射開關：發射極接地上（GND／0 V）；負載在集極側。",
+          "wrongTags": [
+            "transistor"
+          ],
+          "figure": "assets/transistor_switch.png",
+          "answerType": "text",
+          "accepted": [
+            "地",
+            "接地",
+            "GND",
+            "gnd",
+            "0V",
+            "0 V",
+            "0v",
+            "大地"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "levelId": "ipo-opamp",
+      "titleZh": "系統 IPO 與運算放大器（即將推出）",
+      "order": 16,
+      "kind": "locked",
+      "conceptZh": "（下輪預留｜鎖住）系統 IPO：輸入—處理—輸出。\n理想運算放大器（op-amp）：極高增益、虛短／虛斷等理想假設。\n常見接法一句：反相放大器、非反相放大器；比較器把模擬量變數碼判斷。\n今輪未開放練習；請先完成前面歐姆／零件／功率／分壓／AC·DC／晶體管。",
+      "demoZh": "下輪才開題；今輪只預留章節位。",
+      "figure": null,
+      "extraFigures": [],
+      "unlockStars": 0,
+      "questions": [],
+      "locked": true
+    }
+  ],
+  "figureBan": {
+    "mA": [
+      100,
+      250,
+      500
+    ],
+    "A": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "kOhm": [
+      2.2,
+      4.7
+    ],
+    "Ohm": [
+      2200,
+      4700
+    ],
+    "ledVs": [
+      12
+    ],
+    "ledVf": [
+      2
+    ],
+    "led_mA": [
+      20
+    ],
+    "led_A": [
+      0.02
+    ],
+    "led_R": [
+      500
+    ],
+    "batE": [
+      1.5
+    ],
+    "bat_r": [
+      0.5
+    ],
+    "bat_I": [
+      0.2
+    ],
+    "bat_V": [
+      1.4
+    ],
+    "colorOhm": [
+      100,
+      1000
+    ],
+    "colorBands": [
+      "棕・黑・棕・金",
+      "棕黑棕金",
+      "棕・黑・紅・金",
+      "棕黑紅金"
+    ]
+  },
+  "noteZh": "地圖全關自由選；unit_tip（500 mA／2.2 kΩ）及 LED／電池／色環提示例永不入練習池；variants 亂抽；上一題還原唔重抽。 示意圖同零件教學卡為校本自製（DAT 選修電子）。",
+  "freeSelect": true,
+  "supportByLevel": {
+    "ohm-intro": {
+      "defs": [
+        {
+          "term": "電壓／電勢差 V",
+          "zh": "推動電荷流動嘅電動勢差，單位伏特（V）。"
+        },
+        {
+          "term": "電流 I",
+          "zh": "電荷（電子或「空穴」）流動；單位安培（A）。1 A＝每秒 1 庫侖。"
+        },
+        {
+          "term": "電阻值 R",
+          "zh": "材料抵制電子流動嘅程度，單位歐姆（Ω）。"
+        },
+        {
+          "term": "歐姆定律",
+          "zh": "V＝I×R；I＝{{frac:V|R}}；R＝{{frac:V|I}}。"
+        },
+        {
+          "term": "換能器",
+          "zh": "能量形式轉換裝置（例如 LDR、咪、摩打、揚聲器）。"
+        }
+      ],
+      "tips": [
+        "計數前先問：單位啱未？",
+        "示範 Given 數字同本題唔會一樣。"
+      ]
+    },
+    "parts-intro": {
+      "defs": [
+        {
+          "term": "電阻器",
+          "zh": "雙端零件，在接線柱之間產生電壓降，抗拒電流通過。",
+          "figure": "assets/card_resistor.png"
+        },
+        {
+          "term": "電位器",
+          "zh": "可變電阻器，可用作分壓器；常見於聲頻控制。",
+          "figure": "assets/card_potentiometer.png"
+        },
+        {
+          "term": "熱敏電阻器",
+          "zh": "靠溫度變化改變電阻值；常見於溫度監測。",
+          "figure": "assets/card_thermistor.png"
+        },
+        {
+          "term": "光敏電阻器（LDR）",
+          "zh": "光照愈強，電阻值愈細；常見自動路燈。",
+          "figure": "assets/card_ldr.png"
+        },
+        {
+          "term": "電容器",
+          "zh": "儲存兩金屬板之間能量；電流施加時電荷建立在各板。",
+          "figure": "assets/card_capacitor.png"
+        },
+        {
+          "term": "二極管",
+          "zh": "限制電流單向流動，阻擋反向。",
+          "figure": "assets/card_diode.png"
+        },
+        {
+          "term": "發光二極管（LED）",
+          "zh": "正向電流通過時發亮；亦係一種二極管。",
+          "figure": "assets/card_led.png"
+        },
+        {
+          "term": "晶體管（電晶體）",
+          "zh": "半導體器件，通常用作放大器或電動開關。",
+          "figure": "assets/card_transistor.png"
+        },
+        {
+          "term": "揚聲器／蜂鳴器／麥克風",
+          "zh": "電—聲或聲—電換能器；壓電蜂鳴器由電壓驅動，揚聲器多由電流驅動。",
+          "figure": "assets/symbols/speaker_buzzer_mic.png"
+        },
+        {
+          "term": "保險絲／開關／繼電器",
+          "zh": "保險絲防過流；開關控制通斷；繼電器用細控大並隔離。",
+          "figure": "assets/symbols/fuse_switch_relay.png"
+        },
+        {
+          "term": "變壓器",
+          "zh": "只對交流升／降壓（電磁感應）；直流電池本身唔靠變壓器。本節以變壓器電路符號示意。",
+          "figure": "assets/symbols/transformer.png"
+        },
+        {
+          "term": "換能器",
+          "zh": "把一種能量形式轉成另一種（光／聲／熱／機械 ↔ 電）。",
+          "figure": "assets/card_parts_index.png"
+        }
+      ],
+      "tips": [
+        "答題時先分清：輸入感測、被動元件、控制／保護、定輸出？",
+        "變壓器主要對交流；電池係直流源，唔好混淆。",
+        "教學卡為校本自製電路符號示意，供課堂練習用。"
+      ]
+    },
+    "solve-v": {
+      "defs": [
+        {
+          "term": "求 V",
+          "zh": "已知電流同電阻：V＝I×R。"
+        }
+      ],
+      "tips": [
+        "引導：電流單位係 A 定 mA？"
+      ]
+    },
+    "solve-i": {
+      "defs": [
+        {
+          "term": "求 I",
+          "zh": "已知電壓同電阻：I＝V／R。"
+        },
+        {
+          "term": "求電流",
+          "zh": "I＝{{frac:V|R}}。"
+        }
+      ],
+      "tips": [
+        "引導：除完之後要唔要改寫成 mA？"
+      ]
+    },
+    "solve-r": {
+      "defs": [
+        {
+          "term": "求 R",
+          "zh": "已知電壓同電流：R＝V／I。"
+        },
+        {
+          "term": "求電阻",
+          "zh": "R＝{{frac:V|I}}。"
+        }
+      ],
+      "tips": [
+        "引導：結果用 Ω 定 kΩ 較合理？"
+      ]
+    },
+    "power-basic": {
+      "defs": [
+        {
+          "term": "功率 P",
+          "zh": "單位時間能量消耗；P＝V×I，單位瓦特（W）。"
+        },
+        {
+          "term": "三式",
+          "zh": "P＝V×I；P＝I²R；P＝{{frac:V²|R}}。"
+        }
+      ],
+      "tips": [
+        "未知邊兩個量，就揀對應公式。"
+      ]
+    },
+    "divider": {
+      "defs": [
+        {
+          "term": "分壓器",
+          "zh": "兩電阻串聯，電壓按電阻比例分配：V₁＝V×{{frac:R₁|R₁＋R₂}}。"
+        }
+      ],
+      "tips": [
+        "引導：邊粒電阻較大？電壓應該較大定較細？"
+      ]
+    },
+    "shunt": {
+      "defs": [
+        {
+          "term": "分流",
+          "zh": "兩電阻並聯，I₁＝I×{{frac:R₂|R₁＋R₂}}。"
+        }
+      ],
+      "tips": [
+        "後段關卡；引導：邊條支路電阻細，電流大定細？"
+      ]
+    },
+    "color-code": {
+      "defs": [
+        {
+          "term": "四色環",
+          "zh": "前兩環＝數值；第三環＝倍數；第四環＝誤差率。",
+          "figure": "assets/color_code_chart.png"
+        },
+        {
+          "term": "誤差環",
+          "zh": "金 ±5%、銀 ±10%（常見）；表示製造精確度。"
+        }
+      ],
+      "tips": [
+        "引導：先讀有效數字再乘倍數。",
+        "對照表用學習資源彩色編碼頁。"
+      ]
+    },
+    "led-limit": {
+      "defs": [
+        {
+          "term": "LED 限流",
+          "zh": "R＝{{frac:Vs−Vf|I}}；並可計電阻功耗 P＝V·I、P＝I²R、P＝{{frac:V²|R}}。"
+        }
+      ],
+      "tips": [
+        "後段關卡；引導：真正落喺電阻嘅電壓係幾多？"
+      ]
+    },
+    "battery-ir": {
+      "defs": [
+        {
+          "term": "電池內阻",
+          "zh": "V＝E−Ir＝IR（有負載時端電壓低於 E）。"
+        }
+      ],
+      "tips": [
+        "後段關卡；引導：內阻耗咗幾多電壓？"
+      ]
+    },
+    "boss-mix": {
+      "defs": [
+        {
+          "term": "混合題",
+          "zh": "先判斷求邊個量，再揀公式。"
+        }
+      ],
+      "tips": [
+        "引導：串聯定並聯？求 V／I／R／P？"
+      ]
+    },
+    "wrong-book": {
+      "defs": [
+        {
+          "term": "錯題本",
+          "zh": "重練錯過嘅題。"
+        }
+      ],
+      "tips": [
+        "先睇定義再作答。"
+      ]
+    },
+    "ac-dc": {
+      "defs": [
+        {
+          "term": "直流 DC",
+          "zh": "電流穩定同一方向；電池典型。"
+        },
+        {
+          "term": "交流 AC",
+          "zh": "方向週期性改變；常用正弦波描述。"
+        },
+        {
+          "term": "週期／頻率",
+          "zh": "一個完整重複＝一週期；頻率（Hz）＝每秒週期數＝{{frac:1|週期}}。"
+        },
+        {
+          "term": "變壓器",
+          "zh": "主要用於交流電壓升／降壓。"
+        }
+      ],
+      "tips": [
+        "先問：方向會唔會自己週期反轉？會→AC；唔會→DC。",
+        "電壓大小同 AC／DC 分類係兩件事。"
+      ]
+    },
+    "transistor": {
+      "defs": [
+        {
+          "term": "基極 Base",
+          "zh": "控制極；輸入細電流。"
+        },
+        {
+          "term": "集極 Collector",
+          "zh": "受控電流路徑之一；常接負載。"
+        },
+        {
+          "term": "發射極 Emitter",
+          "zh": "共射開關時常接地。"
+        },
+        {
+          "term": "開關模式",
+          "zh": "截止≈開路；飽和導通≈近似短路。"
+        },
+        {
+          "term": "驅動用途",
+          "zh": "用細控大，驅動 LED／繼電器／摩打等。"
+        },
+        {
+          "term": "β（hFE）粗估",
+          "zh": "Ib≈Ic/β；實務留裕量。"
+        }
+      ],
+      "tips": [
+        "先記接腳角色，再估電流；套件接線喺堂上做，唔使喺 app 跟步驟。",
+        "提示唔會直接講出本題數字答案——自己代入 Ic/β。"
+      ]
+    },
+    "ipo-opamp": {
+      "defs": [
+        {
+          "term": "IPO",
+          "zh": "輸入—處理—輸出系統架構。"
+        },
+        {
+          "term": "理想 op-amp",
+          "zh": "理想運算放大器假設（極高增益等）；反相／非反相係常見接法。"
+        },
+        {
+          "term": "比較器",
+          "zh": "把模擬電壓同參考比較，輸出近似數碼高低。"
+        }
+      ],
+      "tips": [
+        "今輪鎖住，下輪才開練習。"
+      ]
+    }
+  },
+  "uiNoteZh": "校本自製示意圖 · DAT。左目錄／中練習／右定義可摺疊。",
+  "istAlignZh": "對齊 DAT 選修電子今輪：成果 1／3／4／6 為主；色環／分流／LED／內阻保留後段；AC／晶體管已開放；IPO／op-amp 鎖住預留。"
+};
+
+const LS_KEY = 'dat-elec-3col:v2';
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveState(s) { localStorage.setItem(LS_KEY, JSON.stringify(s)); }
+
+const state = Object.assign({
+  levelId: null,
+  qIndex: 0,
+  history: [],
+  stars: {},
+  wrong: [],
+  hintStep: 0,
+  answered: false,
+  panels: { left: true, mid: true, right: true }
+}, loadState());
+
+function $(id) { return document.getElementById(id); }
+
+function getLevel(id) { return BANK.levels.find(L => L.levelId === id); }
+
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function randInt(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+function niceRound(x) {
+  const n = Number(x);
+  if (!Number.isFinite(n)) return n;
+  const a = Math.abs(n);
+  let places = 2;
+  if (a > 0 && a < 0.01) places = 4;
+  else if (a > 0 && a < 0.1) places = 3;
+  const f = Math.pow(10, places);
+  const r = Math.round(n * f) / f;
+  if (Math.abs(r - Math.round(r)) < 1e-9) return Math.round(r);
+  return r;
+}
+function sigOf(given) {
+  if (!given) return '';
+  return Object.keys(given).sort().map(k => k + '=' + given[k]).join('|');
+}
+
+function inferGen(q, level) {
+  if (q.gen) return q.gen;
+  const t = q.topic || (level && level.levelId) || '';
+  if (t === 'solve-v' || t === 'solve-i' || t === 'solve-r') return t;
+  if (t === 'power') {
+    const g = q.given || {};
+    if (g.V != null && g.I != null) return 'power-vi';
+    if (g.I != null && g.R != null) return 'power-i2r';
+    if (g.V != null && g.R != null) return 'power-v2r';
+    return 'power-vi';
+  }
+  if (t === 'divider') return (String(q.unknown || '').includes('V2')) ? 'divider-both' : 'divider';
+  if (t === 'shunt') return (String(q.unknown || '').includes('I2')) ? 'shunt-both' : 'shunt';
+  return null;
+}
+
+function tryGen(kind, used) {
+  for (let attempt = 0; attempt < 80; attempt++) {
+    const built = buildGen(kind);
+    if (!built) return null;
+    const sig = kind + '::' + sigOf(built.given);
+    if (used.has(sig)) continue;
+    used.add(sig);
+    return built;
+  }
+  // last resort: allow duplicate rather than fail
+  const built = buildGen(kind);
+  if (built) used.add(kind + '::' + sigOf(built.given));
+  return built;
+}
+
+function buildGen(kind) {
+  if (kind === 'solve-v') {
+    const I = pick([0.5, 1, 1.5, 2, 2.5, 3, 4, 5]);
+    const R = pick([2, 3, 4, 5, 6, 8, 10, 12, 15, 20]);
+    const V = niceRound(I * R);
+    return {
+      stemZh: 'I＝' + I + ' A，R＝' + R + ' Ω，求 V。',
+      given: { I: I, R: R },
+      unknown: 'V', unit: 'V', answer: V, tolerance: 0.01,
+      formulaHint: '引導：可用邊條關係？（用歐姆定律：V＝I×R）想清楚先代入。',
+      stepHint: '引導：第一步應該先處理邊樣——單位、定係直接代入？',
+      fullSolutionZh: '用公式 V＝I×R\nV＝' + I + '×' + R + '＝' + V + '\n答：V＝' + V + ' V'
+    };
+  }
+  if (kind === 'solve-v-mA') {
+    const ImA = pick([20, 40, 50, 80, 100, 150, 200]);
+    const R = pick([25, 40, 50, 80, 100, 200]);
+    const I = niceRound(ImA / 1000);
+    const V = niceRound(I * R);
+    return {
+      stemZh: 'I＝' + ImA + ' mA，R＝' + R + ' Ω，求 V。',
+      given: { I: I, R: R, I_mA: ImA },
+      unknown: 'V', unit: 'V', answer: V, tolerance: 0.01,
+      formulaHint: '引導：單位係 mA 定 A？代入前要唔要換？',
+      stepHint: '引導：先把 mA 換成 A，再用 V＝I×R。',
+      fullSolutionZh: 'I＝' + ImA + ' mA＝' + I + ' A\nV＝I×R＝' + I + '×' + R + '＝' + V + '\n答：V＝' + V + ' V'
+    };
+  }
+  if (kind === 'solve-i') {
+    const R = pick([2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25]);
+    const I = pick([0.2, 0.4, 0.5, 1, 1.5, 2, 2.5, 3, 4]);
+    const V = niceRound(I * R);
+    return {
+      stemZh: 'V＝' + V + ' V，R＝' + R + ' Ω，求 I。',
+      given: { V: V, R: R },
+      unknown: 'I', unit: 'A', answer: I, tolerance: 0.01,
+      formulaHint: '引導：可用邊條關係？（用歐姆定律：I＝V／R）想清楚先代入。',
+      stepHint: '引導：第一步應該先處理邊樣——單位、定係直接代入？',
+      fullSolutionZh: '用公式 I＝V／R\nI＝' + V + '／' + R + '＝' + I + '\n答：I＝' + I + ' A'
+    };
+  }
+  if (kind === 'solve-i-kOhm') {
+    // Pairs (Rk, ImA) so V=ImA×Rk stays in a student-friendly range
+    const pairs = [
+      [1, 5], [1, 10], [1, 12], [1, 15], [1, 20],
+      [2, 5], [2, 10], [2, 12],
+      [2.2, 5], [2.2, 10],
+      [4.7, 2], [4.7, 5],
+      [5, 2], [5, 3], [5, 4],
+      [10, 1], [10, 2]
+    ];
+    const [Rk, ImA] = pick(pairs);
+    const V = niceRound(ImA * Rk);
+    const R = niceRound(Rk * 1000);
+    const Ians = Math.round((ImA / 1000) * 1000) / 1000;
+    return {
+      stemZh: 'V＝' + V + ' V，R＝' + Rk + ' kΩ，求 I。',
+      given: { V: V, R: R, 'R_kΩ': Rk },
+      unknown: 'I', unit: 'A', answer: Ians, tolerance: 0.01,
+      formulaHint: '引導：kΩ 要唔要先換成 Ω？之後用 I＝V／R。',
+      stepHint: '引導：R（Ω）＝kΩ×1000，再代入。',
+      fullSolutionZh: 'R＝' + Rk + ' kΩ＝' + R + ' Ω\nI＝V／R＝' + V + '／' + R + '＝' + Ians + ' A（即 ' + ImA + ' mA）\n答：I＝' + Ians + ' A'
+    };
+  }
+  if (kind === 'solve-r') {
+    const I = pick([0.5, 1, 1.5, 2, 2.5, 3, 4, 5]);
+    const R = pick([2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24]);
+    const V = niceRound(I * R);
+    return {
+      stemZh: 'V＝' + V + ' V，I＝' + I + ' A，求 R。',
+      given: { V: V, I: I },
+      unknown: 'R', unit: 'Ω', answer: R, tolerance: 0.01,
+      formulaHint: '引導：可用邊條關係？（用歐姆定律：R＝V／I）想清楚先代入。',
+      stepHint: '引導：第一步應該先處理邊樣——單位、定係直接代入？',
+      fullSolutionZh: '用公式 R＝V／I\nR＝' + V + '／' + I + '＝' + R + '\n答：R＝' + R + ' Ω'
+    };
+  }
+  if (kind === 'solve-r-mA') {
+    const ImA = pick([20, 40, 50, 80, 100, 200]);
+    const R = pick([25, 50, 100, 125, 200, 250]);
+    const I = niceRound(ImA / 1000);
+    const V = niceRound(I * R);
+    return {
+      stemZh: 'V＝' + V + ' V，I＝' + ImA + ' mA，求 R。',
+      given: { V: V, I: I, I_mA: ImA },
+      unknown: 'R', unit: 'Ω', answer: R, tolerance: 0.01,
+      formulaHint: '引導：單位係 mA 定 A？代入前要唔要換？',
+      stepHint: '引導：先把 mA 換成 A，再用 R＝V／I。',
+      fullSolutionZh: 'I＝' + ImA + ' mA＝' + I + ' A\nR＝V／I＝' + V + '／' + I + '＝' + R + '\n答：R＝' + R + ' Ω'
+    };
+  }
+  if (kind === 'power-vi') {
+    const V = pick([3, 5, 6, 9, 12, 15, 24]);
+    const I = pick([0.1, 0.2, 0.25, 0.5, 1, 1.5, 2]);
+    const P = niceRound(V * I);
+    return {
+      stemZh: '某負載兩端 ' + V + ' V，電流 ' + I + ' A。功率 P 係幾多 W？',
+      given: { V: V, I: I },
+      unknown: 'P', unit: 'W', answer: P, tolerance: 0.02,
+      formulaHint: '引導：可用邊條？（P＝V·I、P＝I²R、P＝{{frac:V²|R}}）想清楚先代入。',
+      stepHint: '引導：有 V、I 就直接相乘。單位係 W。',
+      fullSolutionZh: 'P＝V·I＝' + V + '×' + I + '＝' + P + ' W。'
+    };
+  }
+  if (kind === 'power-i2r') {
+    const I = pick([0.5, 1, 1.5, 2, 2.5, 3]);
+    const R = pick([2, 3, 4, 5, 6, 8, 10]);
+    const P = niceRound(I * I * R);
+    return {
+      stemZh: '一個 ' + R + ' Ω 電阻通過 ' + I + ' A。用 P＝I²R 求功率（W）。',
+      given: { I: I, R: R },
+      unknown: 'P', unit: 'W', answer: P, tolerance: 0.02,
+      formulaHint: '引導：呢題已知 I、R，用邊條功率公式？',
+      stepHint: '引導：P＝I²R，即先平方電流再乘 R。',
+      fullSolutionZh: 'P＝I²R＝' + I + '²×' + R + '＝' + P + ' W。'
+    };
+  }
+  if (kind === 'power-v2r') {
+    // pick R that divides V^2 nicely
+    const pairs = [
+      [12, 4], [12, 6], [12, 8], [24, 6], [24, 8], [24, 12],
+      [9, 3], [9, 9], [15, 5], [15, 3], [10, 5], [20, 5], [20, 8], [18, 6]
+    ];
+    const [V, R] = pick(pairs);
+    const P = niceRound((V * V) / R);
+    return {
+      stemZh: V + ' V 加喺 ' + R + ' Ω 電阻。用 P＝V²／R 求功率（W）。',
+      given: { V: V, R: R },
+      unknown: 'P', unit: 'W', answer: P, tolerance: 0.02,
+      formulaHint: '引導：呢題已知 V、R，用邊條功率公式？',
+      stepHint: '引導：P＝V²／R，注意係電壓平方。',
+      fullSolutionZh: 'P＝V²／R＝' + V + '²／' + R + '＝' + P + ' W。'
+    };
+  }
+  if (kind === 'divider' || kind === 'divider-both') {
+    const combos = [
+      [2, 4], [3, 6], [1, 3], [2, 6], [4, 4], [5, 5], [1, 4], [3, 9],
+      [10, 20], [100, 200], [1, 1], [2, 3], [4, 12], [5, 15]
+    ];
+    const [R1, R2] = pick(combos);
+    const sum = R1 + R2;
+    // V multiple of sum so V1 integer
+    const k = pick([1, 2, 3, 4, 5, 6]);
+    const V = sum * k;
+    // keep V in a student-friendly range
+    if (V > 60) return buildGen(kind);
+    const V1 = niceRound(V * R1 / sum);
+    const V2 = niceRound(V * R2 / sum);
+    const r1lab = R1 >= 100 ? (R1 / 1000) + ' kΩ' : R1 + ' Ω';
+    const r2lab = R2 >= 100 ? (R2 / 1000) + ' kΩ' : R2 + ' Ω';
+    // keep given numeric in ohms
+    if (kind === 'divider-both') {
+      return {
+        stemZh: 'V＝' + V + ' V，R₁＝' + r1lab + '，R₂＝' + r2lab + '，求 V₁ 及 V₂。',
+        given: { V: V, R1: R1, R2: R2 },
+        unknown: 'V1,V2', unit: 'V', answer: V1, tolerance: 0.01,
+        answers: { V1: V1, V2: V2 },
+        multi: [
+          { key: 'V1', label: 'V₁', unit: 'V', answer: V1 },
+          { key: 'V2', label: 'V₂', unit: 'V', answer: V2 }
+        ],
+        formulaHint: '引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）',
+        stepHint: '引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？',
+        fullSolutionZh: 'V₁＝' + V + '×' + R1 + '／(' + R1 + '＋' + R2 + ')＝' + V1 + '\nV₂＝' + V + '×' + R2 + '／(' + R1 + '＋' + R2 + ')＝' + V2 + '（或 V₂＝V－V₁）\n答：V₁＝' + V1 + ' V，V₂＝' + V2 + ' V'
+      };
+    }
+    return {
+      stemZh: 'V＝' + V + ' V，R₁＝' + r1lab + '，R₂＝' + r2lab + '，求 R₁ 兩端電壓 V₁。',
+      given: { V: V, R1: R1, R2: R2 },
+      unknown: 'V1', unit: 'V', answer: V1, tolerance: 0.01,
+      formulaHint: '引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）',
+      stepHint: '引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？',
+      fullSolutionZh: '分壓：V₁＝V×{{frac:R₁|R₁＋R₂}}\nV₁＝' + V + '×' + R1 + '／(' + R1 + '＋' + R2 + ')＝' + V1 + '\n答：V₁＝' + V1 + ' V'
+    };
+  }
+  if (kind === 'shunt' || kind === 'shunt-both') {
+    const combos = [
+      [2, 4], [3, 6], [1, 3], [2, 6], [4, 4], [5, 5], [1, 4], [3, 9], [2, 8], [4, 12]
+    ];
+    const [R1, R2] = pick(combos);
+    const sum = R1 + R2;
+    // I1 = I * R2 / sum → pick I multiple of sum
+    const k = pick([1, 2, 3, 4, 5]);
+    const I = sum * k;
+    if (I > 40) return buildGen(kind);
+    const I1 = niceRound(I * R2 / sum);
+    const I2 = niceRound(I * R1 / sum);
+    if (kind === 'shunt-both') {
+      return {
+        stemZh: 'I＝' + I + ' A，R₁＝' + R1 + ' Ω，R₂＝' + R2 + ' Ω，求 I₁ 及 I₂。',
+        given: { I: I, R1: R1, R2: R2 },
+        unknown: 'I1,I2', unit: 'A', answer: I1, tolerance: 0.01,
+        answers: { I1: I1, I2: I2 },
+        multi: [
+          { key: 'I1', label: 'I₁', unit: 'A', answer: I1 },
+          { key: 'I2', label: 'I₂', unit: 'A', answer: I2 }
+        ],
+        formulaHint: '引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）',
+        stepHint: '引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？',
+        fullSolutionZh: 'I₁＝' + I + '×' + R2 + '／(' + R1 + '＋' + R2 + ')＝' + I1 + '\nI₂＝' + I + '×' + R1 + '／(' + R1 + '＋' + R2 + ')＝' + I2 + '（或 I₂＝I－I₁）\n答：I₁＝' + I1 + ' A，I₂＝' + I2 + ' A'
+      };
+    }
+    return {
+      stemZh: 'I＝' + I + ' A，R₁＝' + R1 + ' Ω，R₂＝' + R2 + ' Ω，求流經 R₁ 的電流 I₁。',
+      given: { I: I, R1: R1, R2: R2 },
+      unknown: 'I1', unit: 'A', answer: I1, tolerance: 0.01,
+      formulaHint: '引導：呢題應該用邊條公式把已知量連起來？（唔使寫出數字。）',
+      stepHint: '引導：第一步應該先處理邊樣——單位、串／並關係、定係直接代入？',
+      fullSolutionZh: '分流：I₁＝I×{{frac:R₂|R₁＋R₂}}\nI₁＝' + I + '×' + R2 + '／(' + R1 + '＋' + R2 + ')＝' + I1 + '\n答：I₁＝' + I1 + ' A\n（記：電阻愈小，分得電流愈大——所以公式用「另一邊」電阻。）'
+    };
+  }
+  return null;
+}
+
+function applyGenerated(q, built) {
+  if (!built) return;
+  q.stemZh = built.stemZh;
+  q.given = built.given;
+  q.unknown = built.unknown;
+  q.unit = built.unit;
+  q.answer = built.answer;
+  if (built.tolerance != null) q.tolerance = built.tolerance;
+  q.formulaHint = built.formulaHint;
+  q.stepHint = built.stepHint;
+  q.fullSolutionZh = built.fullSolutionZh;
+  if (built.multi && built.multi.length) {
+    q.multi = built.multi;
+    q.answers = built.answers || null;
+  } else {
+    delete q.multi;
+    delete q.answers;
+  }
+}
+
+function materializeLevel(level) {
+  if (!level || !level.questions || !level.questions.length) return;
+  if (level.kind === 'wrongbook' || level.locked || level.kind === 'locked') return;
+  const used = new Set();
+  level.questions.forEach(q => {
+    const kind = inferGen(q, level);
+    if (!kind) return;
+    // skip pure concept / color-code
+    if (kind === 'color-code') return;
+    const built = tryGen(kind, used);
+    applyGenerated(q, built);
+  });
+}
+
+
+
+function activeQuestions(level) {
+  if (!level || level.locked || level.kind === 'locked') return [];
+  if (level.kind === 'wrongbook') {
+    const map = {};
+    BANK.levels.forEach(L => (L.questions || []).forEach(q => { map[q.id] = Object.assign({}, q, { _from: L.levelId }); }));
+    return (state.wrong || []).map(id => map[id]).filter(Boolean);
+  }
+  return level.questions || [];
+}
+
+function normalizeAns(s) {
+  return String(s ?? '').trim().replace(/\s+/g, '').replace(/×/g, '*').replace(/·/g, '*').toLowerCase();
+}
+
+function numClose(userRaw, target, tol) {
+  const num = Number(String(userRaw ?? '').replace(/,/g, '').trim());
+  const t = Number(target);
+  if (Number.isNaN(num) || Number.isNaN(t)) return false;
+  const t0 = (tol != null) ? tol : 0.02;
+  if (t === 0) return Math.abs(num) <= t0;
+  return Math.abs(num - t) / Math.abs(t) <= t0 || Math.abs(num - t) <= t0;
+}
+
+function checkAnswerMulti(q) {
+  const parts = q.multi || [];
+  if (!parts.length) return false;
+  const tol = (q.tolerance != null) ? q.tolerance : 0.02;
+  return parts.every(p => {
+    const el = $('ans-' + p.key);
+    if (!el) return false;
+    const target = (q.answers && q.answers[p.key] != null) ? q.answers[p.key] : p.answer;
+    return numClose(el.value, target, tol);
+  });
+}
+
+function checkAnswer(q, userRaw) {
+  if (q.multi && q.multi.length) return checkAnswerMulti(q);
+  const user = String(userRaw ?? '').trim();
+  if (!user) return false;
+  if (q.accepted && q.accepted.length) {
+    const nu = normalizeAns(user);
+    if (q.accepted.some(a => normalizeAns(a) === nu)) return true;
+    // soft contains for Chinese short answers
+    if (q.accepted.some(a => user.includes(a) || String(a).includes(user))) return true;
+  }
+  const ans = q.answer;
+  if (typeof ans === 'number' || (typeof ans === 'string' && /^-?\d+(\.\d+)?([eE][+-]?\d+)?$/.test(String(ans).trim()))) {
+    const tol = (q.tolerance != null) ? q.tolerance : 0.02;
+    if (numClose(user, ans, tol)) return true;
+    return normalizeAns(user) === normalizeAns(ans);
+  }
+  return normalizeAns(user) === normalizeAns(ans);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/** Horizontal fraction: num over den */
+function fracHtml(num, den) {
+  return '<span class="frac"><span class="num">' + escapeHtml(num) + '</span><span class="den">' + escapeHtml(den) + '</span></span>';
+}
+
+const MATH_ATOM = /[0-9A-Za-z⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉ΩωδΔβθπ._′’]/;
+
+function takeMathOperandLeft(s, slashIdx) {
+  let j = slashIdx - 1;
+  while (j >= 0 && /\s/.test(s[j])) j--;
+  if (j < 0) return null;
+  if (s[j] === ')' || s[j] === '）') {
+    const close = s[j];
+    const open = close === ')' ? '(' : '（';
+    let depth = 1;
+    j--;
+    while (j >= 0 && depth > 0) {
+      if (s[j] === close) depth++;
+      else if (s[j] === open) depth--;
+      j--;
+    }
+    if (depth !== 0) return null;
+    const start = j + 1;
+    return { start, end: slashIdx, text: s.slice(start, slashIdx).trim() };
+  }
+  const end = slashIdx;
+  while (j >= 0 && MATH_ATOM.test(s[j])) j--;
+  const start = j + 1;
+  if (start >= end) return null;
+  const text = s.slice(start, end).trim();
+  if (!text) return null;
+  return { start, end, text };
+}
+
+function takeMathOperandRight(s, slashIdx) {
+  let j = slashIdx + 1;
+  while (j < s.length && /\s/.test(s[j])) j++;
+  if (j >= s.length) return null;
+  if (s[j] === '(' || s[j] === '（') {
+    const open = s[j];
+    const close = open === '(' ? ')' : '）';
+    let depth = 1;
+    const start = j;
+    j++;
+    while (j < s.length && depth > 0) {
+      if (s[j] === open) depth++;
+      else if (s[j] === close) depth--;
+      j++;
+    }
+    if (depth !== 0) return null;
+    return { start, end: j, text: s.slice(start, j).trim() };
+  }
+  const start = j;
+  while (j < s.length && MATH_ATOM.test(s[j])) j++;
+  if (j === start) return null;
+  const text = s.slice(start, j).trim();
+  if (!text) return null;
+  return { start, end: j, text };
+}
+
+
+function hasCjk(t) {
+  return /[\u4e00-\u9fff]/.test(t);
+}
+
+/** Turn {{frac:num|den}} and math fullwidth ／ into .frac HTML. */
+function formatMathHtml(raw) {
+  let s = String(raw == null ? '' : raw);
+  s = s.replace(/\{\{frac:([^|{}]+)\|([^|{}]+)\}\}/g, (_, a, b) => '\u0000FRAC\u0000' + a + '\u0000' + b + '\u0000');
+  const slashChars = ['／', '/'];
+  for (const slash of slashChars) {
+    let guard = 0;
+    while (guard++ < 64) {
+      let found = false;
+      for (let i = 0; i < s.length; i++) {
+        if (s[i] !== slash) continue;
+        if (slash === '/') {
+          const leftPeek = s.slice(Math.max(0, i - 3), i);
+          const rightPeek = s.slice(i + 1, i + 3);
+          if (/AC$/i.test(leftPeek) && /^DC/i.test(rightPeek)) continue;
+          if (/LED$/i.test(leftPeek)) continue;
+        }
+        const L = takeMathOperandLeft(s, i);
+        const R = takeMathOperandRight(s, i);
+        if (!L || !R) continue;
+        if (hasCjk(L.text) || hasCjk(R.text)) continue;
+        let k = R.end;
+        while (k < s.length && /\s/.test(s[k])) k++;
+        if (k < s.length && (s[k] === '／' || s[k] === '/')) continue;
+        let p = L.start - 1;
+        while (p >= 0 && /\s/.test(s[p])) p--;
+        if (p >= 0 && (s[p] === '／' || s[p] === '/')) continue;
+        // Skip pure letter alternatives (e.g. IR／I*R／I×R); need digit/paren/super/sub
+        {
+          const mathy = /[0-9()（）²³⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉]/.test(L.text + R.text);
+          if (!mathy) continue;
+        }
+        const replacement = '\u0000FRAC\u0000' + L.text + '\u0000' + R.text + '\u0000';
+        s = s.slice(0, L.start) + replacement + s.slice(R.end);
+        found = true;
+        break;
+      }
+      if (!found) break;
+    }
+  }
+  const parts = s.split('\u0000FRAC\u0000');
+  let out = escapeHtml(parts[0]);
+  for (let i = 1; i < parts.length; i++) {
+    const chunk = parts[i];
+    const z = chunk.split('\u0000');
+    if (z.length >= 3) {
+      out += fracHtml(z[0], z[1]);
+      out += escapeHtml(z.slice(2).join('\u0000'));
+    } else {
+      out += escapeHtml(chunk);
+    }
+  }
+  return out;
+}
+
+/** Sentence / newline → <p> paragraphs; math-formatted inside. */
+function toParagraphsHtml(text) {
+  const raw = String(text == null ? '' : text).replace(/\r\n/g, '\n').trim();
+  if (!raw) return '';
+  const lines = raw.split('\n');
+  const paras = [];
+  lines.forEach(line => {
+    const t = line.trim();
+    if (!t) return;
+    const pieces = t.split(/(?<=。)/);
+    pieces.forEach(p => {
+      const x = p.trim();
+      if (x) paras.push(x);
+    });
+  });
+  if (!paras.length) return '<p>' + formatMathHtml(raw) + '</p>';
+  return paras.map(p => '<p>' + formatMathHtml(p) + '</p>').join('');
+}
+
+
+function renderNav() {
+  const nav = $('navList');
+  nav.innerHTML = '';
+  BANK.levels.forEach(L => {
+    if (L.kind === 'wrongbook' && !(state.wrong && state.wrong.length)) {
+      // still show wrong-book entry but muted
+    }
+    const locked = !!(L.locked || L.kind === 'locked');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nav-item' + (state.levelId === L.levelId ? ' active' : '') + (locked ? ' locked' : '');
+    const star = state.stars[L.levelId] || 0;
+    btn.innerHTML = '<span class="ord">' + L.order + '</span><span class="ttl">' + escapeHtml(L.titleZh) + '</span>' +
+      (locked ? '<span class="soon">鎖</span>' : (star ? '<span class="star">★' + star + '</span>' : ''));
+    btn.onclick = () => selectLevel(L.levelId);
+    nav.appendChild(btn);
+  });
+}
+
+function selectLevel(id) {
+  state.levelId = id;
+  state.qIndex = 0;
+  state.history = [];
+  state.hintStep = 0;
+  state.answered = false;
+  miniDrill = null; // new level → fresh independent mini card
+  materializeLevel(getLevel(id));
+  saveState(state);
+  renderAll();
+}
+
+
+/* —— 歐姆互動教學卡（獨立 mini 練習，唔偷中欄答案） —— */
+let miniDrill = null; // { kind, given, answer, unit, unknown, formulaHtml, titleZh, exampleZh }
+
+function ohmKindForLevel(levelId) {
+  if (!levelId) return null;
+  if (levelId === 'solve-i' || levelId.indexOf('solve-i') === 0) return 'solve-i';
+  if (levelId === 'solve-v' || levelId.indexOf('solve-v') === 0) return 'solve-v';
+  if (levelId === 'solve-r' || levelId.indexOf('solve-r') === 0) return 'solve-r';
+  return null;
+}
+
+function circuitSvgHtml(kind) {
+  // Simple battery + resistor schematic; colors: V red, I blue, R green
+  const Vmark = '<text x="118" y="22" fill="#dc2626" font-size="13" font-weight="700">V</text>' +
+    '<line x1="70" y1="28" x2="170" y2="28" stroke="#dc2626" stroke-width="2"/>' +
+    '<line x1="70" y1="24" x2="70" y2="32" stroke="#dc2626" stroke-width="2"/>' +
+    '<line x1="170" y1="24" x2="170" y2="32" stroke="#dc2626" stroke-width="2"/>';
+  const Imark = '<text x="200" y="78" fill="#2563eb" font-size="13" font-weight="700">I</text>' +
+    '<path d="M70 95 H178" stroke="#2563eb" stroke-width="2.2" fill="none"/>' +
+    '<polygon points="178,90 190,95 178,100" fill="#2563eb"/>';
+  const Rlab = '<text x="108" y="58" fill="#16a34a" font-size="13" font-weight="700">R</text>';
+  let ask = '';
+  if (kind === 'solve-i') {
+    ask = '<rect x="210" y="64" width="28" height="22" rx="4" fill="#dbeafe" stroke="#2563eb"/>' +
+      '<text x="217" y="80" fill="#1d4ed8" font-size="14" font-weight="800">?</text>';
+  } else if (kind === 'solve-v') {
+    ask = '<rect x="108" y="8" width="28" height="20" rx="4" fill="#fee2e2" stroke="#dc2626"/>' +
+      '<text x="115" y="23" fill="#b91c1c" font-size="14" font-weight="800">?</text>';
+  } else {
+    ask = '<rect x="100" y="42" width="28" height="20" rx="4" fill="#dcfce7" stroke="#16a34a"/>' +
+      '<text x="107" y="57" fill="#166534" font-size="14" font-weight="800">?</text>';
+  }
+  return '<svg viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+    '' +
+    // battery
+    '<rect x="18" y="48" width="28" height="44" rx="3" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>' +
+    '<text x="22" y="74" font-size="10" fill="#92400e">電池</text>' +
+    // wires + resistor zigzag
+    '<path d="M46 70 H70 V40 H170 V70 H200" stroke="#334155" stroke-width="2.2" fill="none"/>' +
+    '<path d="M70 40 L82 28 L94 52 L106 28 L118 52 L130 28 L142 52 L154 28 L170 40" stroke="#16a34a" stroke-width="2.4" fill="none"/>' +
+    '<path d="M200 70 V95 H46 V70" stroke="#334155" stroke-width="2.2" fill="none"/>' +
+    Vmark + Imark + Rlab + ask +
+    '</svg>';
+}
+
+function freshMiniDrill(kind) {
+  const built = buildGen(kind);
+  if (!built) return null;
+  let titleZh = '互動練習';
+  let formulaHtml = '';
+  let exampleZh = '';
+  if (kind === 'solve-i') {
+    titleZh = '求電流 I';
+    formulaHtml = 'I＝' + fracHtml('V', 'R');
+    exampleZh = '範例：Given：V＝1.5 V，R＝5 Ω。\nI＝{{frac:V|R}}＝{{frac:1.5|5}}＝0.3 A。';
+  } else if (kind === 'solve-v') {
+    titleZh = '求電壓 V';
+    formulaHtml = 'V＝I×R';
+    exampleZh = '範例：Given：I＝2 A，R＝6 Ω。\nV＝I×R＝2×6＝12 V。';
+  } else if (kind === 'solve-r') {
+    titleZh = '求電阻 R';
+    formulaHtml = 'R＝' + fracHtml('V', 'I');
+    exampleZh = '範例：Given：V＝12 V，I＝3 A。\nR＝{{frac:V|I}}＝{{frac:12|3}}＝4 Ω。';
+  }
+  return {
+    kind: kind,
+    given: built.given,
+    answer: built.answer,
+    unit: built.unit,
+    unknown: built.unknown,
+    titleZh: titleZh,
+    formulaHtml: formulaHtml,
+    formulaLab: kind === 'solve-i' ? '已知 V、R 求 I' : (kind === 'solve-v' ? '已知 I、R 求 V' : '已知 V、I 求 R'),
+    exampleZh: exampleZh
+  };
+}
+
+function ensureMiniDrill(levelId) {
+  const kind = ohmKindForLevel(levelId);
+  if (!kind) { miniDrill = null; return null; }
+  if (!miniDrill || miniDrill.kind !== kind) miniDrill = freshMiniDrill(kind);
+  return miniDrill;
+}
+
+function teachCardHtml(levelId) {
+  const d = ensureMiniDrill(levelId);
+  if (!d) return '';
+  const g = d.given || {};
+  let chips = '';
+  if (d.kind === 'solve-i') {
+    chips =
+      '<div class="tc-chip v"><div class="ck">已知：V</div><div class="cv">' + escapeHtml(String(g.V)) + ' V</div></div>' +
+      '<div class="tc-chip r"><div class="ck">已知：R</div><div class="cv">' + escapeHtml(String(g.R)) + ' Ω</div></div>' +
+      '<div class="tc-chip ask i"><div class="ck">求：I？</div>' +
+      '<input type="text" class="mini-ans" data-mini="1" inputmode="decimal" placeholder="I" autocomplete="off">' +
+      '<span class="unit">A</span></div>';
+  } else if (d.kind === 'solve-v') {
+    const Ishow = (g.I_mA != null) ? (g.I_mA + ' mA') : (String(g.I) + ' A');
+    chips =
+      '<div class="tc-chip i"><div class="ck">已知：I</div><div class="cv">' + escapeHtml(Ishow) + '</div></div>' +
+      '<div class="tc-chip r"><div class="ck">已知：R</div><div class="cv">' + escapeHtml(String(g.R)) + ' Ω</div></div>' +
+      '<div class="tc-chip ask v"><div class="ck">求：V？</div>' +
+      '<input type="text" class="mini-ans" data-mini="1" inputmode="decimal" placeholder="V" autocomplete="off">' +
+      '<span class="unit">V</span></div>';
+  } else {
+    const Ishow = (g.I_mA != null) ? (g.I_mA + ' mA') : (String(g.I) + ' A');
+    chips =
+      '<div class="tc-chip v"><div class="ck">已知：V</div><div class="cv">' + escapeHtml(String(g.V)) + ' V</div></div>' +
+      '<div class="tc-chip i"><div class="ck">已知：I</div><div class="cv">' + escapeHtml(Ishow) + '</div></div>' +
+      '<div class="tc-chip ask r"><div class="ck">求：R？</div>' +
+      '<input type="text" class="mini-ans" data-mini="1" inputmode="decimal" placeholder="R" autocomplete="off">' +
+      '<span class="unit">Ω</span></div>';
+  }
+  return '<h3>互動練習卡</h3>' +
+    '<p class="teach-note">數字同中欄正式題分開（獨立 mini），唔會洩露本題答案。可撳「換一題」再練。</p>' +
+    '<div class="teach-card" data-teach="' + escapeHtml(d.kind) + '">' +
+    '<div class="tc-head"><h4 class="tc-title">' + escapeHtml(d.titleZh) + '</h4>' +
+    '<button type="button" class="tc-refresh" data-mini-refresh="1">換一題</button></div>' +
+    '<div class="tc-layout">' +
+    '<div class="tc-circuit">' + circuitSvgHtml(d.kind) + '</div>' +
+    '<div class="tc-formula"><div class="tf-lab">' + escapeHtml(d.formulaLab) + '</div>' +
+    '<div class="tf-eq">' + d.formulaHtml + '</div></div></div>' +
+    '<div class="tc-chips">' + chips + '</div>' +
+    '<div class="tc-actions">' +
+    '<button type="button" class="btn primary" data-mini-check="1">檢查</button>' +
+    '<span class="tc-fb" data-mini-fb="1"></span></div></div>' +
+    '<div class="demo">' + toParagraphsHtml(d.exampleZh) + '</div>';
+}
+
+function buildSupportHtml(level, q) {
+  if (!level) {
+    return '<p class="muted">左邊揀一個課題開始。</p>';
+  }
+  const support = (BANK.supportByLevel && BANK.supportByLevel[level.levelId]) || { defs: [], tips: [] };
+  let html = '';
+  html += '<h3>課題說明</h3><div class="concept">' + toParagraphsHtml(level.conceptZh || '') + '</div>';
+  if (level.figure) {
+    html += '<figure class="fig fig-sm"><img src="' + escapeHtml(level.figure) + '" alt=""><span class="fig-zoom-hint">撳圖放大</span></figure>';
+  }
+  if (level.extraFigures && level.extraFigures.length) {
+    html += '<div class="fig-row">' + level.extraFigures.map(src =>
+      '<figure class="fig fig-sm"><img src="' + escapeHtml(src) + '" alt=""><span class="fig-zoom-hint">撳圖放大</span></figure>'
+    ).join('') + '</div>';
+  }
+  // Interactive Ohm teach card (independent mini) — before static demo
+  const ohmKind = ohmKindForLevel(level.levelId);
+  if (ohmKind) html += teachCardHtml(level.levelId);
+  if (level.demoZh && !ohmKind) html += '<h3>範例</h3><div class="demo">' + toParagraphsHtml(level.demoZh) + '</div>';
+  if (level.demoZh && ohmKind) {
+    // keep level demo as extra worked example under a quieter heading if different
+    html += '<h3>課本範例</h3><div class="demo">' + toParagraphsHtml(level.demoZh) + '</div>';
+  }
+  if (support.defs && support.defs.length) {
+    html += '<h3>定義</h3><dl class="defs">';
+    support.defs.forEach(d => {
+      html += '<dt>' + formatMathHtml(d.term) + '</dt><dd>' + formatMathHtml(d.zh);
+      if (d.figure) html += '<figure class="fig fig-def"><img src="' + escapeHtml(d.figure) + '" alt=""><span class="fig-zoom-hint">撳圖放大</span></figure>';
+      html += '</dd>';
+    });
+    html += '</dl>';
+  }
+  html += '<h3>引導提示</h3><p class="muted">提示係引導問題，唔會直接講出本題數字答案。撳「提示」逐步解鎖。</p>';
+  if (level.locked || level.kind === 'locked') {
+    html += '<p class="muted">呢章已預留，今輪未開放練習。</p>';
+    return html;
+  }
+  if (!q) {
+    html += '<p class="muted">未有題目。</p>';
+  } else {
+    const steps = [];
+    if (q.formulaHint) steps.push({ label: '提示 1', text: q.formulaHint });
+    if (q.stepHint) steps.push({ label: '提示 2', text: q.stepHint });
+    if (q.fullSolutionZh) steps.push({ label: '詳解（最後先睇）', text: q.fullSolutionZh });
+    if (!steps.length) steps.push({ label: '提示', text: '引導：先睇定義，再問自己已知邊啲量？' });
+    steps.forEach((s, i) => {
+      const show = state.hintStep > i;
+      html += '<div class="hint-card ' + (show ? 'open' : 'locked') + '">' +
+        '<div class="hint-lab">' + escapeHtml(s.label) + (show ? '' : '（未解鎖）') + '</div>' +
+        (show ? '<div>' + toParagraphsHtml(s.text) + '</div>' : '<div class="muted">再撳「提示」解鎖</div>') +
+        '</div>';
+    });
+  }
+  if (support.tips && support.tips.length) {
+    html += '<h3>溫習問題</h3><ul>' + support.tips.map(t => '<li>' + formatMathHtml(t) + '</li>').join('') + '</ul>';
+  }
+  return html;
+}
+
+
+function openLightbox(src) {
+  const box = $('imgLightbox');
+  const img = $('lightboxImg');
+  if (!box || !img || !src) return;
+  img.src = src;
+  box.classList.add('open');
+  box.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  const box = $('imgLightbox');
+  const img = $('lightboxImg');
+  if (!box) return;
+  box.classList.remove('open');
+  box.setAttribute('aria-hidden', 'true');
+  if (img) img.removeAttribute('src');
+}
+
+function onMiniCheck(root) {
+  if (!miniDrill) return;
+  const input = (root || document).querySelector('.mini-ans');
+  const fbNodes = document.querySelectorAll('[data-mini-fb]');
+  const ok = numClose(input ? input.value : '', miniDrill.answer, 0.02);
+  fbNodes.forEach(fb => {
+    fb.className = 'tc-fb ' + (ok ? 'ok' : 'bad');
+    fb.textContent = ok ? ('正確！' + miniDrill.unknown + '＝' + miniDrill.answer + ' ' + miniDrill.unit) : '未啱，再試（用卡上公式）。';
+  });
+  // mirror input value across clones
+  if (input) {
+    document.querySelectorAll('.mini-ans').forEach(el => { if (el !== input) el.value = input.value; });
+  }
+}
+
+function refreshMiniDrillAndRerender() {
+  const L = getLevel(state.levelId);
+  if (!L) return;
+  const kind = ohmKindForLevel(L.levelId);
+  if (!kind) return;
+  miniDrill = freshMiniDrill(kind);
+  const qs = activeQuestions(L);
+  const q = qs.length ? qs[state.qIndex] : null;
+  renderSupport(L, q);
+}
+
+function renderSupport(level, q) {
+  const box = $('supportBody');
+  if (!box) return;
+  box.innerHTML = buildSupportHtml(level, q);
+}
+
+function givenLine(q) {
+  if (!q || !q.given) return '';
+  const parts = [];
+  Object.entries(q.given).forEach(([k, v]) => {
+    if (v == null) return;
+    parts.push(k + '＝' + v);
+  });
+  return parts.length ? '<p class="given"><strong>已知：</strong>' + escapeHtml(parts.join('， ')) + '</p>' : '';
+}
+
+function renderPractice() {
+  const L = getLevel(state.levelId);
+  const mid = $('practiceBody');
+  if (!L) {
+    mid.innerHTML = '<div class="welcome"><h2>' + escapeHtml(BANK.titleZh || '電學自學') + '</h2>' +
+      '<p>' + escapeHtml(BANK.istAlignZh || '') + '</p>' +
+      '<p>' + escapeHtml(BANK.uiNoteZh || '') + '</p>' +
+      '<p class="muted">左欄揀課題 → 中欄做練習 → 右欄睇定義同引導提示。</p></div>';
+    renderSupport(null, null);
+    return;
+  }
+  if (L.locked || L.kind === 'locked') {
+    mid.innerHTML = '<h2>' + escapeHtml(L.titleZh) + '</h2><p class="muted">章節位已預留，今輪未開放。可先做前面歐姆／功率／分壓。</p>';
+    renderSupport(L, null);
+    return;
+  }
+  const qs = activeQuestions(L);
+  if (!qs.length) {
+    mid.innerHTML = '<p>呢關暫未有題（或錯題本係空）。</p>';
+    renderSupport(L, null);
+    return;
+  }
+  if (state.qIndex >= qs.length) state.qIndex = qs.length - 1;
+  const q = qs[state.qIndex];
+  const fig = q.figure ? '<figure class="fig"><img src="' + escapeHtml(q.figure) + '" alt=""></figure>' : '';
+  let answerHtml = '';
+  if (q.multi && q.multi.length) {
+    answerHtml = '<div class="answer-multi">' + q.multi.map(p =>
+      '<div class="answer-row">' +
+      '<label class="ans-lab" for="ans-' + escapeHtml(p.key) + '">' + escapeHtml(p.label) + '</label>' +
+      '<input id="ans-' + escapeHtml(p.key) + '" type="text" autocomplete="off" placeholder="輸入 ' + escapeHtml(p.label) + '">' +
+      '<span class="unit">' + escapeHtml(p.unit || q.unit || '') + '</span></div>'
+    ).join('') + '</div>';
+  } else {
+    answerHtml =
+      '<div class="answer-row">' +
+      '<label class="sr">你的答案</label>' +
+      '<input id="ansInput" type="text" autocomplete="off" placeholder="輸入答案' + (q.unit && q.unit !== '—' ? '（單位 ' + escapeHtml(q.unit) + '）' : '') + '">' +
+      '<span class="unit">' + (q.unit && q.unit !== '—' ? escapeHtml(q.unit) : '') + '</span></div>';
+  }
+  mid.innerHTML =
+    '<div class="q-meta">第 ' + (state.qIndex + 1) + ' / ' + qs.length + ' 題 · ' + escapeHtml(L.titleZh) + '</div>' +
+    '<h2 class="stem">' + formatMathHtml(q.stemZh) + '</h2>' +
+    givenLine(q) + fig + answerHtml +
+    '<div class="btn-row">' +
+    '<button type="button" class="btn" id="btnPrev"' + (state.qIndex === 0 ? ' disabled' : '') + '>上一題</button>' +
+    '<button type="button" class="btn ghost" id="btnHint">提示</button>' +
+    '<button type="button" class="btn primary" id="btnCheck">檢查</button>' +
+    '<button type="button" class="btn" id="btnNext">下一題</button></div>' +
+    '<div id="feedback" class="feedback"></div>';
+  $('btnCheck').onclick = () => onCheck(q, L, qs);
+  $('btnHint').onclick = () => { state.hintStep = Math.min(state.hintStep + 1, 3); saveState(state); renderSupport(L, q); };
+  $('btnNext').onclick = () => goNext(qs);
+  $('btnPrev').onclick = () => goPrev();
+  if (q.multi && q.multi.length) {
+    const first = $('ans-' + q.multi[0].key);
+    if (first) first.focus();
+    q.multi.forEach(p => {
+      const el = $('ans-' + p.key);
+      if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') onCheck(q, L, qs); });
+    });
+  } else {
+    $('ansInput').focus();
+    $('ansInput').addEventListener('keydown', e => { if (e.key === 'Enter') onCheck(q, L, qs); });
+  }
+  renderSupport(L, q);
+}
+
+function onCheck(q, L, qs) {
+  const user = (q.multi && q.multi.length) ? '' : ($('ansInput') ? $('ansInput').value : '');
+  const ok = checkAnswer(q, user);
+  const fb = $('feedback');
+  state.answered = true;
+  if (ok) {
+    fb.className = 'feedback ok';
+    fb.textContent = '正確！';
+    state.wrong = (state.wrong || []).filter(id => id !== q.id);
+    const done = state.qIndex + 1;
+    state.stars[L.levelId] = Math.max(state.stars[L.levelId] || 0, Math.min(3, Math.ceil(3 * done / qs.length)));
+  } else {
+    fb.className = 'feedback bad';
+    if (q.multi && q.multi.length) {
+      fb.textContent = '未啱。兩個答案都要啱；試撳「提示」睇引導，再計一次。';
+    } else {
+      fb.textContent = '未啱。試撳「提示」睇引導問題，再計一次。';
+    }
+    if (!state.wrong.includes(q.id)) state.wrong.push(q.id);
+    if (state.hintStep < 1) state.hintStep = 1;
+  }
+  saveState(state);
+  renderNav();
+  renderSupport(L, q);
+}
+
+function goNext(qs) {
+  if (state.qIndex < qs.length - 1) {
+    state.qIndex++;
+    state.hintStep = 0;
+    state.answered = false;
+    saveState(state);
+    renderPractice();
+    renderNav();
+  } else {
+    $('feedback').className = 'feedback info';
+    $('feedback').textContent = '本關最後一題。可轉左欄下一關。';
+  }
+}
+
+function goPrev() {
+  if (state.qIndex > 0) {
+    state.qIndex--;
+    state.hintStep = 0;
+    state.answered = false;
+    saveState(state);
+    renderPractice();
+  }
+}
+
+function renderPanels() {
+  document.body.classList.toggle('hide-left', !state.panels.left);
+  document.body.classList.toggle('hide-right', !state.panels.right);
+  $('btnToggleLeft').textContent = state.panels.left ? '隱藏目錄' : '顯示目錄';
+  $('btnToggleRight').textContent = state.panels.right ? '隱藏支援' : '顯示支援';
+}
+
+function renderAll() {
+  renderPanels();
+  renderNav();
+  renderPractice();
+  $('progressTag').textContent = '錯題 ' + ((state.wrong || []).length);
+}
+
+function resetProgress() {
+  if (!confirm('清除本 app 進度（星星／錯題／目前題號）？')) return;
+  localStorage.removeItem(LS_KEY);
+  Object.assign(state, { levelId: null, qIndex: 0, history: [], stars: {}, wrong: [], hintStep: 0, answered: false, panels: { left: true, mid: true, right: true } });
+  renderAll();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('btnToggleLeft').onclick = () => { state.panels.left = !state.panels.left; saveState(state); renderPanels(); };
+  $('btnToggleRight').onclick = () => { state.panels.right = !state.panels.right; saveState(state); renderPanels(); };
+  $('btnReset').onclick = resetProgress;
+  // Event delegation for mini drill + lightbox
+  document.addEventListener('click', (e) => {
+    const t = e.target;
+    if (!t) return;
+    if (t.closest && t.closest('[data-mini-check]')) {
+      onMiniCheck(t.closest('.teach-card') || document);
+      e.preventDefault();
+      return;
+    }
+    if (t.closest && t.closest('[data-mini-refresh]')) {
+      refreshMiniDrillAndRerender();
+      e.preventDefault();
+      return;
+    }
+    // 撳圖放大（左浮窗／右欄／中欄練習圖）
+    if (t.tagName === 'IMG') {
+      const inFig = t.closest('.fig, .fig-sm, .fig-def, .fig-row, #practiceBody, #supportBody');
+      const lb = $('imgLightbox');
+      if (lb && lb.classList.contains('open')) {
+        // 撳大圖本身 → 關閉
+        if (t.id === 'lightboxImg') { closeLightbox(); e.preventDefault(); }
+        return;
+      }
+      if (inFig && t.src) {
+        openLightbox(t.currentSrc || t.src);
+        e.preventDefault();
+        return;
+      }
+    }
+    // 撳 lightbox 背景關閉
+    if (t.id === 'imgLightbox') {
+      closeLightbox();
+      e.preventDefault();
+    }
+  });
+  if ($('btnCloseLightbox')) $('btnCloseLightbox').onclick = () => closeLightbox();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+      return;
+    }
+    if (e.key === 'Enter' && e.target && e.target.classList && e.target.classList.contains('mini-ans')) {
+      onMiniCheck(e.target.closest('.teach-card') || document);
+      e.preventDefault();
+    }
+  });
+  // default to first unlocked
+  if (!state.levelId) {
+    const first = BANK.levels.find(L => !(L.locked || L.kind === 'locked'));
+    if (first) state.levelId = first.levelId;
+  }
+  if (state.levelId) materializeLevel(getLevel(state.levelId));
+  renderAll();
+});
